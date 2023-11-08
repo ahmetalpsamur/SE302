@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="497.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Syllabus">
+   <children>
+      <VBox prefHeight="497.0" prefWidth="730.0">
+         <children>
+            <HBox prefHeight="46.0" prefWidth="730.0">
+               <children>
+                  <TextField text="Course Name" />
+                  <TextField prefHeight="26.0" prefWidth="578.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="123.0" prefWidth="730.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField text="Code" />
+                        <TextField prefHeight="73.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField text="Fall" />
+                        <TextField prefHeight="73.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField text="Spring" />
+                        <TextField prefHeight="73.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField text="Theory" />
+                        <TextField prefHeight="73.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField text="Application/Lab" />
+                        <TextField prefHeight="73.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField text="Local Credits" />
+                        <TextField prefHeight="73.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField text="ECTS" />
+                        <TextField prefHeight="73.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="158.0" prefWidth="730.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Prerequisites" />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Course Language" />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Course Type" />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="27.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Course Level " />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="27.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Teaching Methods" />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
