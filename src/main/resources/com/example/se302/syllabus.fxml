@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="497.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Syllabus">
+<AnchorPane prefHeight="4000.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Syllabus">
    <children>
-      <VBox prefHeight="497.0" prefWidth="730.0">
+      <VBox prefHeight="2000.0" prefWidth="730.0">
          <children>
             <HBox prefHeight="46.0" prefWidth="730.0">
                <children>
@@ -92,6 +92,384 @@
                      <children>
                         <TextField text="Teaching Methods" />
                         <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="115.0" prefWidth="730.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Course Coordinator" />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="26.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Course Coordinator" />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="22.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Assistant(s)" />
+                        <TextField prefHeight="26.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="213.0" prefWidth="730.0">
+               <children>
+                  <HBox prefHeight="58.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="59.0" prefWidth="150.0" text="Course Objectives" />
+                        <TextField prefHeight="65.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="98.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="99.0" prefWidth="150.0" text="Learning Outcomes" />
+                        <TextField prefHeight="101.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="38.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="34.0" prefWidth="150.0" text="Course Description" />
+                        <TextField prefHeight="36.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox prefHeight="142.0" prefWidth="660.0">
+               <children>
+                  <TextField prefHeight="129.0" prefWidth="150.0" text="Course Name" />
+                  <VBox prefHeight="142.0" prefWidth="19.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                        <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                        <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                        <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                        <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="126.0" prefWidth="578.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="578.0" />
+                        <TextField prefHeight="26.0" prefWidth="578.0" />
+                        <TextField prefHeight="26.0" prefWidth="578.0" />
+                        <TextField prefHeight="26.0" prefWidth="578.0" />
+                        <TextField prefHeight="26.0" prefWidth="578.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <VBox prefHeight="545.0" prefWidth="730.0">
+               <children>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="Week" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" text="Subjects" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" text="Required Materials" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="1" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="2" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="3" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="4" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="5" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="6" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="7" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="8" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="9" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="10" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="11" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="12" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="13" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="14" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="15" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField text="16" />
+                        <TextField prefHeight="26.0" prefWidth="408.0" />
+                        <TextField prefHeight="26.0" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="296.0" prefWidth="730.0">
+               <children>
+                  <HBox prefHeight="58.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="58.0" prefWidth="299.0" text="Course Notes/Textbooks" />
+                        <TextField prefHeight="65.0" prefWidth="570.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="181.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="182.0" prefWidth="258.0" text="Suggested Readings/Materials " />
+                        <TextField prefHeight="185.0" prefWidth="526.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="545.0" prefWidth="730.0">
+               <children>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Semester Activities" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Participation" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Laboratory/Application" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Field Work" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Quiz/Studio Critique" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Homework/Assignment" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Presentation/Jury" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Project" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Seminar/Workshop" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Oral Exam" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Midterm" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="31.0" prefWidth="730.0">
+                     <children>
+                        <TextField prefHeight="26.0" prefWidth="146.0" text="Final Exam" />
+                        <TextField prefHeight="26.0" prefWidth="131.0" text="Number" />
+                        <TextField prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                        <TextField prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                        <TextField prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                        <TextField prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                        <TextField prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                        <TextField prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                        <TextField prefHeight="26.0" prefWidth="53.0" text="LO7" />
                      </children>
                   </HBox>
                </children>
