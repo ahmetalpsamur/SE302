@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloController {
+public class Controllers {
     @FXML
     private Label welcomeText;
     @FXML
@@ -20,19 +20,14 @@ public class HelloController {
     @FXML
     private Parent root;
 
-
     @FXML
     protected void openSyllabus(ActionEvent event) throws IOException {
         Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("syllabus.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
         stage.setTitle("Helloooo!");
         stage.setScene(scene);
         stage.show();
-
-
-
-
 
     }
 }
