@@ -25,7 +25,7 @@ public class HelloController {
     protected void openSyllabus(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("syllabus.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 760, 750);
         stage.setTitle("Helloooo!");
         stage.setScene(scene);
         stage.show();
