@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="524.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.AddNewSyllabus">
+   <children>
+      <MenuBar prefHeight="32.0" prefWidth="781.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField layoutX="236.0" layoutY="379.0" prefHeight="31.0" prefWidth="161.0" />
+      <Text layoutX="25.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name and Surname:" wrappingWidth="339.6708984375">
+         <font>
+            <Font name="Arial Italic" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="25.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Write a Description for the Changes:" wrappingWidth="528.0">
+         <font>
+            <Font name="System Italic" size="23.0" />
+         </font>
+      </Text>
+      <Text layoutX="25.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:" wrappingWidth="196.6708984375">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="23.0" layoutY="196.0" prefHeight="121.0" prefWidth="710.0" />
+      <Text layoutX="236.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField layoutX="23.0" layoutY="379.0" prefHeight="31.0" prefWidth="161.0" />
+      <Button layoutX="573.0" layoutY="373.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="133.0" text="Save " textFill="#460909" />
+      <TextField layoutX="23.0" layoutY="109.0" prefHeight="31.0" prefWidth="300.0" />
+   </children>
+</AnchorPane>

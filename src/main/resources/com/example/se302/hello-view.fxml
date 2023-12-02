@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -12,34 +19,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
+<AnchorPane prefHeight="576.0" prefWidth="806.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <ImageView fitHeight="120.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@izmirekonomilogo.png" />
-               </image>
-            </ImageView>
-            <Label prefHeight="35.0" prefWidth="250.0" text="Syllabus Application" textAlignment="CENTER">
-               <font>
-                  <Font name="Candara" size="29.0" />
-               </font>
-            </Label>
-            <HBox prefHeight="24.0" prefWidth="600.0" spacing="5.0">
-               <children>
-                  <ChoiceBox id="myChoiceBox" fx:id="myChoiceBox" prefWidth="150.0" />
-                  <Button mnemonicParsing="false" text="Add" />
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#openSyllabus" text="New">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Button>
-                  <Button mnemonicParsing="false" text="Delete" />
-               </children>
-            </HBox>
-            <ListView prefHeight="222.0" prefWidth="600.0" />
-         </children>
-      </VBox>
+      <Label layoutX="134.0" layoutY="91.0" opacity="0.75" text="Welcome to Syllabus Application" textFill="#0e001b">
+         <font>
+            <Font name="Tahoma" size="35.0" />
+         </font>
+      </Label>
+      <MenuBar layoutY="-1.0" prefHeight="36.0" prefWidth="806.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="30.0" layoutY="219.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="209.0" text="Add New Syllabus" />
+      <Button layoutX="29.0" layoutY="358.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="209.0" text="View Syllabus" />
+      <Button layoutX="29.0" layoutY="431.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="209.0" text="Compare Syllabus" />
+      <Button layoutX="29.0" layoutY="288.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="209.0" text="Edit Syllabus" />
    </children>
 </AnchorPane>

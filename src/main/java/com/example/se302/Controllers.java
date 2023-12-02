@@ -24,23 +24,21 @@ public class Controllers implements Initializable  {
     @FXML
     private Parent root;
 
-    @FXML
-    private ChoiceBox<String>myChoiceBox;
-    private String[]course={"SE 302","SE 115","CE 323"};
+
 
     @FXML
     protected void openSyllabus(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
-        stage.setTitle("Helloooo!");
+        stage.setTitle("Syllabus");
         stage.setScene(scene);
         stage.show();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        myChoiceBox.getItems().addAll(course);
+
 
     }
 }
