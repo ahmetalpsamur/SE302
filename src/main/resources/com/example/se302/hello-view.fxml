@@ -3,22 +3,29 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="149.0" fitWidth="271.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="120.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@izmirekonomilogo.png" />
                </image>
             </ImageView>
+            <Label prefHeight="35.0" prefWidth="250.0" text="Syllabus Application" textAlignment="CENTER">
+               <font>
+                  <Font name="Candara" size="29.0" />
+               </font>
+            </Label>
             <HBox prefHeight="24.0" prefWidth="600.0" spacing="5.0">
                <children>
                   <ChoiceBox id="myChoiceBox" fx:id="myChoiceBox" prefWidth="150.0" />
