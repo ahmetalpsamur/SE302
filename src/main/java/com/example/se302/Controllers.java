@@ -35,6 +35,16 @@ public class Controllers implements Initializable  {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    protected void saveSyllabus(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        stage.setTitle("Save");
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
