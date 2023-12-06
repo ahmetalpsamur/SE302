@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Help">
+   <children>
+      <Button layoutX="421.0" layoutY="316.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="156.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Go to Home Screen" />
+   </children>
+</AnchorPane>
