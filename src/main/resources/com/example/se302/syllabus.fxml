@@ -17,7 +17,7 @@
                   <HBox prefHeight="46.0" prefWidth="730.0">
                      <children>
                         <TextField text="Course Name" />
-                        <TextField prefHeight="26.0" prefWidth="578.0" />
+                        <TextField prefHeight="26.0" prefWidth="578.0" fx:id="codeTextField"/>
                      </children>
                   </HBox>
                   <HBox prefHeight="123.0" prefWidth="746.0">
