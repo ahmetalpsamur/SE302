@@ -17,7 +17,7 @@
                   <HBox prefHeight="46.0" prefWidth="730.0">
                      <children>
                         <TextField text="Course Name" />
-                        <TextField prefHeight="26.0" prefWidth="578.0" fx:id="codeTextField"/>
+                        <TextField prefHeight="26.0" prefWidth="578.0" fx:id="courseNameText"/>
                      </children>
                   </HBox>
                   <HBox prefHeight="123.0" prefWidth="746.0">
@@ -25,43 +25,43 @@
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <TextField text="Code" />
-                              <TextField prefHeight="73.0" prefWidth="100.0" />
+                              <TextField prefHeight="73.0" prefWidth="100.0" fx:id="codeTextField" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <TextField text="Fall" />
-                              <TextField prefHeight="73.0" prefWidth="100.0" />
+                              <TextField prefHeight="73.0" prefWidth="100.0" fx:id="fallTextField"/>
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <TextField text="Spring" />
-                              <TextField prefHeight="73.0" prefWidth="100.0" />
+                              <TextField prefHeight="73.0" prefWidth="100.0" fx:id="springTextField" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <TextField text="Theory" />
-                              <TextField prefHeight="73.0" prefWidth="100.0" />
+                              <TextField prefHeight="73.0" prefWidth="100.0" fx:id="theoryTextField" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <TextField text="Application/Lab" />
-                              <TextField prefHeight="73.0" prefWidth="100.0" />
+                              <TextField prefHeight="73.0" prefWidth="100.0" fx:id="labTextField" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <TextField text="Local Credits" />
-                              <TextField prefHeight="73.0" prefWidth="100.0" />
+                              <TextField prefHeight="73.0" prefWidth="100.0" fx:id="localCreditTextField" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <TextField text="ECTS" />
-                              <TextField prefHeight="73.0" prefWidth="100.0" />
+                              <TextField prefHeight="73.0" prefWidth="100.0" fx:id="ectsTextField" />
                            </children>
                         </VBox>
                      </children>
@@ -71,31 +71,31 @@
                         <HBox prefHeight="28.0" prefWidth="730.0">
                            <children>
                               <TextField text="Prerequisites" />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="prerequisitesTextField" />
                            </children>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="730.0">
                            <children>
                               <TextField text="Course Language" />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="courseLanguageTextField" />
                            </children>
                         </HBox>
                         <HBox prefHeight="22.0" prefWidth="730.0">
                            <children>
                               <TextField text="Course Type" />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="courseTypeTextField"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="27.0" prefWidth="730.0">
                            <children>
                               <TextField text="Course Level " />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="courseLevelTextField"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="27.0" prefWidth="730.0">
                            <children>
                               <TextField text="Teaching Methods" />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="teachingMethodsTextField" />
                            </children>
                         </HBox>
                      </children>
@@ -105,19 +105,19 @@
                         <HBox prefHeight="28.0" prefWidth="730.0">
                            <children>
                               <TextField text="Course Coordinator" />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="courseCoordinatorTextField" />
                            </children>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="730.0">
                            <children>
                               <TextField text="Course Coordinator" />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="courseCoordinatorTextField2" />
                            </children>
                         </HBox>
                         <HBox prefHeight="22.0" prefWidth="730.0">
                            <children>
                               <TextField text="Assistant(s)" />
-                              <TextField prefHeight="26.0" prefWidth="570.0" />
+                              <TextField prefHeight="26.0" prefWidth="570.0" fx:id="assistantTextField" />
                            </children>
                         </HBox>
                      </children>
@@ -127,19 +127,19 @@
                         <HBox prefHeight="58.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="59.0" prefWidth="150.0" text="Course Objectives" />
-                              <TextField prefHeight="65.0" prefWidth="570.0" />
+                              <TextField prefHeight="65.0" prefWidth="570.0" fx:id="courseObjectivesTextField" />
                            </children>
                         </HBox>
                         <HBox prefHeight="98.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="99.0" prefWidth="150.0" text="Learning Outcomes" />
-                              <TextField prefHeight="101.0" prefWidth="570.0" />
+                              <TextField prefHeight="101.0" prefWidth="570.0" fx:id="learningOutcomesTextField" />
                            </children>
                         </HBox>
                         <HBox prefHeight="38.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="34.0" prefWidth="150.0" text="Course Description" />
-                              <TextField prefHeight="36.0" prefWidth="570.0" />
+                              <TextField prefHeight="36.0" prefWidth="570.0" fx:id="courseDescriptionTextField" />
                            </children>
                         </HBox>
                      </children>
@@ -149,7 +149,7 @@
                         <TextField prefHeight="129.0" prefWidth="150.0" text="Course Name" />
                         <VBox prefHeight="142.0" prefWidth="19.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="40.0" />
                               <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
                               <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
                               <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />

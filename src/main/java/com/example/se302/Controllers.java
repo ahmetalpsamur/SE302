@@ -32,6 +32,8 @@ public class Controllers implements Initializable {
     @FXML
     private TextField prerequisitesTextField;
     @FXML
+    private TextField labTextField;
+    @FXML
     private TextField courseLanguageTextField;
     @FXML
     private TextField courseTypeTextField;
