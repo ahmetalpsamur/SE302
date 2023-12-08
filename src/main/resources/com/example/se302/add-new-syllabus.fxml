@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="524.0" prefWidth="655.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.AddNewSyllabus">
+<AnchorPane prefHeight="524.0" prefWidth="655.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
    <children>
       <MenuBar layoutY="-5.0" prefHeight="37.0" prefWidth="781.0" style="-fx-background-color: #9C88E2;">
         <menus>

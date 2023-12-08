@@ -54,7 +54,36 @@ public class Controllers implements Initializable {
     @FXML
     private TextField courseNameTextField2; // maybe change the name
 
-    @Override
+    @FXML
+    protected void addSyllabus(ActionEvent event) throws IOException
+    {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("syllabus.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        stage.setTitle("Syllabus");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void saveSyllabus(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        stage.setTitle("Save");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void getHelp(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("help.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        stage.setTitle("Help");
+        stage.setScene(scene);
+        stage.show();
+    }
+        @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialization code if needed
     }
