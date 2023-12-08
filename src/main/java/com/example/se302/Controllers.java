@@ -55,6 +55,11 @@ public class Controllers implements Initializable {
     private TextField courseDescriptionTextField;
     @FXML
     private TextField courseNameTextField2; // maybe change the name
+    //-----------------------------
+
+    // course names will go here
+
+    //-----------------------------
     @FXML
     private TextField subjectsTextFieldOne;
     @FXML
@@ -119,11 +124,144 @@ public class Controllers implements Initializable {
     private TextField subjectsTextFieldSixteen;
     @FXML
     private TextField reqiredMaterialsTextFieldSixteen;
+    @FXML
+    private TextField courseNotesTextBooksTextField;
+    @FXML
+    private TextField suggestedMaterialsTextField;
+    @FXML
+    private TextField participationTextFieldOne;
+
+    @FXML
+    private TextField participationTextFieldTwo;
+
+    @FXML
+    private TextField participationTextFieldThree;
+
+    @FXML
+    private TextField participationTextFieldFour;
+
+    @FXML
+    private TextField participationTextFieldFive;
+
+    @FXML
+    private TextField participationTextFieldSix;
+
+    @FXML
+    private TextField participationTextFieldSeven;
+
+    @FXML
+    private TextField participationTextFieldEight;
+
+    @FXML
+    private TextField participationTextFieldNine;
+    @FXML
+    private TextField laboratoryTextFieldOne;
+
+    @FXML
+    private TextField laboratoryTextFieldTwo;
+
+    @FXML
+    private TextField laboratoryTextFieldThree;
+
+    @FXML
+    private TextField laboratoryTextFieldFour;
+
+    @FXML
+    private TextField laboratoryTextFieldFive;
+
+    @FXML
+    private TextField laboratoryTextFieldSix;
+
+    @FXML
+    private TextField laboratoryTextFieldSeven;
+
+    @FXML
+    private TextField laboratoryTextFieldEight;
+
+    @FXML
+    private TextField laboratoryTextFieldNine;
+    @FXML
+    private TextField fieldWorkTextFieldOne;
+
+    @FXML
+    private TextField fieldWorkTextFieldTwo;
+
+    @FXML
+    private TextField fieldWorkTextFieldThree;
+
+    @FXML
+    private TextField fieldWorkTextFieldFour;
+
+    @FXML
+    private TextField fieldWorkTextFieldFive;
+
+    @FXML
+    private TextField fieldWorkTextFieldSix;
+
+    @FXML
+    private TextField fieldWorkTextFieldSeven;
+
+    @FXML
+    private TextField fieldWorkTextFieldEight;
+
+    @FXML
+    private TextField fieldWorkTextFieldNine;
+    @FXML
+    private TextField quizTextFieldOne;
+
+    @FXML
+    private TextField quizTextFieldTwo;
+
+    @FXML
+    private TextField quizTextFieldThree;
+
+    @FXML
+    private TextField quizTextFieldFour;
+
+    @FXML
+    private TextField quizTextFieldFive;
+
+    @FXML
+    private TextField quizTextFieldSix;
+
+    @FXML
+    private TextField quizTextFieldSeven;
+
+    @FXML
+    private TextField quizTextFieldEight;
+
+    @FXML
+    private TextField quizTextFieldNine;
+    @FXML
+    private TextField homeworkTextFieldOne;
+
+    @FXML
+    private TextField homeworkTextFieldTwo;
+
+    @FXML
+    private TextField homeworkTextFieldThree;
+
+    @FXML
+    private TextField homeworkTextFieldFour;
+
+    @FXML
+    private TextField homeworkTextFieldFive;
+
+    @FXML
+    private TextField homeworkTextFieldSix;
+
+    @FXML
+    private TextField homeworkTextFieldSeven;
+
+    @FXML
+    private TextField homeworkTextFieldEight;
+
+    @FXML
+    private TextField homeworkTextFieldNine;
 
 
     @FXML
-    protected void addSyllabus(ActionEvent event) throws IOException
-    {
+    protected void addSyllabus(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
@@ -150,7 +288,8 @@ public class Controllers implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-        @Override
+
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialization code if needed
     }
