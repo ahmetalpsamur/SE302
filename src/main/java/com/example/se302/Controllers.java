@@ -55,6 +55,71 @@ public class Controllers implements Initializable {
     private TextField courseDescriptionTextField;
     @FXML
     private TextField courseNameTextField2; // maybe change the name
+    @FXML
+    private TextField subjectsTextFieldOne;
+    @FXML
+    private TextField reqiredMaterialsTextFieldOne;
+    @FXML
+    private TextField subjectsTextFieldTwo;
+    @FXML
+    private TextField reqiredMaterialsTextFieldTwo;
+    @FXML
+    private TextField subjectsTextFieldThree;
+    @FXML
+    private TextField reqiredMaterialsTextFieldThree;
+    @FXML
+    private TextField subjectsTextFieldFour;
+    @FXML
+    private TextField reqiredMaterialsTextFieldFour;
+    @FXML
+    private TextField subjectsTextFieldFive;
+    @FXML
+    private TextField reqiredMaterialsTextFieldFive;
+    @FXML
+    private TextField subjectsTextFieldSix;
+    @FXML
+    private TextField reqiredMaterialsTextFieldSix;
+    @FXML
+    private TextField subjectsTextFieldSeven;
+    @FXML
+    private TextField reqiredMaterialsTextFieldSeven;
+    @FXML
+    private TextField subjectsTextFieldEight;
+    @FXML
+    private TextField reqiredMaterialsTextFieldEight;
+    @FXML
+    private TextField subjectsTextFieldNine;
+    @FXML
+    private TextField reqiredMaterialsTextFieldNine;
+    @FXML
+    private TextField subjectsTextFieldTen;
+    @FXML
+    private TextField reqiredMaterialsTextFieldTen;
+    @FXML
+    private TextField subjectsTextFieldEleven;
+    @FXML
+    private TextField reqiredMaterialsTextFieldEleven;
+    @FXML
+    private TextField subjectsTextFieldTwelve;
+    @FXML
+    private TextField reqiredMaterialsTextFieldTwelve;
+    @FXML
+    private TextField subjectsTextFieldThirteen;
+    @FXML
+    private TextField reqiredMaterialsTextFieldThirteen;
+    @FXML
+    private TextField subjectsTextFieldFourteen;
+    @FXML
+    private TextField reqiredMaterialsTextFieldFourteen;
+    @FXML
+    private TextField subjectsTextFieldFifteen;
+    @FXML
+    private TextField reqiredMaterialsTextFieldFifteen;
+    @FXML
+    private TextField subjectsTextFieldSixteen;
+    @FXML
+    private TextField reqiredMaterialsTextFieldSixteen;
+
 
     @FXML
     protected void addSyllabus(ActionEvent event) throws IOException

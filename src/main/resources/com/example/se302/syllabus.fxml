@@ -179,113 +179,113 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="1" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldOne" />
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldOne"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="2" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldTwo" />
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldTwo" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="3" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldThree"  />
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldThree"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="4" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldFour" />
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldFour"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="5" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldFive"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldFive"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="6" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldSix" />
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldSix" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="7" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldSeven" />
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldSeven"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="8" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldEight"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldEight" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="9" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldNine"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldNine"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="10" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldTen" />
+                              <TextField prefHeight="26.0" prefWidth="172.0"  fx:id="reqiredMaterialsTextFieldTen"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="11" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldEleven"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldEleven"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="12" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldTwelve"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldTwelve"/>
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="13" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0 " fx:id="subjectsTextFieldThirteen" />
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldThirteen" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="14" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldFourteen"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldFourteen" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="15" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldFifteen"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldFifteen" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField text="16" />
-                              <TextField prefHeight="26.0" prefWidth="408.0" />
-                              <TextField prefHeight="26.0" prefWidth="172.0" />
+                              <TextField prefHeight="26.0" prefWidth="408.0" fx:id="subjectsTextFieldSixteen"/>
+                              <TextField prefHeight="26.0" prefWidth="172.0" fx:id="reqiredMaterialsTextFieldSixteen" />
                            </children>
                         </HBox>
                      </children>
@@ -295,7 +295,7 @@
                         <HBox prefHeight="58.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="58.0" prefWidth="299.0" text="Course Notes/Textbooks" />
-                              <TextField prefHeight="65.0" prefWidth="570.0" />
+                              <TextField prefHeight="65.0" prefWidth="570.0"  />
                            </children>
                         </HBox>
                         <HBox prefHeight="181.0" prefWidth="730.0">
