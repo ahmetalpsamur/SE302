@@ -723,7 +723,7 @@ public class Controllers implements Initializable,Serializable {
         }
     }
 
-    private void saveSyllabusToFile() {
+    private static void saveSyllabusToFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("syllabus.dat"))) {
             oos.writeObject(syllabusList);
         } catch (IOException e) {
@@ -737,9 +737,13 @@ public class Controllers implements Initializable,Serializable {
             @SuppressWarnings("unchecked")
             ArrayList<Syllabus> loadedList = (ArrayList<Syllabus>) ois.readObject();
             syllabusList.addAll(loadedList);
-        } catch (IOException | ClassNotFoundException e) {
-            // Handle exceptions (e.g., file not found) or simply ignore if the file doesn't exist yet
+        } catch (FileNotFoundException e) {
+            // File not found, create a new file
+            saveSyllabusToFile();
+        } catch (IOException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
