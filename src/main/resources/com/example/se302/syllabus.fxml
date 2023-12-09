@@ -370,9 +370,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Quiz/Studio Critique" />
-                              <TextField fx:id="quizTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                             <TextField fx:id="quizTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                            <TextField fx:id="quizTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="quiz2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                             <TextField fx:id="quiz2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                            <TextField fx:id="quiz2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                             <TextField fx:id="quizTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                             <TextField fx:id="quizTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                             <TextField fx:id="quizTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
@@ -385,10 +385,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Homework/Assignment" />
-                              <TextField fx:id="homeworkTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="homeworkTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="homeworkTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                              <TextField fx:id="homeworkTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="homework2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="homework2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="homework2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="homeworkTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="homeworkTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                              <TextField fx:id="homeworkTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
@@ -401,9 +400,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Presentation/Jury" />
-                              <TextField fx:id="presentationTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="presentationTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                              <TextField fx:id="presentationTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="presentation2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="presentation2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="presentation2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="presentationTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="presentationTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                               <TextField fx:id="presentationTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
@@ -415,9 +414,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Project" />
-                              <TextField fx:id="projectTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="projectTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                              <TextField fx:id="projectTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="project2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="project2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="project2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="projectTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="projectTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                               <TextField fx:id="projectTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
@@ -429,9 +428,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Seminar/Workshop" />
-                              <TextField fx:id="seminarTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="seminarTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                              <TextField fx:id="seminarTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="seminar2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="seminar2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="seminar2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="seminarTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="seminarTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                               <TextField fx:id="seminarTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
@@ -443,9 +442,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Oral Exam" />
-                              <TextField fx:id="oralTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="oralTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                              <TextField fx:id="oralTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="oral2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="oral2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="oral2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="oralTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="oralTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                               <TextField fx:id="oralTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
@@ -457,9 +456,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Midterm" />
-                              <TextField fx:id="midtermTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="midtermTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                              <TextField fx:id="midtermTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="midterm2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="midterm2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="midterm2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="midtermTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="midtermTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                               <TextField fx:id="midtermTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
@@ -471,9 +470,9 @@
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
                               <TextField prefHeight="26.0" prefWidth="146.0" text="Final Exam" />
-                              <TextField fx:id="finalTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                              <TextField fx:id="finalTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                              <TextField fx:id="finalTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="final2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="final2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="final2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="finalTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="finalTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
                               <TextField fx:id="finalTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
