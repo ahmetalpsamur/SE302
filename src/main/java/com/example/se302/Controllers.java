@@ -15,6 +15,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import static com.example.se302.ConvertToJSON.generateJsonFile;
+
 public class Controllers implements Initializable,Serializable {
 
 
@@ -469,6 +471,7 @@ public class Controllers implements Initializable,Serializable {
     public static ArrayList<Syllabus> syllabusList = new ArrayList<>();
 
 
+
     public void setAssistantTextField(Syllabus syllabus) {
         syllabus.setCourseName(courseNameText.getText());
         syllabus.setCode(codeTextField.getText());
@@ -693,6 +696,7 @@ public class Controllers implements Initializable,Serializable {
         setAssistantTextField(test);
         syllabusList.add(test);
         saveSyllabusToFile();
+        generateJsonFile(test);
         System.out.println(test.getCourseName());
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
