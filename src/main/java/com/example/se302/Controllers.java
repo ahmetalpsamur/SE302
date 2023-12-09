@@ -465,6 +465,7 @@ public class Controllers implements Initializable {
     @FXML
     private TextField thirteenProgramTextFieldFive;
 
+    private ArrayList<Syllabus> syllabusList = new ArrayList<>();
 
 
     public void setAssistantTextField(Syllabus syllabus) {
@@ -689,6 +690,7 @@ public class Controllers implements Initializable {
     public void saveSyllabus(ActionEvent event) throws IOException {
         Syllabus test = new Syllabus();
         setAssistantTextField(test);
+        syllabusList.add(test);
         System.out.println(test.getCourseName());
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
