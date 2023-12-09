@@ -3,7 +3,9 @@ package com.example.se302;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class Syllabus {
+import java.io.Serializable;
+
+public class Syllabus implements Serializable {
     private String courseName;
     private String code;
     private String fall;

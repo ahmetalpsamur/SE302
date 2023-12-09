@@ -4,17 +4,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class Controllers implements Initializable {
+public class Controllers implements Initializable,Serializable {
 
 
     @FXML
@@ -465,7 +466,7 @@ public class Controllers implements Initializable {
     @FXML
     private TextField thirteenProgramTextFieldFive;
 
-    private ArrayList<Syllabus> syllabusList = new ArrayList<>();
+    public static ArrayList<Syllabus> syllabusList = new ArrayList<>();
 
 
     public void setAssistantTextField(Syllabus syllabus) {
@@ -691,6 +692,7 @@ public class Controllers implements Initializable {
         Syllabus test = new Syllabus();
         setAssistantTextField(test);
         syllabusList.add(test);
+        saveSyllabusToFile();
         System.out.println(test.getCourseName());
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
@@ -707,6 +709,38 @@ public class Controllers implements Initializable {
         stage.setTitle("Help");
         stage.setScene(scene);
         stage.show();
+    }
+
+
+    public void loadSyllabusInformation() {
+        // Load the ArrayList from the file
+        loadSyllabusFromFile();
+
+        // Iterate through the ArrayList and process each syllabus
+        for (Syllabus syllabus : syllabusList) {
+            System.out.println("Course Name: " + syllabus.getCourseName());
+            // Add more code here to display or load other information as needed
+        }
+    }
+
+    private void saveSyllabusToFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("syllabus.dat"))) {
+            oos.writeObject(syllabusList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void loadSyllabusFromFile() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("syllabus.dat"))) {
+            // Suppressing unchecked cast warning because we're confident it's an ArrayList<Syllabus>
+            @SuppressWarnings("unchecked")
+            ArrayList<Syllabus> loadedList = (ArrayList<Syllabus>) ois.readObject();
+            syllabusList.addAll(loadedList);
+        } catch (IOException | ClassNotFoundException e) {
+            // Handle exceptions (e.g., file not found) or simply ignore if the file doesn't exist yet
+            e.printStackTrace();
+        }
     }
 
     @Override

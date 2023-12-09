@@ -16,7 +16,9 @@ public class App extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 800, 460);
         stage.setTitle("Syllabus App");
         stage.setScene(scene);
+        Controllers.loadSyllabusFromFile();
         stage.show();
+
     }
 
     public static void main(String[] args) {
