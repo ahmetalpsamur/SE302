@@ -465,509 +465,214 @@ public class Controllers implements Initializable {
     @FXML
     private TextField thirteenProgramTextFieldFive;
 
-    String courseName;
-    String code;
-    String fall;
-    String spring;
-    String theory;
-    String lab;
-    String localCredit;
-    String ects;
 
-    String prerequisites;
-    String courseLanguage;
-    String courseType;
-    String courseLevel;
-    String teachingMethods;
 
-    String courseCoordinator;
-    String courseCoordinator2;
-    String assistant;
+    public void setAssistantTextField(Syllabus syllabus) {
+        syllabus.setCourseName(courseNameText.getText());
+        syllabus.setCode(codeTextField.getText());
+        syllabus.setFall(fallTextField.getText());
+        syllabus.setSpring(springTextField.getText());
+        syllabus.setTheory(theoryTextField.getText());
+        syllabus.setLab(labTextField.getText());
+        syllabus.setLocalCredit(localCreditTextField.getText());
+        syllabus.setEcts(ectsTextField.getText());
+        syllabus.setPrerequisites(prerequisitesTextField.getText());
+        syllabus.setCourseLanguage(courseLanguageTextField.getText());
+        syllabus.setCourseType(courseTypeTextField.getText());
+        syllabus.setCourseLevel(courseLevelTextField.getText());
+        syllabus.setTeachingMethods(teachingMethodsTextField.getText());
+        syllabus.setCourseCoordinator(courseCoordinatorTextField.getText());
+        syllabus.setCourseCoordinator2(courseCoordinatorTextField2.getText());
+        syllabus.setAssistant(assistantTextField.getText());
+        syllabus.setCourseObjectives(courseObjectivesTextField.getText());
+        syllabus.setLearningOutcomes(learningOutcomesTextField.getText());
+        syllabus.setCourseDescription(courseDescriptionTextField.getText());
+        syllabus.setSubjectsTwo(subjectsTextFieldTwo.getText());
+        syllabus.setRequiredMaterialsTwo(reqiredMaterialsTextFieldTwo.getText());
+        syllabus.setSubjectsThree(subjectsTextFieldThree.getText());
+        syllabus.setRequiredMaterialsThree(reqiredMaterialsTextFieldThree.getText());
+        syllabus.setSubjectsFour(subjectsTextFieldFour.getText());
+        syllabus.setRequiredMaterialsFour(reqiredMaterialsTextFieldFour.getText());
+        syllabus.setSubjectsFive(subjectsTextFieldFive.getText());
+        syllabus.setRequiredMaterialsFive(reqiredMaterialsTextFieldFive.getText());
+        syllabus.setSubjectsSix(subjectsTextFieldSix.getText());
+        syllabus.setRequiredMaterialsSix(reqiredMaterialsTextFieldSix.getText());
+        syllabus.setSubjectsSeven(subjectsTextFieldSeven.getText());
+        syllabus.setRequiredMaterialsSeven(reqiredMaterialsTextFieldSeven.getText());
+        syllabus.setSubjectsEight(subjectsTextFieldEight.getText());
+        syllabus.setRequiredMaterialsEight(reqiredMaterialsTextFieldEight.getText());
+        syllabus.setSubjectsNine(subjectsTextFieldNine.getText());
+        syllabus.setRequiredMaterialsNine(reqiredMaterialsTextFieldNine.getText());
+        syllabus.setSubjectsTen(subjectsTextFieldTen.getText());
+        syllabus.setRequiredMaterialsTen(reqiredMaterialsTextFieldTen.getText());
+        syllabus.setSubjectsEleven(subjectsTextFieldEleven.getText());
+        syllabus.setRequiredMaterialsEleven(reqiredMaterialsTextFieldEleven.getText());
+        syllabus.setSubjectsTwelve(subjectsTextFieldTwelve.getText());
+        syllabus.setRequiredMaterialsTwelve(reqiredMaterialsTextFieldTwelve.getText());
+        syllabus.setSubjectsThirteen(subjectsTextFieldThirteen.getText());
+        syllabus.setRequiredMaterialsThirteen(reqiredMaterialsTextFieldThirteen.getText());
+        syllabus.setSubjectsFourteen(subjectsTextFieldFourteen.getText());
+        syllabus.setRequiredMaterialsFourteen(reqiredMaterialsTextFieldFourteen.getText());
+        syllabus.setSubjectsFifteen(subjectsTextFieldFifteen.getText());
+        syllabus.setRequiredMaterialsFifteen(reqiredMaterialsTextFieldFifteen.getText());
+        syllabus.setSubjectsSixteen(subjectsTextFieldSixteen.getText());
+        syllabus.setRequiredMaterialsSixteen(reqiredMaterialsTextFieldSixteen.getText());
+        syllabus.setParticipationOne(participationTextFieldOne.getText());
+        syllabus.setParticipationTwo(participationTextFieldTwo.getText());
+        syllabus.setParticipationThree(participationTextFieldThree.getText());
+        syllabus.setParticipationFour(participationTextFieldFour.getText());
+        syllabus.setParticipationFive(participationTextFieldFive.getText());
+        syllabus.setParticipationSix(participationTextFieldSix.getText());
+        syllabus.setParticipationSeven(participationTextFieldSeven.getText());
+        syllabus.setParticipationEight(participationTextFieldEight.getText());
+        syllabus.setParticipationNine(participationTextFieldNine.getText());
+        syllabus.setLaboratoryOne(laboratoryTextFieldOne.getText());
+        syllabus.setLaboratoryTwo(laboratoryTextFieldTwo.getText());
+        syllabus.setLaboratoryThree(laboratoryTextFieldThree.getText());
+        syllabus.setLaboratoryFour(laboratoryTextFieldFour.getText());
+        syllabus.setLaboratoryFive(laboratoryTextFieldFive.getText());
+        syllabus.setLaboratorySix(laboratoryTextFieldSix.getText());
+        syllabus.setLaboratorySeven(laboratoryTextFieldSeven.getText());
+        syllabus.setLaboratoryEight(laboratoryTextFieldEight.getText());
+        syllabus.setLaboratoryNine(laboratoryTextFieldNine.getText());
+        syllabus.setFieldWorkOne(fieldWorkTextFieldOne.getText());
+        syllabus.setFieldWorkTwo(fieldWorkTextFieldTwo.getText());
+        syllabus.setFieldWorkThree(fieldWorkTextFieldThree.getText());
+        syllabus.setFieldWorkFour(fieldWorkTextFieldFour.getText());
+        syllabus.setFieldWorkFive(fieldWorkTextFieldFive.getText());
+        syllabus.setFieldWorkSix(fieldWorkTextFieldSix.getText());
+        syllabus.setFieldWorkSeven(fieldWorkTextFieldSeven.getText());
+        syllabus.setFieldWorkEight(fieldWorkTextFieldEight.getText());
+        syllabus.setFieldWorkNine(fieldWorkTextFieldNine.getText());
+        syllabus.setQuiz2One(quiz2TextFieldOne.getText());
+        syllabus.setQuiz2Two(quiz2TextFieldTwo.getText());
+        syllabus.setQuiz2Three(quiz2TextFieldThree.getText());
+        syllabus.setQuizFour(quizTextFieldFour.getText());
+        syllabus.setQuizFive(quizTextFieldFive.getText());
+        syllabus.setQuizSix(quizTextFieldSix.getText());
+        syllabus.setQuizSeven(quizTextFieldSeven.getText());
+        syllabus.setQuizEight(quizTextFieldEight.getText());
+        syllabus.setQuizNine(quizTextFieldNine.getText());
+        syllabus.setCourseHourOne(coursehourTextFieldOne.getText());
+        syllabus.setCourseHourTwo(coursehourTextFieldTwo.getText());
+
+        // Part 2
+
+        syllabus.setLabhourOne(labhourTextFieldOne.getText());
+        syllabus.setLabhourTwo(labhourTextFieldTwo.getText());
+        syllabus.setStudyhourOne(StudyhourTextFieldOne.getText());
+        syllabus.setStudyhourTwo(StudyhourTextFieldTwo.getText());
+        syllabus.setStudyhourThree(StudyhourTextFieldThree.getText());
+        syllabus.setFieldworkOne(FieldworkTextFieldOne.getText());
+        syllabus.setFieldworkTwo(FieldworkTextFieldTwo.getText());
+        syllabus.setFieldworkThree(FieldworkTextFieldThree.getText());
+        syllabus.setQuizOne(quizTextFieldOne.getText());
+        syllabus.setQuizTwo(quizTextFieldTwo.getText());
+        syllabus.setQuizThree(quizTextFieldThree.getText());
+        syllabus.setHomeworkOne(homeworkTextFieldOne.getText());
+        syllabus.setHomeworkTwo(homeworkTextFieldTwo.getText());
+        syllabus.setHomeworkThree(homeworkTextFieldThree.getText());
+        syllabus.setPresentationOne(presentationTextFieldOne.getText());
+        syllabus.setPresentationTwo(presentationTextFieldTwo.getText());
+        syllabus.setPresentationThree(presentationTextFieldThree.getText());
+        syllabus.setProjectOne(projectTextFieldOne.getText());
+        syllabus.setProjectTwo(projectTextFieldTwo.getText());
+        syllabus.setProjectThree(projectTextFieldThree.getText());
+        syllabus.setPortfolioOne(portfolioTextFieldOne.getText());
+        syllabus.setPortfolioTwo(portfolioTextFieldTwo.getText());
+        syllabus.setPortfolioThree(portfolioTextFieldThree.getText());
+        syllabus.setSeminarOne(seminarTextFieldOne.getText());
+        syllabus.setSeminarTwo(seminarTextFieldTwo.getText());
+        syllabus.setSeminarThree(seminarTextFieldThree.getText());
+        syllabus.setOralOne(oralTextFieldOne.getText());
+        syllabus.setOralTwo(oralTextFieldTwo.getText());
+        syllabus.setOralThree(oralTextFieldThree.getText());
+        syllabus.setMidtermOne(midtermTextFieldOne.getText());
+        syllabus.setMidtermTwo(midtermTextFieldTwo.getText());
+        syllabus.setMidtermThree(midtermTextFieldThree.getText());
+        syllabus.setFinalOne(finalTextFieldOne.getText());
+        syllabus.setFinalTwo(finalTextFieldTwo.getText());
+        syllabus.setFinalThree(finalTextFieldThree.getText());
+        syllabus.setOneProgramZero(oneProgramTextFieldZero.getText());
+        syllabus.setOneProgramOne(oneProgramTextFieldOne.getText());
+        syllabus.setOneProgramTwo(oneProgramTextFieldTwo.getText());
+        syllabus.setOneProgramThree(oneProgramTextFieldThree.getText());
+        syllabus.setOneProgramFour(oneProgramTextFieldFour.getText());
+        syllabus.setOneProgramFive(oneProgramTextFieldFive.getText());
+        syllabus.setTwoProgramZero(twoProgramTextFieldZero.getText());
+        syllabus.setTwoProgramOne(twoProgramTextFieldOne.getText());
+        syllabus.setTwoProgramTwo(twoProgramTextFieldTwo.getText());
+        syllabus.setTwoProgramThree(twoProgramTextFieldThree.getText());
+        syllabus.setTwoProgramFour(twoProgramTextFieldFour.getText());
+        syllabus.setTwoProgramFive(twoProgramTextFieldFive.getText());
+        syllabus.setThreeProgramZero(threeProgramTextFieldZero.getText());
+        syllabus.setThreeProgramOne(threeProgramTextFieldOne.getText());
+        syllabus.setThreeProgramTwo(threeProgramTextFieldTwo.getText());
+        syllabus.setThreeProgramThree(threeProgramTextFieldThree.getText());
+        syllabus.setThreeProgramFour(threeProgramTextFieldFour.getText());
+        syllabus.setThreeProgramFive(threeProgramTextFieldFive.getText());
+        syllabus.setFourProgramZero(fourProgramTextFieldZero.getText());
+        syllabus.setFourProgramOne(fourProgramTextFieldOne.getText());
+        syllabus.setFourProgramTwo(fourProgramTextFieldTwo.getText());
+        syllabus.setFourProgramThree(fourProgramTextFieldThree.getText());
+        syllabus.setFourProgramFour(fourProgramTextFieldFour.getText());
+        syllabus.setFourProgramFive(fourProgramTextFieldFive.getText());
+        syllabus.setFiveProgramZero(fiveProgramTextFieldZero.getText());
+        syllabus.setFiveProgramOne(fiveProgramTextFieldOne.getText());
+        syllabus.setFiveProgramTwo(fiveProgramTextFieldTwo.getText());
+        syllabus.setFiveProgramThree(fiveProgramTextFieldThree.getText());
+        syllabus.setFiveProgramFour(fiveProgramTextFieldFour.getText());
+        syllabus.setFiveProgramFive(fiveProgramTextFieldFive.getText());
+        syllabus.setSixProgramZero(sixProgramTextFieldZero.getText());
+        syllabus.setSixProgramOne(sixProgramTextFieldOne.getText());
+        syllabus.setSixProgramTwo(sixProgramTextFieldTwo.getText());
+        syllabus.setSixProgramThree(sixProgramTextFieldThree.getText());
+        syllabus.setSixProgramFour(sixProgramTextFieldFour.getText());
+        syllabus.setSixProgramFive(sixProgramTextFieldFive.getText());
+        syllabus.setSevenProgramZero(sevenProgramTextFieldZero.getText());
+        syllabus.setSevenProgramOne(sevenProgramTextFieldOne.getText());
+        syllabus.setSevenProgramTwo(sevenProgramTextFieldTwo.getText());
+        syllabus.setSevenProgramThree(sevenProgramTextFieldThree.getText());
+        syllabus.setSevenProgramFour(sevenProgramTextFieldFour.getText());
+        syllabus.setSevenProgramFive(sevenProgramTextFieldFive.getText());
+        syllabus.setEightProgramZero(eightProgramTextFieldZero.getText());
+        syllabus.setEightProgramOne(eightProgramTextFieldOne.getText());
+        syllabus.setEightProgramTwo(eightProgramTextFieldTwo.getText());
+        syllabus.setEightProgramThree(eightProgramTextFieldThree.getText());
+        syllabus.setEightProgramFour(eightProgramTextFieldFour.getText());
+        syllabus.setEightProgramFive(eightProgramTextFieldFive.getText());
+        syllabus.setNineProgramZero(nineProgramTextFieldZero.getText());
+        syllabus.setNineProgramOne(nineProgramTextFieldOne.getText());
+        syllabus.setNineProgramTwo(nineProgramTextFieldTwo.getText());
+        syllabus.setNineProgramThree(nineProgramTextFieldThree.getText());
+        syllabus.setNineProgramFour(nineProgramTextFieldFour.getText());
+        syllabus.setNineProgramFive(nineProgramTextFieldFive.getText());
+        syllabus.setTenProgramZero(tenProgramTextFieldZero.getText());
+        syllabus.setTenProgramOne(tenProgramTextFieldOne.getText());
+        syllabus.setTenProgramTwo(tenProgramTextFieldTwo.getText());
+        syllabus.setTenProgramThree(tenProgramTextFieldThree.getText());
+        syllabus.setTenProgramFour(tenProgramTextFieldFour.getText());
+        syllabus.setTenProgramFive(tenProgramTextFieldFive.getText());
+        syllabus.setElevenProgramZero(elevenProgramTextFieldZero.getText());
+        syllabus.setElevenProgramOne(elevenProgramTextFieldOne.getText());
+        syllabus.setElevenProgramTwo(elevenProgramTextFieldTwo.getText());
+        syllabus.setElevenProgramThree(elevenProgramTextFieldThree.getText());
+        syllabus.setElevenProgramFour(elevenProgramTextFieldFour.getText());
+        syllabus.setElevenProgramFive(elevenProgramTextFieldFive.getText());
+        syllabus.setTwelveProgramZero(twelveProgramTextFieldZero.getText());
+        syllabus.setTwelveProgramOne(twelveProgramTextFieldOne.getText());
+        syllabus.setTwelveProgramTwo(twelveProgramTextFieldTwo.getText());
+        syllabus.setTwelveProgramThree(twelveProgramTextFieldThree.getText());
+        syllabus.setTwelveProgramFour(twelveProgramTextFieldFour.getText());
+        syllabus.setTwelveProgramFive(twelveProgramTextFieldFive.getText());
+        syllabus.setThirteenProgramZero(thirteenProgramTextFieldZero.getText());
+        syllabus.setThirteenProgramOne(thirteenProgramTextFieldOne.getText());
+        syllabus.setThirteenProgramTwo(thirteenProgramTextFieldTwo.getText());
+        syllabus.setThirteenProgramThree(thirteenProgramTextFieldThree.getText());
+        syllabus.setThirteenProgramFour(thirteenProgramTextFieldFour.getText());
+        syllabus.setThirteenProgramFive(thirteenProgramTextFieldFive.getText());
 
-    String courseObjectives;
-    String learningOutcomes;
-    String courseDescription;
 
-    String subjectsTwo;
-    String requiredMaterialsTwo;
-
-    String subjectsThree;
-    String requiredMaterialsThree;
-
-    String subjectsFour;
-    String requiredMaterialsFour;
-
-    String subjectsFive;
-    String requiredMaterialsFive;
-
-    String subjectsSix;
-    String requiredMaterialsSix;
-
-    String subjectsSeven;
-    String requiredMaterialsSeven;
-
-    String subjectsEight;
-    String requiredMaterialsEight;
-
-    String subjectsNine;
-    String requiredMaterialsNine;
-
-    String subjectsTen;
-    String requiredMaterialsTen;
-
-    String subjectsEleven;
-    String requiredMaterialsEleven;
-
-    String subjectsTwelve;
-    String requiredMaterialsTwelve;
-
-    String subjectsThirteen;
-    String requiredMaterialsThirteen;
-
-    String subjectsFourteen;
-    String requiredMaterialsFourteen;
-
-    String subjectsFifteen;
-    String requiredMaterialsFifteen;
-
-    String subjectsSixteen;
-    String requiredMaterialsSixteen;
-
-    String participationOne;
-    String participationTwo;
-    String participationThree;
-    String participationFour;
-    String participationFive;
-    String participationSix;
-    String participationSeven;
-    String participationEight;
-    String participationNine;
-
-    String laboratoryOne;
-    String laboratoryTwo;
-    String laboratoryThree;
-    String laboratoryFour;
-    String laboratoryFive;
-    String laboratorySix;
-    String laboratorySeven;
-    String laboratoryEight;
-    String laboratoryNine;
-
-    String fieldWorkOne;
-    String fieldWorkTwo;
-    String fieldWorkThree;
-    String fieldWorkFour;
-    String fieldWorkFive;
-    String fieldWorkSix;
-    String fieldWorkSeven;
-    String fieldWorkEight;
-    String fieldWorkNine;
-
-    String quiz2One;
-    String quiz2Two;
-    String quiz2Three;
-    String quizFour;
-    String quizFive;
-    String quizSix;
-    String quizSeven;
-    String quizEight;
-    String quizNine;
-
-    String courseHourOne;
-    String courseHourTwo;
-
-//Part 2
-
-    String labhourOne;
-    String labhourTwo;
-
-    String studyhourOne;
-    String studyhourTwo;
-    String studyhourThree;
-
-    String fieldworkOne;
-    String fieldworkTwo;
-    String fieldworkThree;
-
-    String quizOne;
-    String quizTwo;
-    String quizThree;
-
-    String homeworkOne;
-    String homeworkTwo;
-    String homeworkThree;
-
-    String presentationOne;
-    String presentationTwo;
-    String presentationThree;
-
-    String projectOne;
-    String projectTwo;
-    String projectThree;
-
-    String portfolioOne;
-    String portfolioTwo;
-    String portfolioThree;
-
-    String seminarOne;
-    String seminarTwo;
-    String seminarThree;
-
-    String oralOne;
-    String oralTwo;
-    String oralThree;
-
-    String midtermOne;
-    String midtermTwo;
-    String midtermThree;
-
-    String finalOne;
-    String finalTwo;
-    String finalThree;
-
-    String oneProgramZero;
-    String oneProgramOne;
-    String oneProgramTwo;
-    String oneProgramThree;
-    String oneProgramFour;
-    String oneProgramFive;
-
-    String twoProgramZero;
-    String twoProgramOne;
-    String twoProgramTwo;
-    String twoProgramThree;
-    String twoProgramFour;
-    String twoProgramFive;
-
-    String threeProgramZero;
-    String threeProgramOne;
-    String threeProgramTwo;
-    String threeProgramThree;
-    String threeProgramFour;
-    String threeProgramFive;
-
-    String fourProgramZero;
-    String fourProgramOne;
-    String fourProgramTwo;
-    String fourProgramThree;
-    String fourProgramFour;
-    String fourProgramFive;
-
-    String fiveProgramZero;
-    String fiveProgramOne;
-    String fiveProgramTwo;
-    String fiveProgramThree;
-    String fiveProgramFour;
-    String fiveProgramFive;
-
-    String sixProgramZero;
-    String sixProgramOne;
-    String sixProgramTwo;
-    String sixProgramThree;
-    String sixProgramFour;
-    String sixProgramFive;
-
-    String sevenProgramZero;
-    String sevenProgramOne;
-    String sevenProgramTwo;
-    String sevenProgramThree;
-    String sevenProgramFour;
-    String sevenProgramFive;
-
-    String eightProgramZero;
-    String eightProgramOne;
-    String eightProgramTwo;
-    String eightProgramThree;
-    String eightProgramFour;
-    String eightProgramFive;
-
-    String nineProgramZero;
-    String nineProgramOne;
-    String nineProgramTwo;
-    String nineProgramThree;
-    String nineProgramFour;
-    String nineProgramFive;
-
-    String tenProgramZero;
-    String tenProgramOne;
-    String tenProgramTwo;
-    String tenProgramThree;
-    String tenProgramFour;
-    String tenProgramFive;
-
-    String elevenProgramZero;
-    String elevenProgramOne;
-    String elevenProgramTwo;
-    String elevenProgramThree;
-    String elevenProgramFour;
-    String elevenProgramFive;
-
-    String twelveProgramZero;
-    String twelveProgramOne;
-    String twelveProgramTwo;
-    String twelveProgramThree;
-    String twelveProgramFour;
-    String twelveProgramFive;
-
-    String thirteenProgramZero;
-    String thirteenProgramOne;
-    String thirteenProgramTwo;
-    String thirteenProgramThree;
-    String thirteenProgramFour;
-    String thirteenProgramFive;
-
-
-    public void setAssistantTextField() {
-        this.courseName = courseNameText.getText();
-        this.code = codeTextField.getText();
-        this.fall = fallTextField.getText();
-        this.spring = springTextField.getText();
-        this.theory = theoryTextField.getText();
-        this.lab = labTextField.getText();
-        this.localCredit = localCreditTextField.getText();
-        this.ects = ectsTextField.getText();
-
-        this.prerequisites = prerequisitesTextField.getText();
-        this.courseLanguage = courseLanguageTextField.getText();
-        this.courseType = courseTypeTextField.getText();
-        this.courseLevel = courseLevelTextField.getText();
-        this.teachingMethods = teachingMethodsTextField.getText();
-
-        this.courseCoordinator = courseCoordinatorTextField.getText();
-        this.courseCoordinator2 = courseCoordinatorTextField2.getText();
-        this.assistant = assistantTextField.getText();
-
-        this.courseObjectives = courseObjectivesTextField.getText();
-        this.learningOutcomes = learningOutcomesTextField.getText();
-        this.courseDescription = courseDescriptionTextField.getText();
-
-        this.subjectsTwo = subjectsTextFieldTwo.getText();
-        this.requiredMaterialsTwo = reqiredMaterialsTextFieldTwo.getText();
-
-        this.subjectsThree = subjectsTextFieldThree.getText();
-        this.requiredMaterialsThree = reqiredMaterialsTextFieldThree.getText();
-
-        this.subjectsFour = subjectsTextFieldFour.getText();
-        this.requiredMaterialsFour = reqiredMaterialsTextFieldFour.getText();
-
-        this.subjectsFive = subjectsTextFieldFive.getText();
-        this.requiredMaterialsFive = reqiredMaterialsTextFieldFive.getText();
-
-        this.subjectsSix = subjectsTextFieldSix.getText();
-        this.requiredMaterialsSix = reqiredMaterialsTextFieldSix.getText();
-
-        this.subjectsSeven = subjectsTextFieldSeven.getText();
-        this.requiredMaterialsSeven = reqiredMaterialsTextFieldSeven.getText();
-
-        this.subjectsEight = subjectsTextFieldEight.getText();
-        this.requiredMaterialsEight = reqiredMaterialsTextFieldEight.getText();
-
-        this.subjectsNine = subjectsTextFieldNine.getText();
-        this.requiredMaterialsNine = reqiredMaterialsTextFieldNine.getText();
-
-        this.subjectsTen = subjectsTextFieldTen.getText();
-        this.requiredMaterialsTen = reqiredMaterialsTextFieldTen.getText();
-
-        this.subjectsEleven = subjectsTextFieldEleven.getText();
-        this.requiredMaterialsEleven = reqiredMaterialsTextFieldEleven.getText();
-
-        this.subjectsTwelve = subjectsTextFieldTwelve.getText();
-        this.requiredMaterialsTwelve = reqiredMaterialsTextFieldTwelve.getText();
-
-        this.subjectsThirteen = subjectsTextFieldThirteen.getText();
-        this.requiredMaterialsThirteen = reqiredMaterialsTextFieldThirteen.getText();
-
-        this.subjectsFourteen = subjectsTextFieldFourteen.getText();
-        this.requiredMaterialsFourteen = reqiredMaterialsTextFieldFourteen.getText();
-
-        this.subjectsFifteen = subjectsTextFieldFifteen.getText();
-        this.requiredMaterialsFifteen = reqiredMaterialsTextFieldFifteen.getText();
-
-        this.subjectsSixteen = subjectsTextFieldSixteen.getText();
-        this.requiredMaterialsSixteen = reqiredMaterialsTextFieldSixteen.getText();
-
-        this.participationOne = participationTextFieldOne.getText();
-        this.participationTwo = participationTextFieldTwo.getText();
-        this.participationThree = participationTextFieldThree.getText();
-        this.participationFour = participationTextFieldFour.getText();
-        this.participationFive = participationTextFieldFive.getText();
-        this.participationSix = participationTextFieldSix.getText();
-        this.participationSeven = participationTextFieldSeven.getText();
-        this.participationEight = participationTextFieldEight.getText();
-        this.participationNine = participationTextFieldNine.getText();
-
-        this.laboratoryOne = laboratoryTextFieldOne.getText();
-        this.laboratoryTwo = laboratoryTextFieldTwo.getText();
-        this.laboratoryThree = laboratoryTextFieldThree.getText();
-        this.laboratoryFour = laboratoryTextFieldFour.getText();
-        this.laboratoryFive = laboratoryTextFieldFive.getText();
-        this.laboratorySix = laboratoryTextFieldSix.getText();
-        this.laboratorySeven = laboratoryTextFieldSeven.getText();
-        this.laboratoryEight = laboratoryTextFieldEight.getText();
-        this.laboratoryNine = laboratoryTextFieldNine.getText();
-
-        this.fieldWorkOne = fieldWorkTextFieldOne.getText();
-        this.fieldWorkTwo = fieldWorkTextFieldTwo.getText();
-        this.fieldWorkThree = fieldWorkTextFieldThree.getText();
-        this.fieldWorkFour = fieldWorkTextFieldFour.getText();
-        this.fieldWorkFive = fieldWorkTextFieldFive.getText();
-        this.fieldWorkSix = fieldWorkTextFieldSix.getText();
-        this.fieldWorkSeven = fieldWorkTextFieldSeven.getText();
-        this.fieldWorkEight = fieldWorkTextFieldEight.getText();
-        this.fieldWorkNine = fieldWorkTextFieldNine.getText();
-
-        this.quiz2One = quiz2TextFieldOne.getText();
-        this.quiz2Two = quiz2TextFieldTwo.getText();
-        this.quiz2Three = quiz2TextFieldThree.getText();
-        this.quizFour = quizTextFieldFour.getText();
-        this.quizFive = quizTextFieldFive.getText();
-        this.quizSix = quizTextFieldSix.getText();
-        this.quizSeven = quizTextFieldSeven.getText();
-        this.quizEight = quizTextFieldEight.getText();
-        this.quizNine = quizTextFieldNine.getText();
-
-        this.courseHourOne = coursehourTextFieldOne.getText();
-        this.courseHourTwo = coursehourTextFieldTwo.getText();
-
-// Part 2
-
-        this.labhourOne = labhourTextFieldOne.getText();
-        this.labhourTwo = labhourTextFieldTwo.getText();
-
-        this.studyhourOne = StudyhourTextFieldOne.getText();
-        this.studyhourTwo = StudyhourTextFieldTwo.getText();
-        this.studyhourThree = StudyhourTextFieldThree.getText();
-
-        this.fieldworkOne = FieldworkTextFieldOne.getText();
-        this.fieldworkTwo = FieldworkTextFieldTwo.getText();
-        this.fieldworkThree = FieldworkTextFieldThree.getText();
-
-        this.quizOne = quizTextFieldOne.getText();
-        this.quizTwo = quizTextFieldTwo.getText();
-        this.quizThree = quizTextFieldThree.getText();
-
-        this.homeworkOne = homeworkTextFieldOne.getText();
-        this.homeworkTwo = homeworkTextFieldTwo.getText();
-        this.homeworkThree = homeworkTextFieldThree.getText();
-
-        this.presentationOne = presentationTextFieldOne.getText();
-        this.presentationTwo = presentationTextFieldTwo.getText();
-        this.presentationThree = presentationTextFieldThree.getText();
-
-        this.projectOne = projectTextFieldOne.getText();
-        this.projectTwo = projectTextFieldTwo.getText();
-        this.projectThree = projectTextFieldThree.getText();
-
-        this.portfolioOne = portfolioTextFieldOne.getText();
-        this.portfolioTwo = portfolioTextFieldTwo.getText();
-        this.portfolioThree = portfolioTextFieldThree.getText();
-
-        this.seminarOne = seminarTextFieldOne.getText();
-        this.seminarTwo = seminarTextFieldTwo.getText();
-        this.seminarThree = seminarTextFieldThree.getText();
-
-        this.oralOne = oralTextFieldOne.getText();
-        this.oralTwo = oralTextFieldTwo.getText();
-        this.oralThree = oralTextFieldThree.getText();
-
-        this.midtermOne = midtermTextFieldOne.getText();
-        this.midtermTwo = midtermTextFieldTwo.getText();
-        this.midtermThree = midtermTextFieldThree.getText();
-
-        this.finalOne = finalTextFieldOne.getText();
-        this.finalTwo = finalTextFieldTwo.getText();
-        this.finalThree = finalTextFieldThree.getText();
-
-        this.oneProgramZero = oneProgramTextFieldZero.getText();
-        this.oneProgramOne = oneProgramTextFieldOne.getText();
-        this.oneProgramTwo = oneProgramTextFieldTwo.getText();
-        this.oneProgramThree = oneProgramTextFieldThree.getText();
-        this.oneProgramFour = oneProgramTextFieldFour.getText();
-        this.oneProgramFive = oneProgramTextFieldFive.getText();
-
-        this.twoProgramZero = twoProgramTextFieldZero.getText();
-        this.twoProgramOne = twoProgramTextFieldOne.getText();
-        this.twoProgramTwo = twoProgramTextFieldTwo.getText();
-        this.twoProgramThree = twoProgramTextFieldThree.getText();
-        this.twoProgramFour = twoProgramTextFieldFour.getText();
-        this.twoProgramFive = twoProgramTextFieldFive.getText();
-
-        this.threeProgramZero = threeProgramTextFieldZero.getText();
-        this.threeProgramOne = threeProgramTextFieldOne.getText();
-        this.threeProgramTwo = threeProgramTextFieldTwo.getText();
-        this.threeProgramThree = threeProgramTextFieldThree.getText();
-        this.threeProgramFour = threeProgramTextFieldFour.getText();
-        this.threeProgramFive = threeProgramTextFieldFive.getText();
-
-        this.fourProgramZero = fourProgramTextFieldZero.getText();
-        this.fourProgramOne = fourProgramTextFieldOne.getText();
-        this.fourProgramTwo = fourProgramTextFieldTwo.getText();
-        this.fourProgramThree = fourProgramTextFieldThree.getText();
-        this.fourProgramFour = fourProgramTextFieldFour.getText();
-        this.fourProgramFive = fourProgramTextFieldFive.getText();
-
-        this.fiveProgramZero = fiveProgramTextFieldZero.getText();
-        this.fiveProgramOne = fiveProgramTextFieldOne.getText();
-        this.fiveProgramTwo = fiveProgramTextFieldTwo.getText();
-        this.fiveProgramThree = fiveProgramTextFieldThree.getText();
-        this.fiveProgramFour = fiveProgramTextFieldFour.getText();
-        this.fiveProgramFive = fiveProgramTextFieldFive.getText();
-
-        this.sixProgramZero = sixProgramTextFieldZero.getText();
-        this.sixProgramOne = sixProgramTextFieldOne.getText();
-        this.sixProgramTwo = sixProgramTextFieldTwo.getText();
-        this.sixProgramThree = sixProgramTextFieldThree.getText();
-        this.sixProgramFour = sixProgramTextFieldFour.getText();
-        this.sixProgramFive = sixProgramTextFieldFive.getText();
-
-        this.sevenProgramZero = sevenProgramTextFieldZero.getText();
-        this.sevenProgramOne = sevenProgramTextFieldOne.getText();
-        this.sevenProgramTwo = sevenProgramTextFieldTwo.getText();
-        this.sevenProgramThree = sevenProgramTextFieldThree.getText();
-        this.sevenProgramFour = sevenProgramTextFieldFour.getText();
-        this.sevenProgramFive = sevenProgramTextFieldFive.getText();
-
-        this.eightProgramZero = eightProgramTextFieldZero.getText();
-        this.eightProgramOne = eightProgramTextFieldOne.getText();
-        this.eightProgramTwo = eightProgramTextFieldTwo.getText();
-        this.eightProgramThree = eightProgramTextFieldThree.getText();
-        this.eightProgramFour = eightProgramTextFieldFour.getText();
-        this.eightProgramFive = eightProgramTextFieldFive.getText();
-
-        this.nineProgramZero = nineProgramTextFieldZero.getText();
-        this.nineProgramOne = nineProgramTextFieldOne.getText();
-        this.nineProgramTwo = nineProgramTextFieldTwo.getText();
-        this.nineProgramThree = nineProgramTextFieldThree.getText();
-        this.nineProgramFour = nineProgramTextFieldFour.getText();
-        this.nineProgramFive = nineProgramTextFieldFive.getText();
-
-        this.tenProgramZero = tenProgramTextFieldZero.getText();
-        this.tenProgramOne = tenProgramTextFieldOne.getText();
-        this.tenProgramTwo = tenProgramTextFieldTwo.getText();
-        this.tenProgramThree = tenProgramTextFieldThree.getText();
-        this.tenProgramFour = tenProgramTextFieldFour.getText();
-        this.tenProgramFive = tenProgramTextFieldFive.getText();
-
-        this.elevenProgramZero = elevenProgramTextFieldZero.getText();
-        this.elevenProgramOne = elevenProgramTextFieldOne.getText();
-        this.elevenProgramTwo = elevenProgramTextFieldTwo.getText();
-        this.elevenProgramThree = elevenProgramTextFieldThree.getText();
-        this.elevenProgramFour = elevenProgramTextFieldFour.getText();
-        this.elevenProgramFive = elevenProgramTextFieldFive.getText();
-
-        this.twelveProgramZero = twelveProgramTextFieldZero.getText();
-        this.twelveProgramOne = twelveProgramTextFieldOne.getText();
-        this.twelveProgramTwo = twelveProgramTextFieldTwo.getText();
-        this.twelveProgramThree = twelveProgramTextFieldThree.getText();
-        this.twelveProgramFour = twelveProgramTextFieldFour.getText();
-        this.twelveProgramFive = twelveProgramTextFieldFive.getText();
-
-        this.thirteenProgramZero = thirteenProgramTextFieldZero.getText();
-        this.thirteenProgramOne = thirteenProgramTextFieldOne.getText();
-        this.thirteenProgramTwo = thirteenProgramTextFieldTwo.getText();
-        this.thirteenProgramThree = thirteenProgramTextFieldThree.getText();
-        this.thirteenProgramFour = thirteenProgramTextFieldFour.getText();
-        this.thirteenProgramFive = thirteenProgramTextFieldFive.getText();
 
     }
     @FXML
@@ -982,8 +687,9 @@ public class Controllers implements Initializable {
 
     @FXML
     public void saveSyllabus(ActionEvent event) throws IOException {
-        setAssistantTextField();
-        System.out.println("Coursename:"+courseName);
+        Syllabus test = new Syllabus();
+        setAssistantTextField(test);
+        System.out.println(test.getCourseName());
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
