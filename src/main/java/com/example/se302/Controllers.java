@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,6 +20,15 @@ import java.util.ResourceBundle;
 import static com.example.se302.ConvertToJSON.generateJsonFile;
 
 public class Controllers implements Initializable,Serializable {
+
+
+    //below lines are for language choicebox
+
+    @FXML
+    private ChoiceBox<String> myChoiceBox;
+
+    private String[] languages = {"English","Turkish" };
+
 
 
     @FXML
@@ -715,6 +726,58 @@ public class Controllers implements Initializable,Serializable {
         stage.show();
     }
 
+    public void chooseLanguage(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 781, 524);
+        stage.setTitle("Language");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void saveSyllabusInfo(ActionEvent event) {
+        String selectedLanguage = myChoiceBox.getValue();
+
+        // Determine the FXML file based on the selected language
+        String fxmlFileName = "";
+        if ("Turkish".equals(selectedLanguage)) {
+            fxmlFileName = "turkish-syllabus.fxml";
+        } else if ("English".equals(selectedLanguage)) {
+            fxmlFileName = "syllabus.fxml";
+        }
+
+        try {
+            // Load the corresponding FXML file
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxmlFileName));
+            Parent root = fxmlLoader.load();
+
+            // Create a new stage
+            Stage stage = new Stage();
+            Scene scene = new Scene(root, 760, 750);
+
+            // Set the scene to the stage
+            stage.setScene(scene);
+            stage.setTitle("Syllabus");
+            stage.show();
+
+            // Close the current stage
+            Stage currentStage = (Stage) myChoiceBox.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            // Handle the exception appropriately (e.g., log it, show an error message)
+            e.printStackTrace();
+        }
+    }
+
+
+    public void printSyllabusList(){
+        for (Syllabus syllabus : syllabusList) {
+            System.out.println("Course Name: " + syllabus.getCourseName());
+            // Add more code here to display or load other information as needed
+        }
+    }
+
 
     public void loadSyllabusInformation() {
         // Load the ArrayList from the file
@@ -754,6 +817,11 @@ public class Controllers implements Initializable,Serializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialization code if needed
+
+        //for choice box of languages
+
+        if(myChoiceBox != null) {
+    myChoiceBox.getItems().addAll(languages);
     }
 
-}
+} }

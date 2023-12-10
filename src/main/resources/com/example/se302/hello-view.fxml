@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="800.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="800.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
    <children>
       <Label layoutX="228.0" layoutY="52.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.96" prefHeight="88.0" prefWidth="345.0" text="Syllabus Application" textAlignment="JUSTIFY" textFill="#2b309a" wrapText="true">
          <font>
@@ -29,8 +35,8 @@
             </Blend>
          </effect>
       </Label>
-      <Button layoutX="33.0" layoutY="342.0" mnemonicParsing="false" onAction="#addSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Add New Syllabus" />
-      <Button layoutX="224.0" layoutY="342.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="View Syllabus" />
+      <Button layoutX="33.0" layoutY="342.0" mnemonicParsing="false" onAction="#chooseLanguage" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Add New Syllabus" />
+      <Button layoutX="224.0" layoutY="342.0" mnemonicParsing="false" onAction="#printSyllabusList" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="View Syllabus" />
       <Button layoutX="609.0" layoutY="342.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Compare Syllabus" />
       <Button layoutX="420.0" layoutY="342.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Edit Syllabus" />
       <Text layoutX="130.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Syllabus Application provides adding, viewing, editing, and comparison of syllabuses. Designed for educators and administrators, offering advanced features for dynamic viewing,robust editing and management." wrappingWidth="581.6708984375">
