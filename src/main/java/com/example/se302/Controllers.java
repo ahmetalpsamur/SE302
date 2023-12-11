@@ -785,6 +785,7 @@ public class Controllers implements Initializable,Serializable {
 
         // Iterate through the ArrayList and process each syllabus
         for (Syllabus syllabus : syllabusList) {
+          //  setAssistantTextField(syllabus); //IS THIS TRUE
             System.out.println("Course Name: " + syllabus.getCourseName());
             // Add more code here to display or load other information as needed
         }
