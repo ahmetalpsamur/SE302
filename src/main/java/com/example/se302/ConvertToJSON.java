@@ -47,7 +47,7 @@ public class ConvertToJSON {
                         + "  \"assistant\": \"" + syllabus.getAssistant() + "\",\n"
                         + "  \"courseObjectives\": \"" + syllabus.getCourseObjectives() + "\",\n"
                         + "  \"learningOutcomes\": \"" + syllabus.getLearningOutcomes() + "\",\n"
-                        + "  \"courseDescription\": \"" + syllabus.getCourseDescription() + "\"\n"
+                        + "  \"courseDescription\": \"" + syllabus.getCourseDescription() + "\",\n"
                         + "  \"Subjects Two\": \"" + syllabus.getSubjectsTwo() + "\",\n"
                         + "  \"Subjects Three\": \"" + syllabus.getSubjectsThree() + "\",\n"
                         + "  \"Subjects Four\": \"" + syllabus.getSubjectsFour() + "\",\n"
@@ -228,7 +228,7 @@ public class ConvertToJSON {
                         + "  \"ThirteenProgramThree\": \"" + syllabus.getThirteenProgramThree() + "\",\n"
                         + "  \"ThirteenProgramFour\": \"" + syllabus.getThirteenProgramFour() + "\",\n"
                         + "  \"ThirteenProgramFive\": \"" + syllabus.getThirteenProgramFive() + "\",\n"
-                        + "  \"teachingMethods\": \"" + syllabus.getTeachingMethods() + "\",\n"
+                        + "  \"teachingMethods\": \"" + syllabus.getTeachingMethods() + "\"\n"
                         + "}";
 
                 // Write the JSON string to a file
