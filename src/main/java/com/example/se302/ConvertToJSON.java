@@ -1,5 +1,6 @@
 package com.example.se302;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class ConvertToJSON {
     private static int sameFileCounter = 0;
 
 
-    public static void generateJsonFile(Syllabus syllabus) {  ///// FILL THE BLANK PARTS
+    public static void generateJsonFile(Syllabus syllabus, File file) {  ///// FILL THE BLANK PARTS
 
         if (syllabus.getCode() != null) {
             if (!fileList.contains("syllabus" + syllabus.getCode() + ".json")) {
@@ -232,9 +233,9 @@ public class ConvertToJSON {
                         + "}";
 
                 // Write the JSON string to a file
-                try (FileWriter fileWriter = new FileWriter(filePath)) {
+                try (FileWriter fileWriter = new FileWriter(file)) {
                     fileWriter.write(jsonString);
-                    System.out.println("Data written to " + filePath);
+                    System.out.println("Data written to " + file.getAbsolutePath());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

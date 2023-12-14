@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -707,7 +708,7 @@ public class Controllers implements Initializable,Serializable {
         setAssistantTextField(test);
         syllabusList.add(test);
         saveSyllabusToFile();
-        generateJsonFile(test);
+
         System.out.println(test.getCourseName());
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
@@ -767,6 +768,24 @@ public class Controllers implements Initializable,Serializable {
         } catch (IOException e) {
             // Handle the exception appropriately (e.g., log it, show an error message)
             e.printStackTrace();
+        }
+    }
+    public void exportSyllabus(){
+        //Add part
+        Syllabus test = new Syllabus();
+        setAssistantTextField(test);
+        syllabusList.add(test);
+        saveSyllabusToFile();
+        System.out.println(test.getCourseName());
+
+
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter jsonFilter = new FileChooser.ExtensionFilter("JSON Files (*.json)", "*.json");
+        fileChooser.getExtensionFilters().add(jsonFilter);
+        File file = fileChooser.showSaveDialog(new Stage());
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+        if (file != null) {
+            ConvertToJSON.generateJsonFile(test,file);
         }
     }
 
