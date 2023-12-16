@@ -1,7 +1,5 @@
 package com.example.se302;
 
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,13 +14,10 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.security.auth.callback.Callback;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
-import static com.example.se302.ConvertToJSON.generateJsonFile;
 
 public class Controllers implements Initializable,Serializable {
 
@@ -487,7 +482,7 @@ public class Controllers implements Initializable,Serializable {
     public static ArrayList<Syllabus> syllabusList = new ArrayList<>();
     public int currentIndex;
     @FXML
-    private ListView<Syllabus> syllabusListView = new ListView<>();
+    private ListView<Syllabus> syllabusListView = new ListView<Syllabus>();
 
     public static ObservableList<Syllabus> syllabusListO = FXCollections.observableArrayList();
     Syllabus currentSyllabus;
@@ -1078,8 +1073,19 @@ public class Controllers implements Initializable,Serializable {
         if (syllabusListView != null) {
             syllabusListO.addAll(syllabusList);
             syllabusListView.setItems(syllabusListO);
-
         }
+        syllabusListView.setCellFactory(param -> new ListCell<Syllabus>() {
+            @Override
+            protected void updateItem(Syllabus item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    setText(item.getCourseName());
+                }
+            }
+        });
         if (syllabusListView != null) {
             syllabusListView.getSelectionModel().selectedIndexProperty().addListener(
                     (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
