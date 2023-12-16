@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -802,10 +803,13 @@
                      </children>
                   </VBox>
                   <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
-                  </HBox>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#exportSyllabus" text="Export" />
+                     </children></HBox>
                </children>
             </VBox>
          </content>
+
       </ScrollPane>
    </children>
 </AnchorPane>
