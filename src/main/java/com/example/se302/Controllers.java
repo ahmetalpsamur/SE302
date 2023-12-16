@@ -1,5 +1,10 @@
 package com.example.se302;
 
+import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,12 +12,11 @@ import javafx.fxml.Initializable;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javax.security.auth.callback.Callback;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -481,8 +485,10 @@ public class Controllers implements Initializable,Serializable {
     private TextField thirteenProgramTextFieldFive;
 
     public static ArrayList<Syllabus> syllabusList = new ArrayList<>();
-
-
+    public int currentIndex;
+    @FXML
+    private ListView<Syllabus> syllabusListView;
+    Syllabus currentSyllabus;
 
     public void setAssistantTextField(Syllabus syllabus) {
         syllabus.setCourseName(courseNameText.getText());
@@ -692,6 +698,7 @@ public class Controllers implements Initializable,Serializable {
 
 
     }
+
     @FXML
     protected void addSyllabus(ActionEvent event) throws IOException {
         Stage stage = new Stage();
@@ -707,17 +714,13 @@ public class Controllers implements Initializable,Serializable {
         Syllabus test = new Syllabus();
         setAssistantTextField(test);
         syllabusList.add(test);
+        if (syllabusListView != null) {
+            syllabusListView.setItems(FXCollections.observableArrayList(syllabusList));
+        }
+
         saveSyllabusToFile();
-
         System.out.println(test.getCourseName());
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 760, 750);
-        stage.setTitle("Save");
-        stage.setScene(scene);
-        stage.show();
     }
-
     public void getHelp(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("help.fxml"));
@@ -774,8 +777,6 @@ public class Controllers implements Initializable,Serializable {
         //Add part
         Syllabus test = new Syllabus();
         setAssistantTextField(test);
-        syllabusList.add(test);
-        saveSyllabusToFile();
         System.out.println(test.getCourseName());
 
 
@@ -788,14 +789,228 @@ public class Controllers implements Initializable,Serializable {
             ConvertToJSON.generateJsonFile(test,file);
         }
     }
-
-
-    public void printSyllabusList(){
+    public void viewSyllabus() throws IOException {
         for (Syllabus syllabus : syllabusList) {
             System.out.println("Course Name: " + syllabus.getCourseName());
             // Add more code here to display or load other information as needed
         }
+        if (currentSyllabus != null) {
+            Stage stage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view-syllabus.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+            Controllers controller = fxmlLoader.getController();
+            {
+                controller.courseNameText.setText(currentSyllabus.getCourseName());
+                controller.codeTextField.setText(currentSyllabus.getCode());
+                controller.fallTextField.setText(currentSyllabus.getFall());
+                controller.springTextField.setText(currentSyllabus.getSpring());
+                controller.theoryTextField.setText(currentSyllabus.getTheory());
+                controller.labTextField.setText(currentSyllabus.getLab());
+                controller.localCreditTextField.setText(currentSyllabus.getLocalCredit());
+                controller.ectsTextField.setText(currentSyllabus.getEcts());
+                controller.prerequisitesTextField.setText(currentSyllabus.getPrerequisites());
+                controller.courseLanguageTextField.setText(currentSyllabus.getCourseLanguage());
+                controller.courseTypeTextField.setText(currentSyllabus.getCourseType());
+                controller.courseLevelTextField.setText(currentSyllabus.getCourseLevel());
+                controller.teachingMethodsTextField.setText(currentSyllabus.getTeachingMethods());
+                controller.courseCoordinatorTextField.setText(currentSyllabus.getCourseCoordinator());
+                controller.courseCoordinatorTextField2.setText(currentSyllabus.getCourseCoordinator2());
+                controller.assistantTextField.setText(currentSyllabus.getAssistant());
+                controller.courseObjectivesTextField.setText(currentSyllabus.getCourseObjectives());
+                controller.learningOutcomesTextField.setText(currentSyllabus.getLearningOutcomes());
+                controller.courseDescriptionTextField.setText(currentSyllabus.getCourseDescription());
+                controller.subjectsTextFieldTwo.setText(currentSyllabus.getSubjectsTwo());
+                controller.reqiredMaterialsTextFieldTwo.setText(currentSyllabus.getRequiredMaterialsTwo());
+                controller.subjectsTextFieldThree.setText(currentSyllabus.getSubjectsThree());
+                controller.reqiredMaterialsTextFieldThree.setText(currentSyllabus.getRequiredMaterialsThree());
+                controller.subjectsTextFieldFour.setText(currentSyllabus.getSubjectsFour());
+                controller.reqiredMaterialsTextFieldFour.setText(currentSyllabus.getRequiredMaterialsFour());
+                controller.subjectsTextFieldFive.setText(currentSyllabus.getSubjectsFive());
+                controller.reqiredMaterialsTextFieldFive.setText(currentSyllabus.getRequiredMaterialsFive());
+                controller.subjectsTextFieldSix.setText(currentSyllabus.getSubjectsSix());
+                controller.reqiredMaterialsTextFieldSix.setText(currentSyllabus.getRequiredMaterialsSix());
+                controller.subjectsTextFieldSeven.setText(currentSyllabus.getSubjectsSeven());
+                controller.reqiredMaterialsTextFieldSeven.setText(currentSyllabus.getRequiredMaterialsSeven());
+                controller.subjectsTextFieldEight.setText(currentSyllabus.getSubjectsEight());
+                controller.reqiredMaterialsTextFieldEight.setText(currentSyllabus.getRequiredMaterialsEight());
+                controller.subjectsTextFieldNine.setText(currentSyllabus.getSubjectsNine());
+                controller.reqiredMaterialsTextFieldNine.setText(currentSyllabus.getRequiredMaterialsNine());
+                controller.subjectsTextFieldTen.setText(currentSyllabus.getSubjectsTen());
+                controller.reqiredMaterialsTextFieldTen.setText(currentSyllabus.getRequiredMaterialsTen());
+                controller.subjectsTextFieldEleven.setText(currentSyllabus.getSubjectsEleven());
+                controller.reqiredMaterialsTextFieldEleven.setText(currentSyllabus.getRequiredMaterialsEleven());
+                controller.subjectsTextFieldTwelve.setText(currentSyllabus.getSubjectsTwelve());
+                controller.reqiredMaterialsTextFieldTwelve.setText(currentSyllabus.getRequiredMaterialsTwelve());
+                controller.subjectsTextFieldThirteen.setText(currentSyllabus.getSubjectsThirteen());
+                controller.reqiredMaterialsTextFieldThirteen.setText(currentSyllabus.getRequiredMaterialsThirteen());
+                controller.subjectsTextFieldFourteen.setText(currentSyllabus.getSubjectsFourteen());
+                controller.reqiredMaterialsTextFieldFourteen.setText(currentSyllabus.getRequiredMaterialsFourteen());
+                controller.subjectsTextFieldFifteen.setText(currentSyllabus.getSubjectsFifteen());
+                controller.reqiredMaterialsTextFieldFifteen.setText(currentSyllabus.getRequiredMaterialsFifteen());
+                controller.subjectsTextFieldSixteen.setText(currentSyllabus.getSubjectsSixteen());
+                controller.reqiredMaterialsTextFieldSixteen.setText(currentSyllabus.getRequiredMaterialsSixteen());
+                controller.participationTextFieldOne.setText(currentSyllabus.getParticipationOne());
+                controller.participationTextFieldTwo.setText(currentSyllabus.getParticipationTwo());
+                controller.participationTextFieldThree.setText(currentSyllabus.getParticipationThree());
+                controller.participationTextFieldFour.setText(currentSyllabus.getParticipationFour());
+                controller.participationTextFieldFive.setText(currentSyllabus.getParticipationFive());
+                controller.participationTextFieldSix.setText(currentSyllabus.getParticipationSix());
+                controller.participationTextFieldSeven.setText(currentSyllabus.getParticipationSeven());
+                controller.participationTextFieldEight.setText(currentSyllabus.getParticipationEight());
+                controller.laboratoryTextFieldOne.setText(currentSyllabus.getLaboratoryOne());
+                controller.laboratoryTextFieldTwo.setText(currentSyllabus.getLaboratoryTwo());
+                controller.laboratoryTextFieldThree.setText(currentSyllabus.getLaboratoryThree());
+                controller.laboratoryTextFieldFour.setText(currentSyllabus.getLaboratoryFour());
+                controller.laboratoryTextFieldFive.setText(currentSyllabus.getLaboratoryFive());
+                controller.laboratoryTextFieldSix.setText(currentSyllabus.getLaboratorySix());
+                controller.laboratoryTextFieldSeven.setText(currentSyllabus.getLaboratorySeven());
+                controller.laboratoryTextFieldEight.setText(currentSyllabus.getLaboratoryEight());
+                controller.laboratoryTextFieldNine.setText(currentSyllabus.getLaboratoryNine());
+                controller.fieldWorkTextFieldOne.setText(currentSyllabus.getFieldWorkOne());
+                controller.fieldWorkTextFieldTwo.setText(currentSyllabus.getFieldWorkTwo());
+                controller.fieldWorkTextFieldThree.setText(currentSyllabus.getFieldWorkThree());
+                controller.fieldWorkTextFieldFour.setText(currentSyllabus.getFieldWorkFour());
+                controller.fieldWorkTextFieldFive.setText(currentSyllabus.getFieldWorkFive());
+                controller.fieldWorkTextFieldSix.setText(currentSyllabus.getFieldWorkSix());
+                controller.fieldWorkTextFieldSeven.setText(currentSyllabus.getFieldWorkSeven());
+                controller.fieldWorkTextFieldEight.setText(currentSyllabus.getFieldWorkEight());
+                controller.fieldWorkTextFieldNine.setText(currentSyllabus.getFieldWorkNine());
+                controller.quiz2TextFieldOne.setText(currentSyllabus.getQuiz2One());
+                controller.quiz2TextFieldTwo.setText(currentSyllabus.getQuiz2Two());
+                controller.quiz2TextFieldThree.setText(currentSyllabus.getQuiz2Three());
+                controller.quizTextFieldFour.setText(currentSyllabus.getQuizFour());
+                controller.quizTextFieldFive.setText(currentSyllabus.getQuizFive());
+                controller.quizTextFieldSix.setText(currentSyllabus.getQuizSix());
+                controller.quizTextFieldSeven.setText(currentSyllabus.getQuizSeven());
+                controller.quizTextFieldEight.setText(currentSyllabus.getQuizEight());
+                controller.quizTextFieldNine.setText(currentSyllabus.getQuizNine());
+                controller.coursehourTextFieldOne.setText(currentSyllabus.getCourseHourOne());
+                controller.coursehourTextFieldTwo.setText(currentSyllabus.getCourseHourTwo());
+
+// Part 2
+
+                controller.labhourTextFieldOne.setText(currentSyllabus.getLabhourOne());
+                controller.labhourTextFieldTwo.setText(currentSyllabus.getLabhourTwo());
+                controller.StudyhourTextFieldOne.setText(currentSyllabus.getStudyhourOne());
+                controller.StudyhourTextFieldTwo.setText(currentSyllabus.getStudyhourTwo());
+                controller.StudyhourTextFieldThree.setText(currentSyllabus.getStudyhourThree());
+                controller.FieldworkTextFieldOne.setText(currentSyllabus.getFieldworkOne());
+                controller.FieldworkTextFieldTwo.setText(currentSyllabus.getFieldworkTwo());
+                controller.FieldworkTextFieldThree.setText(currentSyllabus.getFieldworkThree());
+                controller.quizTextFieldOne.setText(currentSyllabus.getQuizOne());
+                controller.quizTextFieldTwo.setText(currentSyllabus.getQuizTwo());
+                controller.quizTextFieldThree.setText(currentSyllabus.getQuizThree());
+                controller.homeworkTextFieldOne.setText(currentSyllabus.getHomeworkOne());
+                controller.homeworkTextFieldTwo.setText(currentSyllabus.getHomeworkTwo());
+                controller.homeworkTextFieldThree.setText(currentSyllabus.getHomeworkThree());
+                controller.presentationTextFieldOne.setText(currentSyllabus.getPresentationOne());
+                controller.presentationTextFieldTwo.setText(currentSyllabus.getPresentationTwo());
+                controller.presentationTextFieldThree.setText(currentSyllabus.getPresentationThree());
+                controller.projectTextFieldOne.setText(currentSyllabus.getProjectOne());
+                controller.projectTextFieldTwo.setText(currentSyllabus.getProjectTwo());
+                controller.projectTextFieldThree.setText(currentSyllabus.getProjectThree());
+                controller.portfolioTextFieldOne.setText(currentSyllabus.getPortfolioOne());
+                controller.portfolioTextFieldTwo.setText(currentSyllabus.getPortfolioTwo());
+                controller.portfolioTextFieldThree.setText(currentSyllabus.getPortfolioThree());
+                controller.seminarTextFieldOne.setText(currentSyllabus.getSeminarOne());
+                controller.seminarTextFieldTwo.setText(currentSyllabus.getSeminarTwo());
+                controller.seminarTextFieldThree.setText(currentSyllabus.getSeminarThree());
+                controller.oralTextFieldOne.setText(currentSyllabus.getOralOne());
+                controller.oralTextFieldTwo.setText(currentSyllabus.getOralTwo());
+                controller.oralTextFieldThree.setText(currentSyllabus.getOralThree());
+                controller.midtermTextFieldOne.setText(currentSyllabus.getMidtermOne());
+                controller.midtermTextFieldTwo.setText(currentSyllabus.getMidtermTwo());
+                controller.midtermTextFieldThree.setText(currentSyllabus.getMidtermThree());
+                controller.finalTextFieldOne.setText(currentSyllabus.getFinalOne());
+                controller.finalTextFieldTwo.setText(currentSyllabus.getFinalTwo());
+                controller.finalTextFieldThree.setText(currentSyllabus.getFinalThree());
+                controller.oneProgramTextFieldZero.setText(currentSyllabus.getOneProgramZero());
+                controller.oneProgramTextFieldOne.setText(currentSyllabus.getOneProgramOne());
+                controller.oneProgramTextFieldTwo.setText(currentSyllabus.getOneProgramTwo());
+                controller.oneProgramTextFieldThree.setText(currentSyllabus.getOneProgramThree());
+                controller.oneProgramTextFieldFour.setText(currentSyllabus.getOneProgramFour());
+                controller.oneProgramTextFieldFive.setText(currentSyllabus.getOneProgramFive());
+                controller.twoProgramTextFieldZero.setText(currentSyllabus.getTwoProgramZero());
+                controller.twoProgramTextFieldOne.setText(currentSyllabus.getTwoProgramOne());
+                controller.twoProgramTextFieldTwo.setText(currentSyllabus.getTwoProgramTwo());
+                controller.twoProgramTextFieldThree.setText(currentSyllabus.getTwoProgramThree());
+                controller.twoProgramTextFieldFour.setText(currentSyllabus.getTwoProgramFour());
+                controller.twoProgramTextFieldFive.setText(currentSyllabus.getTwoProgramFive());
+                controller.threeProgramTextFieldZero.setText(currentSyllabus.getThreeProgramZero());
+                controller.threeProgramTextFieldOne.setText(currentSyllabus.getThreeProgramOne());
+                controller.threeProgramTextFieldTwo.setText(currentSyllabus.getThreeProgramTwo());
+                controller.threeProgramTextFieldThree.setText(currentSyllabus.getThreeProgramThree());
+                controller.threeProgramTextFieldFour.setText(currentSyllabus.getThreeProgramFour());
+                controller.threeProgramTextFieldFive.setText(currentSyllabus.getThreeProgramFive());
+                controller.fourProgramTextFieldZero.setText(currentSyllabus.getFourProgramZero());
+                controller.fourProgramTextFieldOne.setText(currentSyllabus.getFourProgramOne());
+                controller.fourProgramTextFieldTwo.setText(currentSyllabus.getFourProgramTwo());
+                controller.fourProgramTextFieldThree.setText(currentSyllabus.getFourProgramThree());
+                controller.fourProgramTextFieldFour.setText(currentSyllabus.getFourProgramFour());
+                controller.fourProgramTextFieldFive.setText(currentSyllabus.getFourProgramFive());
+                controller.fiveProgramTextFieldZero.setText(currentSyllabus.getFiveProgramZero());
+                controller.fiveProgramTextFieldOne.setText(currentSyllabus.getFiveProgramOne());
+                controller.fiveProgramTextFieldTwo.setText(currentSyllabus.getFiveProgramTwo());
+                controller.fiveProgramTextFieldThree.setText(currentSyllabus.getFiveProgramThree());
+                controller.fiveProgramTextFieldFour.setText(currentSyllabus.getFiveProgramFour());
+                controller.fiveProgramTextFieldFive.setText(currentSyllabus.getFiveProgramFive());
+                controller.sixProgramTextFieldZero.setText(currentSyllabus.getSixProgramZero());
+                controller.sixProgramTextFieldOne.setText(currentSyllabus.getSixProgramOne());
+                controller.sixProgramTextFieldTwo.setText(currentSyllabus.getSixProgramTwo());
+                controller.sixProgramTextFieldThree.setText(currentSyllabus.getSixProgramThree());
+                controller.sixProgramTextFieldFour.setText(currentSyllabus.getSixProgramFour());
+                controller.sixProgramTextFieldFive.setText(currentSyllabus.getSixProgramFive());
+                controller.sevenProgramTextFieldZero.setText(currentSyllabus.getSevenProgramZero());
+                controller.sevenProgramTextFieldOne.setText(currentSyllabus.getSevenProgramOne());
+                controller.sevenProgramTextFieldTwo.setText(currentSyllabus.getSevenProgramTwo());
+                controller.sevenProgramTextFieldThree.setText(currentSyllabus.getSevenProgramThree());
+                controller.sevenProgramTextFieldFour.setText(currentSyllabus.getSevenProgramFour());
+                controller.sevenProgramTextFieldFive.setText(currentSyllabus.getSevenProgramFive());
+                controller.eightProgramTextFieldZero.setText(currentSyllabus.getEightProgramZero());
+                controller.eightProgramTextFieldOne.setText(currentSyllabus.getEightProgramOne());
+                controller.eightProgramTextFieldTwo.setText(currentSyllabus.getEightProgramTwo());
+                controller.eightProgramTextFieldThree.setText(currentSyllabus.getEightProgramThree());
+                controller.eightProgramTextFieldFour.setText(currentSyllabus.getEightProgramFour());
+                controller.eightProgramTextFieldFive.setText(currentSyllabus.getEightProgramFive());
+                controller.nineProgramTextFieldZero.setText(currentSyllabus.getNineProgramZero());
+                controller.nineProgramTextFieldOne.setText(currentSyllabus.getNineProgramOne());
+                controller.nineProgramTextFieldTwo.setText(currentSyllabus.getNineProgramTwo());
+                controller.nineProgramTextFieldThree.setText(currentSyllabus.getNineProgramThree());
+                controller.nineProgramTextFieldFour.setText(currentSyllabus.getNineProgramFour());
+                controller.nineProgramTextFieldFive.setText(currentSyllabus.getNineProgramFive());
+                controller.tenProgramTextFieldZero.setText(currentSyllabus.getTenProgramZero());
+                controller.tenProgramTextFieldOne.setText(currentSyllabus.getTenProgramOne());
+                controller.tenProgramTextFieldTwo.setText(currentSyllabus.getTenProgramTwo());
+                controller.tenProgramTextFieldThree.setText(currentSyllabus.getTenProgramThree());
+                controller.tenProgramTextFieldFour.setText(currentSyllabus.getTenProgramFour());
+                controller.tenProgramTextFieldFive.setText(currentSyllabus.getTenProgramFive());
+                controller.elevenProgramTextFieldZero.setText(currentSyllabus.getElevenProgramZero());
+                controller.elevenProgramTextFieldOne.setText(currentSyllabus.getElevenProgramOne());
+                controller.elevenProgramTextFieldTwo.setText(currentSyllabus.getElevenProgramTwo());
+                controller.elevenProgramTextFieldThree.setText(currentSyllabus.getElevenProgramThree());
+                controller.elevenProgramTextFieldFour.setText(currentSyllabus.getElevenProgramFour());
+                controller.elevenProgramTextFieldFive.setText(currentSyllabus.getElevenProgramFive());
+                controller.twelveProgramTextFieldZero.setText(currentSyllabus.getTwelveProgramZero());
+                controller.twelveProgramTextFieldOne.setText(currentSyllabus.getTwelveProgramOne());
+                controller.twelveProgramTextFieldTwo.setText(currentSyllabus.getTwelveProgramTwo());
+                controller.twelveProgramTextFieldThree.setText(currentSyllabus.getTwelveProgramThree());
+                controller.twelveProgramTextFieldFour.setText(currentSyllabus.getTwelveProgramFour());
+                controller.twelveProgramTextFieldFive.setText(currentSyllabus.getTwelveProgramFive());
+                controller.thirteenProgramTextFieldZero.setText(currentSyllabus.getThirteenProgramZero());
+                controller.thirteenProgramTextFieldOne.setText(currentSyllabus.getThirteenProgramOne());
+                controller.thirteenProgramTextFieldTwo.setText(currentSyllabus.getThirteenProgramTwo());
+                controller.thirteenProgramTextFieldThree.setText(currentSyllabus.getThirteenProgramThree());
+                controller.thirteenProgramTextFieldFour.setText(currentSyllabus.getThirteenProgramFour());
+                controller.thirteenProgramTextFieldFive.setText(currentSyllabus.getThirteenProgramFive());
+            }
+            stage.setTitle("View Syllabus");
+            stage.setScene(scene);
+            stage.show();
+        } else {
+            System.out.println("Please select a syllabus to view.");
+        }
     }
+
 
 
     public void loadSyllabusInformation() {
@@ -823,6 +1038,9 @@ public class Controllers implements Initializable,Serializable {
             // Suppressing unchecked cast warning because we're confident it's an ArrayList<Syllabus>
             @SuppressWarnings("unchecked")
             ArrayList<Syllabus> loadedList = (ArrayList<Syllabus>) ois.readObject();
+
+            // Clear the existing syllabusList and add the loaded entries
+            syllabusList.clear();
             syllabusList.addAll(loadedList);
         } catch (FileNotFoundException e) {
             // File not found, create a new file
@@ -843,5 +1061,23 @@ public class Controllers implements Initializable,Serializable {
         if(myChoiceBox != null) {
     myChoiceBox.getItems().addAll(languages);
     }
+        Controllers.loadSyllabusFromFile();
+
+        if (syllabusListView != null) {
+            syllabusListView.setItems(FXCollections.observableArrayList(syllabusList));
+        }
+        if (syllabusListView != null) {
+            syllabusListView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number oldValue, Number newValue) {
+                    if (newValue.intValue() >= 0) {
+                        currentSyllabus = syllabusListView.getItems().get(newValue.intValue());
+                        System.out.println(currentSyllabus.getCourseName());
+                    } else {
+                        currentSyllabus = null;
+                    }
+                }
+            });
+        }
 
 } }

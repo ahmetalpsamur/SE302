@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="3694.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
+   <children>
+      <ScrollPane prefHeight="734.0" prefWidth="750.0">
+         <content>
+            <VBox prefHeight="3696.0" prefWidth="730.0">
+               <children>
+                  <HBox prefHeight="46.0" prefWidth="730.0">
+                     <children>
+                        <TextField editable="false" text="Course Name" />
+                        <TextField fx:id="courseNameText" editable="false" prefHeight="26.0" prefWidth="578.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="123.0" prefWidth="746.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField editable="false" text="Code" />
+                              <TextField fx:id="codeTextField" editable="false" prefHeight="73.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField editable="false" text="Fall" />
+                              <TextField fx:id="fallTextField" editable="false" prefHeight="73.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField editable="false" text="Spring" />
+                              <TextField fx:id="springTextField" editable="false" prefHeight="73.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField editable="false" text="Theory" />
+                              <TextField fx:id="theoryTextField" editable="false" prefHeight="73.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField editable="false" text="Application/Lab" />
+                              <TextField fx:id="labTextField" editable="false" prefHeight="73.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField editable="false" text="Local Credits" />
+                              <TextField fx:id="localCreditTextField" editable="false" prefHeight="73.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField editable="false" text="ECTS" />
+                              <TextField fx:id="ectsTextField" editable="false" prefHeight="73.0" prefWidth="100.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="158.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Prerequisites" />
+                              <TextField fx:id="prerequisitesTextField" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="26.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Course Language" />
+                              <TextField fx:id="courseLanguageTextField" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="22.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Course Type" />
+                              <TextField fx:id="courseTypeTextField" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="27.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Course Level " />
+                              <TextField fx:id="courseLevelTextField" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="27.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Teaching Methods" />
+                              <TextField fx:id="teachingMethodsTextField" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="115.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="28.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Course Coordinator" />
+                              <TextField fx:id="courseCoordinatorTextField" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="26.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Course Coordinator" />
+                              <TextField fx:id="courseCoordinatorTextField2" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="22.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Assistant(s)" />
+                              <TextField fx:id="assistantTextField" editable="false" prefHeight="26.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="213.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="58.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="59.0" prefWidth="150.0" text="Course Objectives" />
+                              <TextField fx:id="courseObjectivesTextField" editable="false" prefHeight="65.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="98.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="99.0" prefWidth="150.0" text="Learning Outcomes" />
+                              <TextField fx:id="learningOutcomesTextField" editable="false" prefHeight="101.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="38.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="34.0" prefWidth="150.0" text="Course Description" />
+                              <TextField fx:id="courseDescriptionTextField" editable="false" prefHeight="36.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="142.0" prefWidth="660.0">
+                     <children>
+                        <TextField prefHeight="129.0" prefWidth="150.0" text="Course Name" />
+                        <VBox prefHeight="142.0" prefWidth="19.0">
+                           <children>
+                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="40.0" />
+                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="126.0" prefWidth="578.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="545.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="Week" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="408.0" text="Subjects" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="172.0" text="Required Materials" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="1" />
+                              <TextField fx:id="subjectsTextFieldOne" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldOne" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="2" />
+                              <TextField fx:id="subjectsTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="3" />
+                              <TextField fx:id="subjectsTextFieldThree" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldThree" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="4" />
+                              <TextField fx:id="subjectsTextFieldFour" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldFour" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="5" />
+                              <TextField fx:id="subjectsTextFieldFive" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldFive" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="6" />
+                              <TextField fx:id="subjectsTextFieldSix" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldSix" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="7" />
+                              <TextField fx:id="subjectsTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="8" />
+                              <TextField fx:id="subjectsTextFieldEight" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldEight" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="9" />
+                              <TextField fx:id="subjectsTextFieldNine" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldNine" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="10" />
+                              <TextField fx:id="subjectsTextFieldTen" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldTen" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="11" />
+                              <TextField fx:id="subjectsTextFieldEleven" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldEleven" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="12" />
+                              <TextField fx:id="subjectsTextFieldTwelve" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldTwelve" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="13" />
+                              <TextField fx:id="subjectsTextFieldThirteen" editable="false" prefHeight="26.0" prefWidth="408.0 " />
+                              <TextField fx:id="reqiredMaterialsTextFieldThirteen" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="14" />
+                              <TextField fx:id="subjectsTextFieldFourteen" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldFourteen" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="15" />
+                              <TextField fx:id="subjectsTextFieldFifteen" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldFifteen" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" text="16" />
+                              <TextField fx:id="subjectsTextFieldSixteen" editable="false" prefHeight="26.0" prefWidth="408.0" />
+                              <TextField fx:id="reqiredMaterialsTextFieldSixteen" editable="false" prefHeight="26.0" prefWidth="172.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="296.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="58.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="58.0" prefWidth="299.0" text="Course Notes/Textbooks" />
+                              <TextField fx:id="courseNotesTextBooksTextField" editable="false" prefHeight="65.0" prefWidth="570.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="181.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="182.0" prefWidth="258.0" text="Suggested Readings/Materials " />
+                              <TextField fx:id="suggestedMaterialsTextField" editable="false" prefHeight="185.0" prefWidth="526.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="394.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Semester Activities" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="131.0" text="Number" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="75.0" text=" LO1" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="62.0" text="LO2" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="59.0" text="LO3" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="65.0" text="LO4" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="54.0" text="LO5" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="53.0" text="LO6" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="53.0" text="LO7" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Participation" />
+                              <TextField fx:id="participationTextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="participationTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="participationTextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="participationTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="participationTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="participationTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="participationTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="participationTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="participationTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Laboratory/Application" />
+                              <TextField fx:id="laboratoryTextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="laboratoryTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="laboratoryTextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="laboratoryTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="laboratoryTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="laboratoryTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="laboratoryTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="laboratoryTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="laboratoryTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Field Work" />
+                              <TextField fx:id="fieldWorkTextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                                <TextField fx:id="fieldWorkTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                               <TextField fx:id="fieldWorkTextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                             <TextField fx:id="fieldWorkTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                             <TextField fx:id="fieldWorkTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                            <TextField fx:id="fieldWorkTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                            <TextField fx:id="fieldWorkTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                            <TextField fx:id="fieldWorkTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                            <TextField fx:id="fieldWorkTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Quiz/Studio Critique" />
+                              <TextField fx:id="quiz2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                             <TextField fx:id="quiz2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                            <TextField fx:id="quiz2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                            <TextField fx:id="quizTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                            <TextField fx:id="quizTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                            <TextField fx:id="quizTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                           <TextField fx:id="quizTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                           <TextField fx:id="quizTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                          <TextField fx:id="quizTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Homework/Assignment" />
+                              <TextField fx:id="homework2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="homework2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="homework2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="homeworkTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="homeworkTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                             <TextField fx:id="homeworkTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                             <TextField fx:id="homeworkTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                            <TextField fx:id="homeworkTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                            <TextField fx:id="homeworkTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Presentation/Jury" />
+                              <TextField fx:id="presentation2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="presentation2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="presentation2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="presentationTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="presentationTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="presentationTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="presentationTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="presentationTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="presentationTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Project" />
+                              <TextField fx:id="project2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="project2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="project2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="projectTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="projectTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="projectTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="projectTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="projectTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="projectTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Seminar/Workshop" />
+                              <TextField fx:id="seminar2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="seminar2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="seminar2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="seminarTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="seminarTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="seminarTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="seminarTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="seminarTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="seminarTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Oral Exam" />
+                              <TextField fx:id="oral2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="oral2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="oral2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="oralTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="oralTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="oralTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="oralTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="oralTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="oralTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Midterm" />
+                              <TextField fx:id="midterm2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="midterm2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="midterm2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="midtermTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="midtermTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="midtermTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="midtermTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="midtermTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="midtermTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Final Exam" />
+                              <TextField fx:id="final2TextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="final2TextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="final2TextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="finalTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="finalTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="finalTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="finalTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="finalTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="finalTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="124.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="26.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Weighting of SemesterActivities on the Final Grade" />
+                              <TextField fx:id="semesterTextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="semesterTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="semesterTextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="semesterTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="semesterTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="semesterTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="semesterTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="semesterTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="semesterTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Weighting of End-of-SemesterActivities on the Final Grade" />
+                              <TextField fx:id="endofTextFieldOne" editable="false" prefHeight="26.0" prefWidth="131.0" />
+                              <TextField fx:id="endofTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="endofTextFieldThree" editable="false" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="endofTextFieldFour" editable="false" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="endofTextFieldFive" editable="false" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="endofTextFieldSix" editable="false" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="endofTextFieldSeven" editable="false" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="endofTextFieldEight" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="endofTextFieldNine" editable="false" prefHeight="26.0" prefWidth="53.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="508.0" prefWidth="730.0">
+                     <children>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Semester Activities" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="Number" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="126.0" text="Duration(Hours)" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="135.0" text="Workload" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Course Hours(Including exam week: 16 x total hours)" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="16" />
+                              <TextField fx:id="coursehourTextFieldOne" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="coursehourTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Laboratory/Application Hours(Including exam week: 16 x total hours)" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="16" />
+                              <TextField fx:id="labhourTextFieldOne" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="labhourTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Study Hours out of Class" />
+                              <TextField fx:id="StudyhourTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="StudyhourTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="StudyhourTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Field Work" />
+                              <TextField fx:id="FieldworkTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="FieldworkTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="FieldworkTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Quiz/Studio Critique" />
+                              <TextField fx:id="quizTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="quizTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="quizTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Homework/Assignments" />
+                              <TextField fx:id="homeworkTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="homeworkTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="homeworkTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Presentation/Jury" />
+                              <TextField fx:id="presentationTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="presentationTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="presentationTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Project" />
+                              <TextField fx:id="projectTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="projectTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="projectTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Portfolio" />
+                              <TextField fx:id="portfolioTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="portfolioTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="portfolioTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Seminar/Workshop" />
+                              <TextField fx:id="seminarTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="seminarTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="seminarTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Oral Exam" />
+                              <TextField fx:id="oralTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="oralTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="oralTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Midterm" />
+                              <TextField fx:id="midtermTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="midtermTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="midtermTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="31.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Final Exam" />
+                              <TextField fx:id="finalTextFieldOne" editable="false" prefHeight="26.0" prefWidth="136.0" />
+                              <TextField fx:id="finalTextFieldTwo" editable="false" prefHeight="26.0" prefWidth="126.0" />
+                              <TextField fx:id="finalTextFieldThree" editable="false" prefHeight="26.0" prefWidth="135.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="1395.0" prefWidth="748.0">
+                     <children>
+                        <HBox prefHeight="49.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="53.0" prefWidth="86.0" text="#" />
+                              <TextField editable="false" prefHeight="51.0" prefWidth="235.0" text="Program Competencies/Outcomes" />
+                              <VBox prefHeight="50.0" prefWidth="414.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField editable="false" prefHeight="26.0" prefWidth="412.0" text="Contribution Level" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField editable="false" prefHeight="26.0" prefWidth="95.0" text="1" />
+                                          <TextField editable="false" prefHeight="26.0" prefWidth="95.0" text="2" />
+                                          <TextField editable="false" prefHeight="26.0" prefWidth="95.0" text="3" />
+                                          <TextField editable="false" prefHeight="26.0" prefWidth="87.0" text="4" />
+                                          <TextField editable="false" prefHeight="26.0" prefWidth="97.0" text="5" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="1" />
+                              <TextField fx:id="oneProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="oneProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="oneProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="oneProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="oneProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="oneProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="2" />
+                              <TextField fx:id="twoProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="twoProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="twoProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="twoProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="twoProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="twoProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="3" />
+                              <TextField fx:id="threeProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="threeProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="threeProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="threeProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="threeProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="threeProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="4" />
+                              <TextField fx:id="fourProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="fourProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="fourProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="fourProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="fourProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="fourProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="5" />
+                              <TextField fx:id="fiveProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="fiveProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="fiveProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="fiveProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="fiveProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="fiveProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="6" />
+                              <TextField fx:id="sixProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="sixProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="sixProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="sixProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="sixProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="sixProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="7" />
+                              <TextField fx:id="sevenProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="sevenProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="sevenProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="sevenProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="sevenProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="sevenProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="8" />
+                              <TextField fx:id="eightProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="eightProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="eightProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="eightProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="eightProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="eightProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="9" />
+                              <TextField fx:id="nineProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="nineProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="nineProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="nineProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="nineProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="nineProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="10" />
+                              <TextField fx:id="tenProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="tenProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="tenProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="tenProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="tenProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="tenProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="11" />
+                              <TextField fx:id="elevenProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="elevenProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="elevenProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="elevenProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="elevenProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="elevenProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="12" />
+                              <TextField fx:id="twelveProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="twelveProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="twelveProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="twelveProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="twelveProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="twelveProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="99.0" prefWidth="730.0">
+                           <children>
+                              <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="13" />
+                              <TextField fx:id="thirteenProgramTextFieldZero" editable="false" prefHeight="98.0" prefWidth="233.0" />
+                              <TextField fx:id="thirteenProgramTextFieldOne" editable="false" prefHeight="98.0" prefWidth="86.0" />
+                              <TextField fx:id="thirteenProgramTextFieldTwo" editable="false" prefHeight="98.0" prefWidth="83.0" />
+                              <TextField fx:id="thirteenProgramTextFieldThree" editable="false" prefHeight="100.0" prefWidth="83.0" />
+                              <TextField fx:id="thirteenProgramTextFieldFour" editable="false" prefHeight="101.0" prefWidth="75.0" />
+                              <TextField fx:id="thirteenProgramTextFieldFive" editable="false" prefHeight="99.0" prefWidth="87.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
