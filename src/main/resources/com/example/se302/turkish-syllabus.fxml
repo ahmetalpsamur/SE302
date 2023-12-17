@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="3694.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers"  >
+<AnchorPane prefHeight="3694.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
     <children>
         <ScrollPane layoutY="-1.0" prefHeight="1439.0" prefWidth="750.0">
             <content>
@@ -826,6 +826,7 @@
                         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                             <children>
                                 <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Save" />
+                        <Button mnemonicParsing="false" text="Export" />
                             </children>
                         </HBox>
                     </children>
