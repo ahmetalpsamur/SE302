@@ -1245,6 +1245,8 @@ public class Controllers implements Initializable,Serializable {
             controller.thirteenProgramTextFieldFive.setText(tempSyllabus.getThirteenProgramFive());
 
 
+        System.out.println(currentIndex);
+
         stage.setScene(scene);
         stage.show();
 
@@ -1325,6 +1327,7 @@ public class Controllers implements Initializable,Serializable {
             syllabusListView.getSelectionModel().selectedIndexProperty().addListener(
                     (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
                         if (newValue.intValue() >= 0) {
+                            currentIndex = syllabusListView.getItems().indexOf(syllabusListView.getItems().get(newValue.intValue()));
                             currentSyllabus = syllabusListView.getItems().get(newValue.intValue());
                             System.out.println(currentSyllabus.getCourseName());
                         } else {

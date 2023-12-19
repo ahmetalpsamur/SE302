@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import java.io.Serializable;
 
 public class Syllabus implements Serializable {
+
     private String courseName;
     private String code;
     private String fall;
