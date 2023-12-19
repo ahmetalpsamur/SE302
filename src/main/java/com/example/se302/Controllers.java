@@ -23,6 +23,7 @@ public class Controllers implements Initializable,Serializable {
 
 
     private Syllabus currentSyllabus;
+    private Syllabus tempSyllabus;
 
     //below lines are for language choicebox
 
@@ -32,6 +33,9 @@ public class Controllers implements Initializable,Serializable {
 
     private String[] languages = {"English","Turkish" };
 
+    public void setTempSyllabus(Syllabus syllabus) {
+        this.tempSyllabus = syllabus;
+    }
 
 
     @FXML
@@ -1016,22 +1020,30 @@ public class Controllers implements Initializable,Serializable {
         }
     }
 
-    public void editSaveButton() throws IOException {
-        System.out.println("Edit Save Button Clicked");
+    public void editSaveButton(ActionEvent event) throws IOException {
+
+        if (tempSyllabus != null) {
+            tempSyllabus.setCourseName(courseNameText.getText());
+
+            ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+        } else {
+            System.out.println("Please select a syllabus to edit.");
+        }
     }
+
 
     public void editSyllabus() throws IOException {
 
-        Syllabus tempSyllabus;
         tempSyllabus = currentSyllabus;
 
-        Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("edit-syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
         Controllers controller = fxmlLoader.getController();
+        controller = fxmlLoader.getController();
+        Stage stage = new Stage();
         stage.setTitle("Edit Syllabus");
 
-        {
+
             controller.courseNameText.setText(tempSyllabus.getCourseName());
             controller.codeTextField.setText(tempSyllabus.getCode());
             controller.fallTextField.setText(tempSyllabus.getFall());
@@ -1231,7 +1243,7 @@ public class Controllers implements Initializable,Serializable {
             controller.thirteenProgramTextFieldThree.setText(tempSyllabus.getThirteenProgramThree());
             controller.thirteenProgramTextFieldFour.setText(tempSyllabus.getThirteenProgramFour());
             controller.thirteenProgramTextFieldFive.setText(tempSyllabus.getThirteenProgramFive());
-        }
+
 
         stage.setScene(scene);
         stage.show();
@@ -1250,6 +1262,7 @@ public class Controllers implements Initializable,Serializable {
             // Add more code here to display or load other information as needed
         }
     }
+
 
     private static void saveSyllabusToFile() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("syllabus.dat"))) {
@@ -1293,7 +1306,9 @@ public class Controllers implements Initializable,Serializable {
         if (syllabusListView != null) {
             syllabusListO.addAll(syllabusList);
             syllabusListView.setItems(syllabusListO);
+
         }
+
         syllabusListView.setCellFactory(param -> new ListCell<Syllabus>() {
             @Override
             protected void updateItem(Syllabus item, boolean empty) {
