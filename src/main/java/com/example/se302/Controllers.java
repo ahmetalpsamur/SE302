@@ -37,6 +37,16 @@ public class Controllers implements Initializable,Serializable {
         this.tempSyllabus = syllabus;
     }
 
+    //For the Detailed Info while adding and editing
+    @FXML
+    private TextField editorNameTextField;
+    @FXML
+    private TextField editDateTextField;
+    @FXML
+    private TextField editTimeTextField;
+    @FXML
+    private TextArea editDescriptionTextArea;
+
 
     @FXML
     private TextField courseNameText;
@@ -494,6 +504,12 @@ public class Controllers implements Initializable,Serializable {
     public static ObservableList<Syllabus> syllabusListO = FXCollections.observableArrayList();
 
     public void setAssistantTextField(Syllabus syllabus) {
+
+        syllabus.setEditorName(editorNameTextField.getText());
+        syllabus.setEditDescription(editDescriptionTextArea.getText());
+        syllabus.setEditDate(editDateTextField.getText());
+        syllabus.setEditTime(editTimeTextField.getText());
+
         syllabus.setCourseName(courseNameText.getText());
         syllabus.setCode(codeTextField.getText());
         syllabus.setFall(fallTextField.getText());

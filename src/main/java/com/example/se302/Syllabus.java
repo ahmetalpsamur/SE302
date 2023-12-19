@@ -7,6 +7,44 @@ import java.io.Serializable;
 
 public class Syllabus implements Serializable {
 
+
+    private String editorName;
+    private String editDescription;
+    private String editDate;
+    private String editTime;
+
+    public String getEditorName() {
+        return editorName;
+    }
+
+    public void setEditorName(String editorName) {
+        this.editorName = editorName;
+    }
+
+    public String getEditDescription() {
+        return editDescription;
+    }
+
+    public void setEditDescription(String editDescription) {
+        this.editDescription = editDescription;
+    }
+
+    public String getEditDate() {
+        return editDate;
+    }
+
+    public void setEditDate(String editDate) {
+        this.editDate = editDate;
+    }
+
+    public String getEditTime() {
+        return editTime;
+    }
+
+    public void setEditTime(String editTime) {
+        this.editTime = editTime;
+    }
+
     private String courseName;
     private String code;
     private String fall;
