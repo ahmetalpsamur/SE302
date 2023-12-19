@@ -729,6 +729,26 @@ public class Controllers implements Initializable,Serializable {
         saveSyllabusToFile();
         System.out.println(test.getCourseName());
     }
+
+
+    @FXML
+    public void saveTurkishSyllabus(ActionEvent event) throws IOException {
+        Syllabus test = new Syllabus();
+        setAssistantTextField(test);
+       syllabusList.add(test);
+        if (syllabusListView != null) {
+            syllabusListO.add(test);
+            syllabusListView.setItems(syllabusListO);
+            System.out.println("Added to Turkish Syllabus");
+        } else {
+            System.out.println("Turkish Syllabus ListView is Null");
+        }
+        saveTurkishSyllabusToFile(); // New method for saving Turkish syllabus
+        System.out.println(test.getCourseName());
+    }
+
+
+
     public void getHelp(ActionEvent event) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("help.fxml"));
@@ -1274,6 +1294,17 @@ public class Controllers implements Initializable,Serializable {
         }
     }
 
+
+    private static void saveTurkishSyllabusToFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("turkish_syllabus.dat"))) {
+            oos.writeObject(syllabusList);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     public static void loadSyllabusFromFile() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("syllabus.dat"))) {
             // Suppressing unchecked cast warning because we're confident it's an ArrayList<Syllabus>
@@ -1286,6 +1317,26 @@ public class Controllers implements Initializable,Serializable {
         } catch (FileNotFoundException e) {
             // File not found, create a new file
             saveSyllabusToFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public static void loadTurkishSyllabusFromFile() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("turkish_syllabus.dat"))) {
+            // Suppressing unchecked cast warning because we're confident it's an ArrayList<Syllabus>
+            @SuppressWarnings("unchecked")
+            ArrayList<Syllabus> loadedList = (ArrayList<Syllabus>) ois.readObject();
+
+            // Clear the existing syllabusList and add the loaded entries
+            syllabusList.clear();
+            syllabusList.addAll(loadedList);
+        } catch (FileNotFoundException e) {
+            // File not found, create a new file
+            saveTurkishSyllabusToFile();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

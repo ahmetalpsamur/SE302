@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="3694.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
     <children>
-        <ScrollPane layoutY="-1.0" prefHeight="1439.0" prefWidth="750.0">
+        <ScrollPane layoutY="-1.0" prefHeight="740.0" prefWidth="750.0">
             <content>
                 <VBox prefHeight="3696.0" prefWidth="730.0">
                     <children>
@@ -500,7 +500,7 @@
                             <children>
                                 <HBox prefHeight="26.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="139.0" text="Yarıyıl İçi Aktivitelerin Başarı Notuna Katkısı" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Yarıyıl İçi Aktivitelerin Başarı Notuna Katkısı" />
                                         <TextField prefHeight="26.0" prefWidth="131.0" />
                                         <TextField prefHeight="26.0" prefWidth="98.0" />
                                         <TextField prefHeight="26.0" prefWidth="75.0" />
@@ -514,7 +514,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="139.0" text="Yarıyıl Sonu Aktivitelerin Başarı Notuna Katkısı " />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Yarıyıl Sonu Aktivitelerin Başarı Notuna Katkısı " />
                                         <TextField prefHeight="26.0" prefWidth="131.0" />
                                         <TextField prefHeight="26.0" prefWidth="98.0" />
                                         <TextField prefHeight="26.0" prefWidth="75.0" />
@@ -532,15 +532,15 @@
                             <children>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Yarıyıl Aktiviteleri" />
-                                        <TextField prefHeight="26.0" prefWidth="136.0" text="Sayı" />
-                                        <TextField prefHeight="26.0" prefWidth="126.0" text="Süre (Saat)" />
-                                        <TextField prefHeight="26.0" prefWidth="135.0" text="İş Yükü" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Yarıyıl Aktiviteleri" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="Sayı" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="126.0" text="Süre (Saat)" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="135.0" text="İş Yükü" />
                                     </children>
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Teorik Ders Saati (Sınav haftası dahildir: 16 x teorik ders saati)" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Teorik Ders Saati (Sınav haftası dahildir: 16 x teorik ders saati)" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -548,7 +548,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Laboratuvar /Uygulama Ders Saati (Sınav haftası dahildir: 16 x uygulama/lab ders saati)" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Laboratuvar /Uygulama Ders Saati (Sınav haftası dahildir: 16 x uygulama/lab ders saati)" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -556,7 +556,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Laboratory/Application Hours(Including exam week: 16 x total hours)" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Laboratory/Application Hours(Including exam week: 16 x total hours)" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -564,7 +564,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Sınıf Dışı Ders Çalışması " />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Sınıf Dışı Ders Çalışması " />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -572,7 +572,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Arazi Çalışması" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Arazi Çalışması" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -580,7 +580,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Küçük Sınav/Stüdyo Kritiği " />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Küçük Sınav/Stüdyo Kritiği " />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -588,7 +588,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Ödev" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Ödev" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -596,7 +596,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Sunum/Jüri Önünde Sunum" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Sunum/Jüri Önünde Sunum" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -604,7 +604,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Portfolyo" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Portfolyo" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -612,7 +612,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Proje" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Proje" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -620,7 +620,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Seminer/Çalıştay" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Seminer/Çalıştay" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -628,7 +628,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Sözlü Sınav" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Sözlü Sınav" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -636,7 +636,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Ara Sınav" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Ara Sınav" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -644,7 +644,7 @@
                                 </HBox>
                                 <HBox prefHeight="31.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="26.0" prefWidth="329.0" text="Final Sınavı" />
+                                        <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Final Sınavı" />
                                         <TextField prefHeight="26.0" prefWidth="136.0" />
                                         <TextField prefHeight="26.0" prefWidth="126.0" />
                                         <TextField prefHeight="26.0" prefWidth="135.0" />
@@ -656,22 +656,22 @@
                             <children>
                                 <HBox prefHeight="49.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="53.0" prefWidth="86.0" text="#" />
-                                        <TextField prefHeight="51.0" prefWidth="235.0" text="Program Yeterlilikleri/Çıktıları" />
+                                        <TextField editable="false" prefHeight="53.0" prefWidth="86.0" text="#" />
+                                        <TextField editable="false" prefHeight="51.0" prefWidth="235.0" text="Program Yeterlilikleri/Çıktıları" />
                                         <VBox prefHeight="50.0" prefWidth="414.0">
                                             <children>
                                                 <HBox prefHeight="100.0" prefWidth="200.0">
                                                     <children>
-                                                        <TextField prefHeight="26.0" prefWidth="412.0" text="Katkı Düzeyi" />
+                                                        <TextField editable="false" prefHeight="26.0" prefWidth="412.0" text="Katkı Düzeyi" />
                                                     </children>
                                                 </HBox>
                                                 <HBox prefHeight="100.0" prefWidth="200.0">
                                                     <children>
-                                                        <TextField prefHeight="26.0" prefWidth="95.0" text="1" />
-                                                        <TextField prefHeight="26.0" prefWidth="95.0" text="2" />
-                                                        <TextField prefHeight="26.0" prefWidth="95.0" text="3" />
-                                                        <TextField prefHeight="26.0" prefWidth="87.0" text="4" />
-                                                        <TextField prefHeight="26.0" prefWidth="97.0" text="5" />
+                                                        <TextField editable="false" prefHeight="26.0" prefWidth="95.0" text="1" />
+                                                        <TextField editable="false" prefHeight="26.0" prefWidth="95.0" text="2" />
+                                                        <TextField editable="false" prefHeight="26.0" prefWidth="95.0" text="3" />
+                                                        <TextField editable="false" prefHeight="26.0" prefWidth="87.0" text="4" />
+                                                        <TextField editable="false" prefHeight="26.0" prefWidth="97.0" text="5" />
                                                     </children>
                                                 </HBox>
                                             </children>
@@ -680,7 +680,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="1" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="1" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -691,7 +691,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="2" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="2" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -702,7 +702,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="3" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="3" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -713,7 +713,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="4" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="4" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -724,7 +724,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="5" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="5" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -735,7 +735,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="6" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="6" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -746,7 +746,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="7" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="7" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -757,7 +757,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="8" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="8" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -768,7 +768,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="9" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="9" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -779,7 +779,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="10" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="10" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -790,7 +790,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="11" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="11" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -801,7 +801,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="12" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="12" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -812,7 +812,7 @@
                                 </HBox>
                                 <HBox prefHeight="99.0" prefWidth="730.0">
                                     <children>
-                                        <TextField prefHeight="101.0" prefWidth="86.0" text="13" />
+                                        <TextField editable="false" prefHeight="101.0" prefWidth="86.0" text="13" />
                                         <TextField prefHeight="98.0" prefWidth="233.0" />
                                         <TextField prefHeight="98.0" prefWidth="86.0" />
                                         <TextField prefHeight="98.0" prefWidth="83.0" />
@@ -825,7 +825,7 @@
                         </VBox>
                         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" text="Save" />
+                                <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#saveTurkishSyllabus" text="Save" />
                         <Button mnemonicParsing="false" text="Export" />
                             </children>
                         </HBox>
