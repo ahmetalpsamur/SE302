@@ -498,6 +498,11 @@ public class Controllers implements Initializable,Serializable {
 
     public static ArrayList<Syllabus> syllabusList = new ArrayList<>();
     public int currentIndex;
+    public static String editorname;
+    public static String description;
+    public static String date;
+    public static String time;
+
     @FXML
     private ListView<Syllabus> syllabusListView = new ListView<Syllabus>();
 
@@ -505,10 +510,10 @@ public class Controllers implements Initializable,Serializable {
 
     public void setAssistantTextField(Syllabus syllabus) {
 
-        syllabus.setEditorName(editorNameTextField.getText());
-        syllabus.setEditDescription(editDescriptionTextArea.getText());
-        syllabus.setEditDate(editDateTextField.getText());
-        syllabus.setEditTime(editTimeTextField.getText());
+        syllabus.setEditorName(editorname);
+        syllabus.setEditDescription(description);
+        syllabus.setEditDate(date);
+        syllabus.setEditTime(time);
 
         syllabus.setCourseName(courseNameText.getText());
         syllabus.setCode(codeTextField.getText());
@@ -786,6 +791,14 @@ public class Controllers implements Initializable,Serializable {
     @FXML
     public void saveSyllabusInfo(ActionEvent event) {
         String selectedLanguage = myChoiceBox.getValue();
+
+        editorname = editorNameTextField.getText();
+        description = editDescriptionTextArea.getText();
+        date = editDateTextField.getText();
+        time = editTimeTextField.getText();
+        System.out.println(editorname);
+
+
 
         // Determine the FXML file based on the selected language
         String fxmlFileName = "";
@@ -1386,7 +1399,9 @@ public class Controllers implements Initializable,Serializable {
                 if (empty || item == null) {
                     setText(null);
                 } else {
-                    setText(item.getCourseName());
+                    String allDataView;
+                    allDataView = item.getCourseName()+" "+item.getEditorName()+" "+item.getCourseDescription()+" "+item.getEditDate()+" "+item.getEditDate();
+                    setText(allDataView);
                 }
             }
         });
@@ -1397,6 +1412,7 @@ public class Controllers implements Initializable,Serializable {
                             currentIndex = syllabusListView.getItems().indexOf(syllabusListView.getItems().get(newValue.intValue()));
                             currentSyllabus = syllabusListView.getItems().get(newValue.intValue());
                             System.out.println(currentSyllabus.getCourseName());
+                            System.out.println(currentSyllabus.getEditorName());
                         } else {
                             currentSyllabus = null;
                         }
