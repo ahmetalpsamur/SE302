@@ -22,12 +22,12 @@ public class ConvertToJSON {
 
                 String jsonString = "{\n"
 
-                        + "Changes Detail: "
-                        + "\"Code of the Class\" : \" " + syllabus.getCode() + "\n"
-                        + "\"Editor Name and Surname\" : \" " + syllabus.getEditorName() + "\n"  //add editor info with get
-                        + "\"Reason for Changes\" : \" " + syllabus.getEditDescription() + "\n" // get why change info
-                        + "\"When was change made\" : \" " + syllabus.getEditDate() + "\n" //get date box
-                        + "\"What time was change made\" : \" " + syllabus.getEditTime() + "\n" //get time box
+                       + "Changes Detail: "
+                       + "\"Code of the Class\" : \" " + syllabus.getCode() + "\n"
+                       + "\"Editor Name and Surname\" : \" " + syllabus.getEditorName() + "\n"  //add editor info with get
+                       + "\"Reason for Changes\" : \" " + syllabus.getEditDescription() + "\n" // get why change info
+                       + "\"When was change made\" : \" " + syllabus.getEditDate() + "\n" //get date box
+                       + "\"What time was change made\" : \" " + syllabus.getEditTime() + "\n" //get time box
                     //    + "\"Language of the Syllabus\" : \" " + syllabus.getSyllabusLanguage() + "\n" //get language
 
                         + "  \"courseName\": \"" + syllabus.getCourseName() + "\",\n"
