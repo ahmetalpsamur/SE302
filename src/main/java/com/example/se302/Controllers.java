@@ -11,6 +11,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -1392,19 +1394,42 @@ public class Controllers implements Initializable,Serializable {
         }
 
         syllabusListView.setCellFactory(param -> new ListCell<Syllabus>() {
+                    private HBox createCell(String label, String value) {
+                        Text labelTxt = new Text(label + ": ");
+                        labelTxt.setStyle("-fx-font-weight: bold;");
+                        Text valueTxt = new Text(value);
+                        HBox cell = new HBox(labelTxt, valueTxt);
+                        cell.setStyle("-fx-spacing: 5;");
+                        return cell;
+                    }
+
             @Override
             protected void updateItem(Syllabus item, boolean empty) {
                 super.updateItem(item, empty);
 
                 if (empty || item == null) {
                     setText(null);
+                    setGraphic(null);
                 } else {
-                    String allDataView;
-                    allDataView = item.getCourseName()+" "+item.getEditorName()+" "+item.getCourseDescription()+" "+item.getEditDate()+" "+item.getEditDate();
-                    setText(allDataView);
+                    HBox hbox = new HBox(
+                            createCell("Course",item.getCourseName()),
+                            createCell("Editor",item.getEditorName()),
+                            createCell("Description",item.getCourseDescription()),
+                            createCell("Date",item.getEditDate()),
+                            createCell("Time",item.getEditTime())
+                    );
+                    setGraphic(hbox);
+
                 }
+
+
             }
-        });
+        }
+
+        );
+
+
+
         if (syllabusListView != null) {
             syllabusListView.getSelectionModel().selectedIndexProperty().addListener(
                     (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
