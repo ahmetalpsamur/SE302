@@ -158,11 +158,11 @@
                         </VBox>
                         <VBox prefHeight="126.0" prefWidth="578.0">
                            <children>
-                              <TextField prefHeight="26.0" prefWidth="578.0" text="Core Course" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" text="Major Area Course" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" text="Supportive Course" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" text="Communication and Management Skills Course" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" text="Transferable Skill Course" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Core Course" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Major Area Course" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Supportive Course" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Communication and Management Skills Course" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Transferable Skill Course" />
                            </children>
                         </VBox>
                      </children>
