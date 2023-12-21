@@ -766,7 +766,7 @@ public class Controllers implements Initializable,Serializable {
         } else {
             System.out.println("Turkish Syllabus ListView is Null");
         }
-        saveTurkishSyllabusToFile(); // New method for saving Turkish syllabus
+        saveTurkishSyllabusToFile();
         System.out.println(test.getCourseName());
     }
 
@@ -790,6 +790,8 @@ public class Controllers implements Initializable,Serializable {
         stage.show();
     }
 
+    private boolean isEnglish = true; // Default to English
+
     @FXML
     public void saveSyllabusInfo(ActionEvent event) {
         String selectedLanguage = myChoiceBox.getValue();
@@ -802,36 +804,30 @@ public class Controllers implements Initializable,Serializable {
 
 
 
-        // Determine the FXML file based on the selected language
-        String fxmlFileName = "";
-        if ("Turkish".equals(selectedLanguage)) {
-            fxmlFileName = "turkish-syllabus.fxml";
-        } else if ("English".equals(selectedLanguage)) {
-            fxmlFileName = "syllabus.fxml";
-        }
+        // Set the language flag
+        isEnglish = "English".equals(selectedLanguage);
+
+        // Set the filename based on the language
+        String fxmlFileName = isEnglish ? "syllabus.fxml" : "turkish-syllabus.fxml";
 
         try {
-            // Load the corresponding FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxmlFileName));
             Parent root = fxmlLoader.load();
 
-            // Create a new stage
             Stage stage = new Stage();
             Scene scene = new Scene(root, 760, 750);
 
-            // Set the scene to the stage
             stage.setScene(scene);
             stage.setTitle("Syllabus");
             stage.show();
 
-            // Close the current stage
             Stage currentStage = (Stage) myChoiceBox.getScene().getWindow();
             currentStage.close();
         } catch (IOException e) {
-            // Handle the exception appropriately (e.g., log it, show an error message)
             e.printStackTrace();
         }
     }
+
     public void exportSyllabus(){
         //Add part
         Syllabus test = new Syllabus();

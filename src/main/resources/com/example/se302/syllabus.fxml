@@ -804,7 +804,7 @@
                   </VBox>
                   <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#saveSyllabus" text="Save" />
+                        <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#saveSyllabusInfo" text="Save" />
                         <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#exportSyllabus" text="Export" />
                      </children>
                   </HBox>
