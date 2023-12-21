@@ -1399,7 +1399,7 @@ public class Controllers implements Initializable,Serializable {
                         labelTxt.setStyle("-fx-font-weight: bold;");
                         Text valueTxt = new Text(value);
                         HBox cell = new HBox(labelTxt, valueTxt);
-                        cell.setStyle("-fx-spacing: 5;");
+                        cell.setStyle("-fx-spacing: 3;");
                         return cell;
                     }
 
