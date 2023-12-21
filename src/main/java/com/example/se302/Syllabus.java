@@ -3,7 +3,9 @@ package com.example.se302;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ToggleGroup;
 
+import java.awt.event.MouseEvent;
 import java.io.Serializable;
 
 public class Syllabus implements Serializable {
@@ -47,6 +49,17 @@ public class Syllabus implements Serializable {
 
     public void setEditTime(String editTime) {
         this.editTime = editTime;
+    }
+
+
+    private String courseCategory;
+
+    public String getCourseCategory() {
+        return courseCategory;
+    }
+
+    public void setCourseCategory(String courseCategory) {
+        this.courseCategory = courseCategory;
     }
 
     private String courseName;

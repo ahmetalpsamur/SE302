@@ -30,6 +30,8 @@ public class ConvertToJSON {
                        + "\"What time was change made\" : \" " + syllabus.getEditTime() + "\n" //get time box
                     //    + "\"Language of the Syllabus\" : \" " + syllabus.getSyllabusLanguage() + "\n" //get language
 
+                        + "\n"
+
                         + "  \"courseName\": \"" + syllabus.getCourseName() + "\",\n"
                         + "  \"code\": \"" + syllabus.getCode() + "\",\n"
                         + "  \"fall\": \"" + syllabus.getFall() + "\",\n"
@@ -49,6 +51,7 @@ public class ConvertToJSON {
                         + "  \"courseObjectives\": \"" + syllabus.getCourseObjectives() + "\",\n"
                         + "  \"learningOutcomes\": \"" + syllabus.getLearningOutcomes() + "\",\n"
                         + "  \"courseDescription\": \"" + syllabus.getCourseDescription() + "\",\n"
+                        + "  \"Course Category\": \"" + syllabus.getCourseCategory() + "\",\n"
                         + "  \"Subjects Two\": \"" + syllabus.getSubjectsTwo() + "\",\n"
                         + "  \"Subjects Three\": \"" + syllabus.getSubjectsThree() + "\",\n"
                         + "  \"Subjects Four\": \"" + syllabus.getSubjectsFour() + "\",\n"

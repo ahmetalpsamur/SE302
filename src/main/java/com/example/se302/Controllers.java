@@ -16,6 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javafx.scene.input.MouseEvent;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -92,6 +93,9 @@ public class Controllers implements Initializable,Serializable {
     private TextField courseDescriptionTextField;
 
     //DONT FORGET COURSE NAME AND CHOICE BOX
+
+    @FXML
+    private TextField courseCategory;
 
     @FXML
     private TextField subjectsTextFieldTwo;
@@ -497,12 +501,56 @@ public class Controllers implements Initializable,Serializable {
     @FXML
     private TextField thirteenProgramTextFieldFive;
 
+
     public static ArrayList<Syllabus> syllabusList = new ArrayList<>();
     public int currentIndex;
     public static String editorname;
     public static String description;
     public static String date;
     public static String time;
+
+
+    @FXML
+    private ToggleGroup CourseCategory;
+    @FXML
+    private RadioButton coreCourseCheck;
+
+    @FXML
+    private RadioButton majorCourseCheck;
+
+    @FXML
+    private RadioButton supportCourseCheck;
+
+    @FXML
+    private RadioButton comSkillsCourseCheck;
+
+    @FXML
+    private RadioButton transfSkillCourseCheck;
+
+
+    private String selectedCourseCategory;
+
+
+    public void handleCourseCategorySelection() {
+        if (coreCourseCheck.isSelected()) {
+            selectedCourseCategory = "Core Course";
+            System.out.println("Selected course category is "+selectedCourseCategory);
+        } else if (majorCourseCheck.isSelected()) {
+            selectedCourseCategory = "Major Area Course";
+            System.out.println("Selected course category is "+selectedCourseCategory);
+        } else if (supportCourseCheck.isSelected()) {
+            selectedCourseCategory = "Supportive Course";
+            System.out.println("Selected course category is "+selectedCourseCategory);
+        } else if (comSkillsCourseCheck.isSelected()) {
+            selectedCourseCategory = "Communication and Management Skills Course";
+            System.out.println("Selected course category is "+selectedCourseCategory);
+        } else if (transfSkillCourseCheck.isSelected()) {
+            selectedCourseCategory = "Transferable Skills Course";
+            System.out.println("Selected course category is "+selectedCourseCategory);
+        }
+    }
+
+
 
     @FXML
     private ListView<Syllabus> syllabusListView = new ListView<Syllabus>();
@@ -515,6 +563,9 @@ public class Controllers implements Initializable,Serializable {
         syllabus.setEditDescription(description);
         syllabus.setEditDate(date);
         syllabus.setEditTime(time);
+
+        handleCourseCategorySelection();
+        syllabus.setCourseCategory(selectedCourseCategory);
 
         syllabus.setCourseName(courseNameText.getText());
         syllabus.setCode(codeTextField.getText());
@@ -1647,7 +1698,7 @@ public class Controllers implements Initializable,Serializable {
                         labelTxt.setStyle("-fx-font-weight: bold;");
                         Text valueTxt = new Text(value);
                         HBox cell = new HBox(labelTxt, valueTxt);
-                        cell.setStyle("-fx-spacing: 3;");
+                        cell.setStyle("-fx-spacing: 5;");
                         return cell;
                     }
 
