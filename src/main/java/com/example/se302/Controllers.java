@@ -25,7 +25,8 @@ public class Controllers implements Initializable,Serializable {
 
 
     private Syllabus currentSyllabus;
-    private Syllabus tempSyllabus;
+    private static Syllabus tempSyllabus;
+    private Controllers controller;
 
     //below lines are for language choicebox
 
@@ -35,9 +36,6 @@ public class Controllers implements Initializable,Serializable {
 
     private String[] languages = {"English","Turkish" };
 
-    public void setTempSyllabus(Syllabus syllabus) {
-        this.tempSyllabus = syllabus;
-    }
 
     //For the Detailed Info while adding and editing
     @FXML
@@ -735,6 +733,7 @@ public class Controllers implements Initializable,Serializable {
         stage.show();
     }
 
+
     @FXML
     public void saveSyllabus(ActionEvent event) throws IOException {
         Syllabus test = new Syllabus();
@@ -1071,26 +1070,45 @@ public class Controllers implements Initializable,Serializable {
         }
     }
 
-    public void editSaveButton(ActionEvent event) throws IOException {
+    public void editSaveButton() throws IOException {
+        System.out.println("Selected index for update: " + currentIndex);
 
-        if (tempSyllabus != null) {
+        if (tempSyllabus != null && currentIndex >= 0) {
             tempSyllabus.setCourseName(courseNameText.getText());
+            tempSyllabus.setCode(codeTextField.getText());
+            tempSyllabus.setFall(fallTextField.getText());
 
-            ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+            updateSyllabusList(currentIndex, tempSyllabus);
+            saveSyllabusToFile();
         } else {
-            System.out.println("Please select a syllabus to edit.");
+            System.out.println("No syllabus selected for editing or index is out of range");
         }
     }
+
+    private void updateSyllabusList(int index, Syllabus updatedSyllabus) {
+        if (index >= 0 && index < syllabusList.size()) {
+            syllabusList.set(index, updatedSyllabus);
+
+            syllabusListO.set(index, updatedSyllabus);
+
+            if (syllabusListView != null) {
+                syllabusListView.refresh();
+            }
+        } else {
+            System.out.println("Index out of range: " + index);
+        }
+    }
+
 
 
     public void editSyllabus() throws IOException {
 
         tempSyllabus = currentSyllabus;
+        System.out.println("In editSyllabus, tempSyllabus is set to: " + tempSyllabus);
 
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("edit-syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
-        Controllers controller = fxmlLoader.getController();
-        controller = fxmlLoader.getController();
+        this.controller = fxmlLoader.getController();
         Stage stage = new Stage();
         stage.setTitle("Edit Syllabus");
 
@@ -1381,6 +1399,7 @@ public class Controllers implements Initializable,Serializable {
 
         //for choice box of languages
 
+
         if(myChoiceBox != null) {
     myChoiceBox.getItems().addAll(languages);
     }
@@ -1434,7 +1453,10 @@ public class Controllers implements Initializable,Serializable {
             syllabusListView.getSelectionModel().selectedIndexProperty().addListener(
                     (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
                         if (newValue.intValue() >= 0) {
-                            currentIndex = syllabusListView.getItems().indexOf(syllabusListView.getItems().get(newValue.intValue()));
+
+                            // currentIndex =
+                            // syllabusListView.getItems().indexOf(syllabusListView.getItems().get(newValue.intValue()));
+                            currentIndex = newValue.intValue();
                             currentSyllabus = syllabusListView.getItems().get(newValue.intValue());
                             System.out.println(currentSyllabus.getCourseName());
                             System.out.println(currentSyllabus.getEditorName());
