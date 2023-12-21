@@ -934,7 +934,6 @@ public class Controllers implements Initializable,Serializable {
                 controller.learningOutcomesTextField.setText(tempSyllabus.getLearningOutcomes());
                 controller.courseDescriptionTextField.setText(tempSyllabus.getCourseDescription());
 
-                controller.courseDescriptionTextField.setText(tempSyllabus.getCourseDescription());
 
                 //Since it is only for user to view and not to make changes, make the buttons uneditable
                 controller.coreCourseCheck.setDisable(true);
@@ -1214,6 +1213,27 @@ public class Controllers implements Initializable,Serializable {
             controller.courseObjectivesTextField.setText(tempSyllabus.getCourseObjectives());
             controller.learningOutcomesTextField.setText(tempSyllabus.getLearningOutcomes());
             controller.courseDescriptionTextField.setText(tempSyllabus.getCourseDescription());
+
+        // Set the selected radio button based on the saved category
+        switch (tempSyllabus.getCourseCategory()) {
+            case "Core Course":
+                controller.coreCourseCheck.setSelected(true);
+                break;
+            case "Major Area Course":
+                controller.majorCourseCheck.setSelected(true);
+                break;
+            case "Supportive Course":
+                controller.supportCourseCheck.setSelected(true);
+                break;
+            case "Communication and Management Skills Course":
+                controller.comSkillsCourseCheck.setSelected(true);
+                break;
+            case "Transferable Skills Course":
+                controller.transfSkillCourseCheck.setSelected(true);
+                break;
+
+        }
+
             controller.subjectsTextFieldTwo.setText(tempSyllabus.getSubjectsTwo());
             controller.reqiredMaterialsTextFieldTwo.setText(tempSyllabus.getRequiredMaterialsTwo());
             controller.subjectsTextFieldThree.setText(tempSyllabus.getSubjectsThree());

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="3694.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
+<AnchorPane prefHeight="3694.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
    <children>
       <ScrollPane prefHeight="733.0" prefWidth="750.0">
          <content>
@@ -149,23 +148,46 @@
                   </VBox>
                   <HBox prefHeight="142.0" prefWidth="660.0">
                      <children>
-                        <TextField editable="false" prefHeight="129.0" prefWidth="150.0" text="Course Name" />
+                        <TextField fx:id="courseCategory" editable="false" prefHeight="129.0" prefWidth="150.0" text="Course Category" />
                         <VBox prefHeight="142.0" prefWidth="19.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="40.0" />
-                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
-                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
-                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
-                              <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="20.0" />
+                              <RadioButton fx:id="coreCourseCheck" graphicTextGap="5.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="16.0">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="CourseCategory" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="majorCourseCheck" mnemonicParsing="false" prefHeight="26.0" prefWidth="18.0" toggleGroup="$CourseCategory">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="supportCourseCheck" lineSpacing="1.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="30.0" toggleGroup="$CourseCategory">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="comSkillsCourseCheck" mnemonicParsing="false" prefHeight="21.0" prefWidth="16.0" toggleGroup="$CourseCategory">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="transfSkillCourseCheck" mnemonicParsing="false" prefHeight="26.0" prefWidth="16.0" toggleGroup="$CourseCategory">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </RadioButton>
                            </children>
                         </VBox>
                         <VBox prefHeight="126.0" prefWidth="578.0">
                            <children>
-                              <TextField prefHeight="26.0" prefWidth="578.0" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" />
-                              <TextField prefHeight="26.0" prefWidth="578.0" />
+                              <TextField prefHeight="26.0" prefWidth="578.0" text="Core Course" />
+                              <TextField prefHeight="26.0" prefWidth="578.0" text="Major Area Course" />
+                              <TextField prefHeight="26.0" prefWidth="578.0" text="Supportive Course" />
+                              <TextField prefHeight="26.0" prefWidth="578.0" text="Communication and Management Skills Course" />
+                              <TextField prefHeight="26.0" prefWidth="578.0" text="Transferable Skill Course" />
                            </children>
                         </VBox>
                      </children>
