@@ -25,8 +25,9 @@ public class Controllers implements Initializable,Serializable {
 
 
     private Syllabus currentSyllabus;
-    private static Syllabus tempSyllabus;
     private Controllers controller;
+    private Syllabus currentSyllabus2;
+    private Syllabus tempSyllabus;
 
     //below lines are for language choicebox
 
@@ -1320,6 +1321,234 @@ public class Controllers implements Initializable,Serializable {
         stage.show();
 
     }
+
+    public void compareSyllabus() throws IOException {
+        if (currentSyllabus != null && currentSyllabus2 != null) {
+            showSyllabusDetails();
+        } else {
+            System.out.println("Please select a syllabus to compare.");
+        }
+    }
+    private void showSyllabusDetails() throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("compare-syllabus.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        Controllers controller = fxmlLoader.getController();
+        stage.setTitle("Compare Syllabuses");
+        fillSyllabusDetails(controller);
+        stage.setScene(scene);
+        stage.show();
+    }
+    private void fillSyllabusDetails(Controllers controller) {
+        compareAndSetTextField(controller.courseNameText, currentSyllabus.getCourseName(), currentSyllabus2.getCourseName());
+        compareAndSetTextField(controller.codeTextField, currentSyllabus.getCode(), currentSyllabus2.getCode());
+        compareAndSetTextField(controller.fallTextField, currentSyllabus.getFall(), currentSyllabus2.getFall());
+        compareAndSetTextField(controller.springTextField, currentSyllabus.getSpring(), currentSyllabus2.getSpring());
+        compareAndSetTextField(controller.theoryTextField, currentSyllabus.getTheory(), currentSyllabus2.getTheory());
+        compareAndSetTextField(controller.labTextField, currentSyllabus.getLab(), currentSyllabus2.getLab());
+        compareAndSetTextField(controller.localCreditTextField, currentSyllabus.getLocalCredit(), currentSyllabus2.getLocalCredit());
+        compareAndSetTextField(controller.ectsTextField, currentSyllabus.getEcts(), currentSyllabus2.getEcts());
+        compareAndSetTextField(controller.prerequisitesTextField, currentSyllabus.getPrerequisites(), currentSyllabus2.getPrerequisites());
+        compareAndSetTextField(controller.courseLanguageTextField, currentSyllabus.getCourseLanguage(), currentSyllabus2.getCourseLanguage());
+        compareAndSetTextField(controller.courseTypeTextField, currentSyllabus.getCourseType(), currentSyllabus2.getCourseType());
+        compareAndSetTextField(controller.courseLevelTextField, currentSyllabus.getCourseLevel(), currentSyllabus2.getCourseLevel());
+        compareAndSetTextField(controller.teachingMethodsTextField, currentSyllabus.getTeachingMethods(), currentSyllabus2.getTeachingMethods());
+        compareAndSetTextField(controller.courseCoordinatorTextField, currentSyllabus.getCourseCoordinator(), currentSyllabus2.getCourseCoordinator());
+        compareAndSetTextField(controller.courseCoordinatorTextField2, currentSyllabus.getCourseCoordinator2(), currentSyllabus2.getCourseCoordinator2());
+        compareAndSetTextField(controller.assistantTextField, currentSyllabus.getAssistant(), currentSyllabus2.getAssistant());
+        compareAndSetTextField(controller.courseObjectivesTextField, currentSyllabus.getCourseObjectives(), currentSyllabus2.getCourseObjectives());
+        compareAndSetTextField(controller.learningOutcomesTextField, currentSyllabus.getLearningOutcomes(), currentSyllabus2.getLearningOutcomes());
+        compareAndSetTextField(controller.courseDescriptionTextField, currentSyllabus.getCourseDescription(), currentSyllabus2.getCourseDescription());
+        compareAndSetTextField(controller.subjectsTextFieldTwo, currentSyllabus.getSubjectsTwo(), currentSyllabus2.getSubjectsTwo());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldTwo, currentSyllabus.getRequiredMaterialsTwo(), currentSyllabus2.getRequiredMaterialsTwo());
+        compareAndSetTextField(controller.subjectsTextFieldThree, currentSyllabus.getSubjectsThree(), currentSyllabus2.getSubjectsThree());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldThree, currentSyllabus.getRequiredMaterialsThree(), currentSyllabus2.getRequiredMaterialsThree());
+        compareAndSetTextField(controller.subjectsTextFieldFour, currentSyllabus.getSubjectsFour(), currentSyllabus2.getSubjectsFour());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldFour, currentSyllabus.getRequiredMaterialsFour(), currentSyllabus2.getRequiredMaterialsFour());
+        compareAndSetTextField(controller.subjectsTextFieldFive, currentSyllabus.getSubjectsFive(), currentSyllabus2.getSubjectsFive());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldFive, currentSyllabus.getRequiredMaterialsFive(), currentSyllabus2.getRequiredMaterialsFive());
+        compareAndSetTextField(controller.subjectsTextFieldSix, currentSyllabus.getSubjectsSix(), currentSyllabus2.getSubjectsSix());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldSix, currentSyllabus.getRequiredMaterialsSix(), currentSyllabus2.getRequiredMaterialsSix());
+        compareAndSetTextField(controller.subjectsTextFieldSeven, currentSyllabus.getSubjectsSeven(), currentSyllabus2.getSubjectsSeven());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldSeven, currentSyllabus.getRequiredMaterialsSeven(), currentSyllabus2.getRequiredMaterialsSeven());
+        compareAndSetTextField(controller.subjectsTextFieldEight, currentSyllabus.getSubjectsEight(), currentSyllabus2.getSubjectsEight());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldEight, currentSyllabus.getRequiredMaterialsEight(), currentSyllabus2.getRequiredMaterialsEight());
+        compareAndSetTextField(controller.subjectsTextFieldNine, currentSyllabus.getSubjectsNine(), currentSyllabus2.getSubjectsNine());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldNine, currentSyllabus.getRequiredMaterialsNine(), currentSyllabus2.getRequiredMaterialsNine());
+        compareAndSetTextField(controller.subjectsTextFieldTen, currentSyllabus.getSubjectsTen(), currentSyllabus2.getSubjectsTen());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldTen, currentSyllabus.getRequiredMaterialsTen(), currentSyllabus2.getRequiredMaterialsTen());
+        compareAndSetTextField(controller.subjectsTextFieldEleven, currentSyllabus.getSubjectsEleven(), currentSyllabus2.getSubjectsEleven());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldEleven, currentSyllabus.getRequiredMaterialsEleven(), currentSyllabus2.getRequiredMaterialsEleven());
+        compareAndSetTextField(controller.subjectsTextFieldTwelve, currentSyllabus.getSubjectsTwelve(), currentSyllabus2.getSubjectsTwelve());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldTwelve, currentSyllabus.getRequiredMaterialsTwelve(), currentSyllabus2.getRequiredMaterialsTwelve());
+        compareAndSetTextField(controller.subjectsTextFieldThirteen, currentSyllabus.getSubjectsThirteen(), currentSyllabus2.getSubjectsThirteen());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldThirteen, currentSyllabus.getRequiredMaterialsThirteen(), currentSyllabus2.getRequiredMaterialsThirteen());
+        compareAndSetTextField(controller.subjectsTextFieldFourteen, currentSyllabus.getSubjectsFourteen(), currentSyllabus2.getSubjectsFourteen());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldFourteen, currentSyllabus.getRequiredMaterialsFourteen(), currentSyllabus2.getRequiredMaterialsFourteen());
+        compareAndSetTextField(controller.subjectsTextFieldFifteen, currentSyllabus.getSubjectsFifteen(), currentSyllabus2.getSubjectsFifteen());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldFifteen, currentSyllabus.getRequiredMaterialsFifteen(), currentSyllabus2.getRequiredMaterialsFifteen());
+        compareAndSetTextField(controller.subjectsTextFieldSixteen, currentSyllabus.getSubjectsSixteen(), currentSyllabus2.getSubjectsSixteen());
+        compareAndSetTextField(controller.reqiredMaterialsTextFieldSixteen, currentSyllabus.getRequiredMaterialsSixteen(), currentSyllabus2.getRequiredMaterialsSixteen());
+        compareAndSetTextField(controller.participationTextFieldOne, currentSyllabus.getParticipationOne(), currentSyllabus2.getParticipationOne());
+        compareAndSetTextField(controller.participationTextFieldTwo, currentSyllabus.getParticipationTwo(), currentSyllabus2.getParticipationTwo());
+        compareAndSetTextField(controller.participationTextFieldThree, currentSyllabus.getParticipationThree(), currentSyllabus2.getParticipationThree());
+        compareAndSetTextField(controller.participationTextFieldFour, currentSyllabus.getParticipationFour(), currentSyllabus2.getParticipationFour());
+        compareAndSetTextField(controller.participationTextFieldFive, currentSyllabus.getParticipationFive(), currentSyllabus2.getParticipationFive());
+        compareAndSetTextField(controller.participationTextFieldSix, currentSyllabus.getParticipationSix(), currentSyllabus2.getParticipationSix());
+        compareAndSetTextField(controller.participationTextFieldSeven, currentSyllabus.getParticipationSeven(), currentSyllabus2.getParticipationSeven());
+        compareAndSetTextField(controller.participationTextFieldEight, currentSyllabus.getParticipationEight(), currentSyllabus2.getParticipationEight());
+        compareAndSetTextField(controller.laboratoryTextFieldOne, currentSyllabus.getLaboratoryOne(), currentSyllabus2.getLaboratoryOne());
+        compareAndSetTextField(controller.laboratoryTextFieldTwo, currentSyllabus.getLaboratoryTwo(), currentSyllabus2.getLaboratoryTwo());
+        compareAndSetTextField(controller.laboratoryTextFieldThree, currentSyllabus.getLaboratoryThree(), currentSyllabus2.getLaboratoryThree());
+        compareAndSetTextField(controller.laboratoryTextFieldFour, currentSyllabus.getLaboratoryFour(), currentSyllabus2.getLaboratoryFour());
+        compareAndSetTextField(controller.laboratoryTextFieldFive, currentSyllabus.getLaboratoryFive(), currentSyllabus2.getLaboratoryFive());
+        compareAndSetTextField(controller.laboratoryTextFieldSix, currentSyllabus.getLaboratorySix(), currentSyllabus2.getLaboratorySix());
+        compareAndSetTextField(controller.laboratoryTextFieldSeven, currentSyllabus.getLaboratorySeven(), currentSyllabus2.getLaboratorySeven());
+        compareAndSetTextField(controller.laboratoryTextFieldEight, currentSyllabus.getLaboratoryEight(), currentSyllabus2.getLaboratoryEight());
+        compareAndSetTextField(controller.laboratoryTextFieldNine, currentSyllabus.getLaboratoryNine(), currentSyllabus2.getLaboratoryNine());
+        compareAndSetTextField(controller.fieldWorkTextFieldOne, currentSyllabus.getFieldWorkOne(), currentSyllabus2.getFieldWorkOne());
+        compareAndSetTextField(controller.fieldWorkTextFieldTwo, currentSyllabus.getFieldWorkTwo(), currentSyllabus2.getFieldWorkTwo());
+        compareAndSetTextField(controller.fieldWorkTextFieldThree, currentSyllabus.getFieldWorkThree(), currentSyllabus2.getFieldWorkThree());
+        compareAndSetTextField(controller.fieldWorkTextFieldFour, currentSyllabus.getFieldWorkFour(), currentSyllabus2.getFieldWorkFour());
+        compareAndSetTextField(controller.fieldWorkTextFieldFive, currentSyllabus.getFieldWorkFive(), currentSyllabus2.getFieldWorkFive());
+        compareAndSetTextField(controller.fieldWorkTextFieldSix, currentSyllabus.getFieldWorkSix(), currentSyllabus2.getFieldWorkSix());
+        compareAndSetTextField(controller.fieldWorkTextFieldSeven, currentSyllabus.getFieldWorkSeven(), currentSyllabus2.getFieldWorkSeven());
+        compareAndSetTextField(controller.fieldWorkTextFieldEight, currentSyllabus.getFieldWorkEight(), currentSyllabus2.getFieldWorkEight());
+        compareAndSetTextField(controller.fieldWorkTextFieldNine, currentSyllabus.getFieldWorkNine(), currentSyllabus2.getFieldWorkNine());
+        compareAndSetTextField(controller.quiz2TextFieldOne, currentSyllabus.getQuiz2One(), currentSyllabus2.getQuiz2One());
+        compareAndSetTextField(controller.quiz2TextFieldTwo, currentSyllabus.getQuiz2Two(), currentSyllabus2.getQuiz2Two());
+        compareAndSetTextField(controller.quiz2TextFieldThree, currentSyllabus.getQuiz2Three(), currentSyllabus2.getQuiz2Three());
+        compareAndSetTextField(controller.quizTextFieldFour, currentSyllabus.getQuizFour(), currentSyllabus2.getQuizFour());
+        compareAndSetTextField(controller.quizTextFieldFive, currentSyllabus.getQuizFive(), currentSyllabus2.getQuizFive());
+        compareAndSetTextField(controller.quizTextFieldSix, currentSyllabus.getQuizSix(), currentSyllabus2.getQuizSix());
+        compareAndSetTextField(controller.quizTextFieldSeven, currentSyllabus.getQuizSeven(), currentSyllabus2.getQuizSeven());
+        compareAndSetTextField(controller.quizTextFieldEight, currentSyllabus.getQuizEight(), currentSyllabus2.getQuizEight());
+        compareAndSetTextField(controller.quizTextFieldNine, currentSyllabus.getQuizNine(), currentSyllabus2.getQuizNine());
+        compareAndSetTextField(controller.coursehourTextFieldOne, currentSyllabus.getCourseHourOne(), currentSyllabus2.getCourseHourOne());
+        compareAndSetTextField(controller.coursehourTextFieldTwo, currentSyllabus.getCourseHourTwo(), currentSyllabus2.getCourseHourTwo());
+        compareAndSetTextField(controller.labhourTextFieldOne, currentSyllabus.getLabhourOne(), currentSyllabus2.getLabhourOne());
+        compareAndSetTextField(controller.labhourTextFieldTwo, currentSyllabus.getLabhourTwo(), currentSyllabus2.getLabhourTwo());
+        compareAndSetTextField(controller.StudyhourTextFieldOne, currentSyllabus.getStudyhourOne(), currentSyllabus2.getStudyhourOne());
+        compareAndSetTextField(controller.StudyhourTextFieldTwo, currentSyllabus.getStudyhourTwo(), currentSyllabus2.getStudyhourTwo());
+        compareAndSetTextField(controller.StudyhourTextFieldThree, currentSyllabus.getStudyhourThree(), currentSyllabus2.getStudyhourThree());
+        compareAndSetTextField(controller.FieldworkTextFieldOne, currentSyllabus.getFieldworkOne(), currentSyllabus2.getFieldworkOne());
+        compareAndSetTextField(controller.FieldworkTextFieldTwo, currentSyllabus.getFieldworkTwo(), currentSyllabus2.getFieldworkTwo());
+        compareAndSetTextField(controller.FieldworkTextFieldThree, currentSyllabus.getFieldworkThree(), currentSyllabus2.getFieldworkThree());
+        compareAndSetTextField(controller.quizTextFieldOne, currentSyllabus.getQuizOne(), currentSyllabus2.getQuizOne());
+        compareAndSetTextField(controller.quizTextFieldTwo, currentSyllabus.getQuizTwo(), currentSyllabus2.getQuizTwo());
+        compareAndSetTextField(controller.quizTextFieldThree, currentSyllabus.getQuizThree(), currentSyllabus2.getQuizThree());
+        compareAndSetTextField(controller.homeworkTextFieldOne, currentSyllabus.getHomeworkOne(), currentSyllabus2.getHomeworkOne());
+        compareAndSetTextField(controller.homeworkTextFieldTwo, currentSyllabus.getHomeworkTwo(), currentSyllabus2.getHomeworkTwo());
+        compareAndSetTextField(controller.homeworkTextFieldThree, currentSyllabus.getHomeworkThree(), currentSyllabus2.getHomeworkThree());
+        compareAndSetTextField(controller.presentationTextFieldOne, currentSyllabus.getPresentationOne(), currentSyllabus2.getPresentationOne());
+        compareAndSetTextField(controller.presentationTextFieldTwo, currentSyllabus.getPresentationTwo(), currentSyllabus2.getPresentationTwo());
+        compareAndSetTextField(controller.presentationTextFieldThree, currentSyllabus.getPresentationThree(), currentSyllabus2.getPresentationThree());
+        compareAndSetTextField(controller.projectTextFieldOne, currentSyllabus.getProjectOne(), currentSyllabus2.getProjectOne());
+        compareAndSetTextField(controller.projectTextFieldTwo, currentSyllabus.getProjectTwo(), currentSyllabus2.getProjectTwo());
+        compareAndSetTextField(controller.projectTextFieldThree, currentSyllabus.getProjectThree(), currentSyllabus2.getProjectThree());
+        compareAndSetTextField(controller.portfolioTextFieldOne, currentSyllabus.getPortfolioOne(), currentSyllabus2.getPortfolioOne());
+        compareAndSetTextField(controller.portfolioTextFieldTwo, currentSyllabus.getPortfolioTwo(), currentSyllabus2.getPortfolioTwo());
+        compareAndSetTextField(controller.portfolioTextFieldThree, currentSyllabus.getPortfolioThree(), currentSyllabus2.getPortfolioThree());
+        compareAndSetTextField(controller.seminarTextFieldOne, currentSyllabus.getSeminarOne(), currentSyllabus2.getSeminarOne());
+        compareAndSetTextField(controller.seminarTextFieldTwo, currentSyllabus.getSeminarTwo(), currentSyllabus2.getSeminarTwo());
+        compareAndSetTextField(controller.seminarTextFieldThree, currentSyllabus.getSeminarThree(), currentSyllabus2.getSeminarThree());
+        compareAndSetTextField(controller.oralTextFieldOne, currentSyllabus.getOralOne(), currentSyllabus2.getOralOne());
+        compareAndSetTextField(controller.oralTextFieldTwo, currentSyllabus.getOralTwo(), currentSyllabus2.getOralTwo());
+        compareAndSetTextField(controller.oralTextFieldThree, currentSyllabus.getOralThree(), currentSyllabus2.getOralThree());
+        compareAndSetTextField(controller.midtermTextFieldOne, currentSyllabus.getMidtermOne(), currentSyllabus2.getMidtermOne());
+        compareAndSetTextField(controller.midtermTextFieldTwo, currentSyllabus.getMidtermTwo(), currentSyllabus2.getMidtermTwo());
+        compareAndSetTextField(controller.midtermTextFieldThree, currentSyllabus.getMidtermThree(), currentSyllabus2.getMidtermThree());
+        compareAndSetTextField(controller.finalTextFieldOne, currentSyllabus.getFinalOne(), currentSyllabus2.getFinalOne());
+        compareAndSetTextField(controller.finalTextFieldTwo, currentSyllabus.getFinalTwo(), currentSyllabus2.getFinalTwo());
+        compareAndSetTextField(controller.finalTextFieldThree, currentSyllabus.getFinalThree(), currentSyllabus2.getFinalThree());
+        compareAndSetTextField(controller.oneProgramTextFieldZero, currentSyllabus.getOneProgramZero(), currentSyllabus2.getOneProgramZero());
+        compareAndSetTextField(controller.oneProgramTextFieldOne, currentSyllabus.getOneProgramOne(), currentSyllabus2.getOneProgramOne());
+        compareAndSetTextField(controller.oneProgramTextFieldTwo, currentSyllabus.getOneProgramTwo(), currentSyllabus2.getOneProgramTwo());
+        compareAndSetTextField(controller.oneProgramTextFieldThree, currentSyllabus.getOneProgramThree(), currentSyllabus2.getOneProgramThree());
+        compareAndSetTextField(controller.oneProgramTextFieldFour, currentSyllabus.getOneProgramFour(), currentSyllabus2.getOneProgramFour());
+        compareAndSetTextField(controller.oneProgramTextFieldFive, currentSyllabus.getOneProgramFive(), currentSyllabus2.getOneProgramFive());
+        compareAndSetTextField(controller.twoProgramTextFieldZero, currentSyllabus.getTwoProgramZero(), currentSyllabus2.getTwoProgramZero());
+        compareAndSetTextField(controller.twoProgramTextFieldOne, currentSyllabus.getTwoProgramOne(), currentSyllabus2.getTwoProgramOne());
+        compareAndSetTextField(controller.twoProgramTextFieldTwo, currentSyllabus.getTwoProgramTwo(), currentSyllabus2.getTwoProgramTwo());
+        compareAndSetTextField(controller.twoProgramTextFieldThree, currentSyllabus.getTwoProgramThree(), currentSyllabus2.getTwoProgramThree());
+        compareAndSetTextField(controller.twoProgramTextFieldFour, currentSyllabus.getTwoProgramFour(), currentSyllabus2.getTwoProgramFour());
+        compareAndSetTextField(controller.twoProgramTextFieldFive, currentSyllabus.getTwoProgramFive(), currentSyllabus2.getTwoProgramFive());
+        compareAndSetTextField(controller.threeProgramTextFieldZero, currentSyllabus.getThreeProgramZero(), currentSyllabus2.getThreeProgramZero());
+        compareAndSetTextField(controller.threeProgramTextFieldOne, currentSyllabus.getThreeProgramOne(), currentSyllabus2.getThreeProgramOne());
+        compareAndSetTextField(controller.threeProgramTextFieldTwo, currentSyllabus.getThreeProgramTwo(), currentSyllabus2.getThreeProgramTwo());
+        compareAndSetTextField(controller.threeProgramTextFieldThree, currentSyllabus.getThreeProgramThree(), currentSyllabus2.getThreeProgramThree());
+        compareAndSetTextField(controller.threeProgramTextFieldFour, currentSyllabus.getThreeProgramFour(), currentSyllabus2.getThreeProgramFour());
+        compareAndSetTextField(controller.threeProgramTextFieldFive, currentSyllabus.getThreeProgramFive(), currentSyllabus2.getThreeProgramFive());
+        compareAndSetTextField(controller.fourProgramTextFieldZero, currentSyllabus.getFourProgramZero(), currentSyllabus2.getFourProgramZero());
+        compareAndSetTextField(controller.fourProgramTextFieldOne, currentSyllabus.getFourProgramOne(), currentSyllabus2.getFourProgramOne());
+        compareAndSetTextField(controller.fourProgramTextFieldTwo, currentSyllabus.getFourProgramTwo(), currentSyllabus2.getFourProgramTwo());
+        compareAndSetTextField(controller.fourProgramTextFieldThree, currentSyllabus.getFourProgramThree(), currentSyllabus2.getFourProgramThree());
+        compareAndSetTextField(controller.fourProgramTextFieldFour, currentSyllabus.getFourProgramFour(), currentSyllabus2.getFourProgramFour());
+        compareAndSetTextField(controller.fourProgramTextFieldFive, currentSyllabus.getFourProgramFive(), currentSyllabus2.getFourProgramFive());
+        compareAndSetTextField(controller.fiveProgramTextFieldZero, currentSyllabus.getFiveProgramZero(), currentSyllabus2.getFiveProgramZero());
+        compareAndSetTextField(controller.fiveProgramTextFieldOne, currentSyllabus.getFiveProgramOne(), currentSyllabus2.getFiveProgramOne());
+        compareAndSetTextField(controller.fiveProgramTextFieldTwo, currentSyllabus.getFiveProgramTwo(), currentSyllabus2.getFiveProgramTwo());
+        compareAndSetTextField(controller.fiveProgramTextFieldThree, currentSyllabus.getFiveProgramThree(), currentSyllabus2.getFiveProgramThree());
+        compareAndSetTextField(controller.fiveProgramTextFieldFour, currentSyllabus.getFiveProgramFour(), currentSyllabus2.getFiveProgramFour());
+        compareAndSetTextField(controller.fiveProgramTextFieldFive, currentSyllabus.getFiveProgramFive(), currentSyllabus2.getFiveProgramFive());
+        compareAndSetTextField(controller.sixProgramTextFieldZero, currentSyllabus.getSixProgramZero(), currentSyllabus2.getSixProgramZero());
+        compareAndSetTextField(controller.sixProgramTextFieldOne, currentSyllabus.getSixProgramOne(), currentSyllabus2.getSixProgramOne());
+        compareAndSetTextField(controller.sixProgramTextFieldTwo, currentSyllabus.getSixProgramTwo(), currentSyllabus2.getSixProgramTwo());
+        compareAndSetTextField(controller.sixProgramTextFieldThree, currentSyllabus.getSixProgramThree(), currentSyllabus2.getSixProgramThree());
+        compareAndSetTextField(controller.sixProgramTextFieldFour, currentSyllabus.getSixProgramFour(), currentSyllabus2.getSixProgramFour());
+        compareAndSetTextField(controller.sixProgramTextFieldFive, currentSyllabus.getSixProgramFive(), currentSyllabus2.getSixProgramFive());
+        compareAndSetTextField(controller.sevenProgramTextFieldZero, currentSyllabus.getSevenProgramZero(), currentSyllabus2.getSevenProgramZero());
+        compareAndSetTextField(controller.sevenProgramTextFieldOne, currentSyllabus.getSevenProgramOne(), currentSyllabus2.getSevenProgramOne());
+        compareAndSetTextField(controller.sevenProgramTextFieldTwo, currentSyllabus.getSevenProgramTwo(), currentSyllabus2.getSevenProgramTwo());
+        compareAndSetTextField(controller.sevenProgramTextFieldThree, currentSyllabus.getSevenProgramThree(), currentSyllabus2.getSevenProgramThree());
+        compareAndSetTextField(controller.sevenProgramTextFieldFour, currentSyllabus.getSevenProgramFour(), currentSyllabus2.getSevenProgramFour());
+        compareAndSetTextField(controller.sevenProgramTextFieldFive, currentSyllabus.getSevenProgramFive(), currentSyllabus2.getSevenProgramFive());
+        compareAndSetTextField(controller.eightProgramTextFieldZero, currentSyllabus.getEightProgramZero(), currentSyllabus2.getEightProgramZero());
+        compareAndSetTextField(controller.eightProgramTextFieldOne, currentSyllabus.getEightProgramOne(), currentSyllabus2.getEightProgramOne());
+        compareAndSetTextField(controller.eightProgramTextFieldTwo, currentSyllabus.getEightProgramTwo(), currentSyllabus2.getEightProgramTwo());
+        compareAndSetTextField(controller.eightProgramTextFieldThree, currentSyllabus.getEightProgramThree(), currentSyllabus2.getEightProgramThree());
+        compareAndSetTextField(controller.eightProgramTextFieldFour, currentSyllabus.getEightProgramFour(), currentSyllabus2.getEightProgramFour());
+        compareAndSetTextField(controller.eightProgramTextFieldFive, currentSyllabus.getEightProgramFive(), currentSyllabus2.getEightProgramFive());
+        compareAndSetTextField(controller.nineProgramTextFieldZero, currentSyllabus.getNineProgramZero(), currentSyllabus2.getNineProgramZero());
+        compareAndSetTextField(controller.nineProgramTextFieldOne, currentSyllabus.getNineProgramOne(), currentSyllabus2.getNineProgramOne());
+        compareAndSetTextField(controller.nineProgramTextFieldTwo, currentSyllabus.getNineProgramTwo(), currentSyllabus2.getNineProgramTwo());
+        compareAndSetTextField(controller.nineProgramTextFieldThree, currentSyllabus.getNineProgramThree(), currentSyllabus2.getNineProgramThree());
+        compareAndSetTextField(controller.nineProgramTextFieldFour, currentSyllabus.getNineProgramFour(), currentSyllabus2.getNineProgramFour());
+        compareAndSetTextField(controller.nineProgramTextFieldFive, currentSyllabus.getNineProgramFive(), currentSyllabus2.getNineProgramFive());
+        compareAndSetTextField(controller.tenProgramTextFieldZero, currentSyllabus.getTenProgramZero(), currentSyllabus2.getTenProgramZero());
+        compareAndSetTextField(controller.tenProgramTextFieldOne, currentSyllabus.getTenProgramOne(), currentSyllabus2.getTenProgramOne());
+        compareAndSetTextField(controller.tenProgramTextFieldTwo, currentSyllabus.getTenProgramTwo(), currentSyllabus2.getTenProgramTwo());
+        compareAndSetTextField(controller.tenProgramTextFieldThree, currentSyllabus.getTenProgramThree(), currentSyllabus2.getTenProgramThree());
+        compareAndSetTextField(controller.tenProgramTextFieldFour, currentSyllabus.getTenProgramFour(), currentSyllabus2.getTenProgramFour());
+        compareAndSetTextField(controller.tenProgramTextFieldFive, currentSyllabus.getTenProgramFive(), currentSyllabus2.getTenProgramFive());
+        compareAndSetTextField(controller.elevenProgramTextFieldZero, currentSyllabus.getElevenProgramZero(), currentSyllabus2.getElevenProgramZero());
+        compareAndSetTextField(controller.elevenProgramTextFieldOne, currentSyllabus.getElevenProgramOne(), currentSyllabus2.getElevenProgramOne());
+        compareAndSetTextField(controller.elevenProgramTextFieldTwo, currentSyllabus.getElevenProgramTwo(), currentSyllabus2.getElevenProgramTwo());
+        compareAndSetTextField(controller.elevenProgramTextFieldThree, currentSyllabus.getElevenProgramThree(), currentSyllabus2.getElevenProgramThree());
+        compareAndSetTextField(controller.elevenProgramTextFieldFour, currentSyllabus.getElevenProgramFour(), currentSyllabus2.getElevenProgramFour());
+        compareAndSetTextField(controller.elevenProgramTextFieldFive, currentSyllabus.getElevenProgramFive(), currentSyllabus2.getElevenProgramFive());
+        compareAndSetTextField(controller.twelveProgramTextFieldZero, currentSyllabus.getTwelveProgramZero(), currentSyllabus2.getTwelveProgramZero());
+        compareAndSetTextField(controller.twelveProgramTextFieldOne, currentSyllabus.getTwelveProgramOne(), currentSyllabus2.getTwelveProgramOne());
+        compareAndSetTextField(controller.twelveProgramTextFieldTwo, currentSyllabus.getTwelveProgramTwo(), currentSyllabus2.getTwelveProgramTwo());
+        compareAndSetTextField(controller.twelveProgramTextFieldThree, currentSyllabus.getTwelveProgramThree(), currentSyllabus2.getTwelveProgramThree());
+        compareAndSetTextField(controller.twelveProgramTextFieldFour, currentSyllabus.getTwelveProgramFour(), currentSyllabus2.getTwelveProgramFour());
+        compareAndSetTextField(controller.twelveProgramTextFieldFive, currentSyllabus.getTwelveProgramFive(), currentSyllabus2.getTwelveProgramFive());
+        compareAndSetTextField(controller.thirteenProgramTextFieldZero, currentSyllabus.getThirteenProgramZero(), currentSyllabus2.getThirteenProgramZero());
+        compareAndSetTextField(controller.thirteenProgramTextFieldOne, currentSyllabus.getThirteenProgramOne(), currentSyllabus2.getThirteenProgramOne());
+        compareAndSetTextField(controller.thirteenProgramTextFieldTwo, currentSyllabus.getThirteenProgramTwo(), currentSyllabus2.getThirteenProgramTwo());
+        compareAndSetTextField(controller.thirteenProgramTextFieldThree, currentSyllabus.getThirteenProgramThree(), currentSyllabus2.getThirteenProgramThree());
+        compareAndSetTextField(controller.thirteenProgramTextFieldFour, currentSyllabus.getThirteenProgramFour(), currentSyllabus2.getThirteenProgramFour());
+        compareAndSetTextField(controller.thirteenProgramTextFieldFive, currentSyllabus.getThirteenProgramFive(), currentSyllabus2.getThirteenProgramFive());
+    }
+    private void compareAndSetTextField(TextField textField, String value, String otherValue) {
+        textField.setText(value);
+        if (!value.equals(otherValue)) {
+            textField.setStyle("-fx-text-fill: black; -fx-font-weight: bold;");
+        } else {
+            textField.setStyle("-fx-text-fill: grey;");
+        }
+    }
+
 
 
     public void loadSyllabusInformation() {
