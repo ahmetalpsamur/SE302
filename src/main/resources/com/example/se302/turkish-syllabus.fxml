@@ -24,43 +24,44 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextField editable="false" text="Code" />
+                              <TextField editable="false" text="Kodu" />
                               <TextField fx:id="codeTextField" prefHeight="73.0" prefWidth="100.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextField editable="false" text="Fall" />
+                              <TextField editable="false" text="Güz" />
                               <TextField fx:id="fallTextField" prefHeight="73.0" prefWidth="100.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextField editable="false" text="Spring" />
+                              <TextField editable="false" text="Bahar" />
                               <TextField fx:id="springTextField" prefHeight="73.0" prefWidth="100.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextField editable="false" text="Theory" />
+                              <TextField editable="false" text="Teori" />
                               <TextField fx:id="theoryTextField" prefHeight="73.0" prefWidth="100.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextField editable="false" text="Application/Lab" />
+                              <TextField editable="false" text="Uygulama/Lab" />
                               <TextField fx:id="labTextField" prefHeight="73.0" prefWidth="100.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextField editable="false" text="Local Credits" />
+                              <TextField editable="false" text="Yerel
+Kredi" />
                               <TextField fx:id="localCreditTextField" prefHeight="73.0" prefWidth="100.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextField editable="false" text="ECTS" />
+                              <TextField editable="false" text="AKTS" />
                               <TextField fx:id="ectsTextField" prefHeight="73.0" prefWidth="100.0" />
                            </children>
                         </VBox>
@@ -70,31 +71,31 @@
                      <children>
                         <HBox prefHeight="28.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Prerequisites" />
+                              <TextField editable="false" text="Ön-koşul(lar)" />
                               <TextField fx:id="prerequisitesTextField" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Course Language" />
+                              <TextField editable="false" text="Dersin Dili" />
                               <TextField fx:id="courseLanguageTextField" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="22.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Course Type" />
+                              <TextField editable="false" text="Dersin Türü" />
                               <TextField fx:id="courseTypeTextField" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="27.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Course Level " />
+                              <TextField editable="false" text="Dersin Düzeyi " />
                               <TextField fx:id="courseLevelTextField" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="27.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Teaching Methods" />
+                              <TextField editable="false" text="Dersin Veriliş Şekli" />
                               <TextField fx:id="teachingMethodsTextField" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
@@ -104,19 +105,19 @@
                      <children>
                         <HBox prefHeight="28.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Course Coordinator" />
+                              <TextField editable="false" text="Dersin Koordinatörü" />
                               <TextField fx:id="courseCoordinatorTextField" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Course Coordinator" />
+                              <TextField editable="false" text="Öğretim Eleman(lar)ı" />
                               <TextField fx:id="courseCoordinatorTextField2" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="22.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Assistant(s)" />
+                              <TextField editable="false" text="Yardımcı(lar)ı" />
                               <TextField fx:id="assistantTextField" prefHeight="26.0" prefWidth="570.0" />
                            </children>
                         </HBox>
@@ -126,19 +127,20 @@
                      <children>
                         <HBox prefHeight="58.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="59.0" prefWidth="150.0" text="Course Objectives" />
+                              <TextField editable="false" prefHeight="59.0" prefWidth="150.0" text="Dersin Amacı
+" />
                               <TextField fx:id="courseObjectivesTextField" prefHeight="65.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="98.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="99.0" prefWidth="150.0" text="Learning Outcomes" />
+                              <TextField editable="false" prefHeight="99.0" prefWidth="150.0" text="Öğrenme Çıktıları" />
                               <TextField fx:id="learningOutcomesTextField" prefHeight="101.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="38.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="34.0" prefWidth="150.0" text="Course Description" />
+                              <TextField editable="false" prefHeight="34.0" prefWidth="150.0" text="Ders Tanımı" />
                               <TextField fx:id="courseDescriptionTextField" prefHeight="36.0" prefWidth="570.0" />
                            </children>
                         </HBox>
@@ -146,7 +148,7 @@
                   </VBox>
                   <HBox prefHeight="142.0" prefWidth="660.0">
                      <children>
-                        <TextField editable="false" prefHeight="129.0" prefWidth="150.0" text="Course Category" />
+                        <TextField editable="false" prefHeight="129.0" prefWidth="150.0" text="Dersin Kategorisi " />
                         <VBox prefHeight="142.0" prefWidth="19.0">
                            <children>
                               <CheckBox mnemonicParsing="false" prefHeight="26.0" prefWidth="40.0" />
@@ -158,11 +160,11 @@
                         </VBox>
                         <VBox prefHeight="126.0" prefWidth="578.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Core Course" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Major Area Course" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Supportive Course" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Communication and Management Skills Course" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Transferable Skill Course" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Temel Ders" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Uzmanlık/Alan Dersi" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Destek Dersi" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="İletişim ve Yönetim Becerileri Dersi" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="578.0" text="Aktarılabilir Beceri Dersi" />
                            </children>
                         </VBox>
                      </children>
@@ -171,9 +173,10 @@
                      <children>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" text="Week" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="408.0" text="Subjects" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="172.0" text="Required Materials" />
+                              <TextField editable="false" text="Hafta" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="408.0" text="Konular" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="172.0" text="Ön Hazırlık
+" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
@@ -294,13 +297,13 @@
                      <children>
                         <HBox prefHeight="58.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="58.0" prefWidth="299.0" text="Course Notes/Textbooks" />
+                              <TextField editable="false" prefHeight="58.0" prefWidth="299.0" text="Ders Kitabı" />
                               <TextField fx:id="courseNotesTextBooksTextField" prefHeight="65.0" prefWidth="570.0" />
                            </children>
                         </HBox>
                         <HBox prefHeight="181.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="182.0" prefWidth="258.0" text="Suggested Readings/Materials " />
+                              <TextField editable="false" prefHeight="182.0" prefWidth="258.0" text="Önerilen Okumalar/Materyaller " />
                               <TextField fx:id="suggestedMaterialsTextField" prefHeight="185.0" prefWidth="526.0" />
                            </children>
                         </HBox>
@@ -310,9 +313,9 @@
                      <children>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Semester Activities" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="131.0" text="Number" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="98.0" text="Weigthing" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Yarıyıl Aktiviteleri" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="131.0" text="Sayı" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="98.0" text="Katkı Payı %" />
                               <TextField editable="false" prefHeight="26.0" prefWidth="75.0" text=" LO1" />
                               <TextField editable="false" prefHeight="26.0" prefWidth="62.0" text="LO2" />
                               <TextField editable="false" prefHeight="26.0" prefWidth="59.0" text="LO3" />
@@ -324,7 +327,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Participation" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Katılım" />
                               <TextField fx:id="participationTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="participationTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="participationTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -339,7 +342,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Laboratory/Application" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Laboratuvar/Uygulama" />
                               <TextField fx:id="laboratoryTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="laboratoryTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="laboratoryTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -354,52 +357,52 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Field Work" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Arazi Çalışması" />
                               <TextField fx:id="fieldWorkTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                                <TextField fx:id="fieldWorkTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                               <TextField fx:id="fieldWorkTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
-                             <TextField fx:id="fieldWorkTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
-                             <TextField fx:id="fieldWorkTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
-                            <TextField fx:id="fieldWorkTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
-                            <TextField fx:id="fieldWorkTextFieldSeven" prefHeight="26.0" prefWidth="54.0" />
-                            <TextField fx:id="fieldWorkTextFieldEight" prefHeight="26.0" prefWidth="53.0" />
-                            <TextField fx:id="fieldWorkTextFieldNine" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="fieldWorkTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="fieldWorkTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="fieldWorkTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="fieldWorkTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="fieldWorkTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="fieldWorkTextFieldSeven" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="fieldWorkTextFieldEight" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="fieldWorkTextFieldNine" prefHeight="26.0" prefWidth="53.0" />
 
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Quiz/Studio Critique" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Küçük Sınav/Stüdyo Kritiği" />
                               <TextField fx:id="quiz2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
-                             <TextField fx:id="quiz2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
-                            <TextField fx:id="quiz2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
-                            <TextField fx:id="quizTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
-                            <TextField fx:id="quizTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
-                            <TextField fx:id="quizTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
-                           <TextField fx:id="quizTextFieldSeven" prefHeight="26.0" prefWidth="54.0" />
-                           <TextField fx:id="quizTextFieldEight" prefHeight="26.0" prefWidth="53.0" />
-                          <TextField fx:id="quizTextFieldNine" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="quiz2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
+                              <TextField fx:id="quiz2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
+                              <TextField fx:id="quizTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
+                              <TextField fx:id="quizTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
+                              <TextField fx:id="quizTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="quizTextFieldSeven" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="quizTextFieldEight" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="quizTextFieldNine" prefHeight="26.0" prefWidth="53.0" />
 
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Homework/Assignment" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Ödev" />
                               <TextField fx:id="homework2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="homework2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="homework2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
                               <TextField fx:id="homeworkTextFieldFour" prefHeight="26.0" prefWidth="62.0" />
                               <TextField fx:id="homeworkTextFieldFive" prefHeight="26.0" prefWidth="59.0" />
-                             <TextField fx:id="homeworkTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
-                             <TextField fx:id="homeworkTextFieldSeven" prefHeight="26.0" prefWidth="54.0" />
-                            <TextField fx:id="homeworkTextFieldEight" prefHeight="26.0" prefWidth="53.0" />
-                            <TextField fx:id="homeworkTextFieldNine" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="homeworkTextFieldSix" prefHeight="26.0" prefWidth="65.0" />
+                              <TextField fx:id="homeworkTextFieldSeven" prefHeight="26.0" prefWidth="54.0" />
+                              <TextField fx:id="homeworkTextFieldEight" prefHeight="26.0" prefWidth="53.0" />
+                              <TextField fx:id="homeworkTextFieldNine" prefHeight="26.0" prefWidth="53.0" />
 
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Presentation/Jury" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Sunum/Jüri Önünde Sunum" />
                               <TextField fx:id="presentation2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="presentation2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="presentation2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -413,7 +416,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Project" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Portfolyo" />
                               <TextField fx:id="project2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="project2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="project2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -427,7 +430,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Seminar/Workshop" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Seminer/Çalıştay" />
                               <TextField fx:id="seminar2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="seminar2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="seminar2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -441,7 +444,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Oral Exam" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Sözlü Sınav" />
                               <TextField fx:id="oral2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="oral2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="oral2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -455,7 +458,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Midterm" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Ara Sınavı" />
                               <TextField fx:id="midterm2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="midterm2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="midterm2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -469,7 +472,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Final Exam" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="146.0" text="Final Sınavı" />
                               <TextField fx:id="final2TextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="final2TextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="final2TextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -487,7 +490,8 @@
                      <children>
                         <HBox prefHeight="26.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Weighting of SemesterActivities on the Final Grade" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Yarıyıl İçi Aktivitelerin Başarı Notuna
+Katkısı" />
                               <TextField fx:id="semesterTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="semesterTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="semesterTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -501,7 +505,8 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Weighting of End-of-SemesterActivities on the Final Grade" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="139.0" text="Yarıyıl Sonu Aktivitelerin Başarı Notuna
+Katkısı" />
                               <TextField fx:id="endofTextFieldOne" prefHeight="26.0" prefWidth="131.0" />
                               <TextField fx:id="endofTextFieldTwo" prefHeight="26.0" prefWidth="98.0" />
                               <TextField fx:id="endofTextFieldThree" prefHeight="26.0" prefWidth="75.0" />
@@ -519,15 +524,16 @@
                      <children>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Semester Activities" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="Number" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="126.0" text="Duration(Hours)" />
-                              <TextField editable="false" prefHeight="26.0" prefWidth="135.0" text="Workload" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Yarıyıl Aktiviteleri" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="Sayı" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="126.0" text="Süre (Saat)" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="135.0" text="İş Yükü" />
                            </children>
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Course Hours(Including exam week: 16 x total hours)" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Teorik Ders Saati
+(Sınav haftası dahildir: 16 x teorik ders saati)" />
                               <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="16" />
                               <TextField fx:id="coursehourTextFieldOne" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="coursehourTextFieldTwo" prefHeight="26.0" prefWidth="135.0" />
@@ -535,7 +541,8 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Laboratory/Application Hours(Including exam week: 16 x total hours)" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Laboratuvar /Uygulama Ders Saati
+(Sınav haftası dahildir: 16 x uygulama/lab ders saati)" />
                               <TextField editable="false" prefHeight="26.0" prefWidth="136.0" text="16" />
                               <TextField fx:id="labhourTextFieldOne" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="labhourTextFieldTwo" prefHeight="26.0" prefWidth="135.0" />
@@ -543,7 +550,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Study Hours out of Class" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Sınıf Dışı Ders Çalışması" />
                               <TextField fx:id="StudyhourTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="StudyhourTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="StudyhourTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -551,7 +558,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Field Work" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Arazi Çalışması" />
                               <TextField fx:id="FieldworkTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="FieldworkTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="FieldworkTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -559,7 +566,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Quiz/Studio Critique" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Küçük Sınav/Stüdyo Kritiği" />
                               <TextField fx:id="quizTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="quizTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="quizTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -567,7 +574,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Homework/Assignments" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Ödev" />
                               <TextField fx:id="homeworkTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="homeworkTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="homeworkTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -575,7 +582,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Presentation/Jury" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Sunum/Jüri Önünde Sunum" />
                               <TextField fx:id="presentationTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="presentationTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="presentationTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -583,7 +590,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Project" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Proje" />
                               <TextField fx:id="projectTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="projectTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="projectTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -591,7 +598,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Portfolio" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Portfolyo" />
                               <TextField fx:id="portfolioTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="portfolioTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="portfolioTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -599,7 +606,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Seminar/Workshop" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Seminer/Çalıştay" />
                               <TextField fx:id="seminarTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="seminarTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="seminarTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -607,7 +614,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Oral Exam" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Sözlü Sınav" />
                               <TextField fx:id="oralTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="oralTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="oralTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -615,7 +622,7 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Midterm" />
+                              <TextField editable="false" prefHeight="26.0" prefWidth="329.0" text="Ara Sınav" />
                               <TextField fx:id="midtermTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="midtermTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="midtermTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -623,7 +630,8 @@
                         </HBox>
                         <HBox prefHeight="31.0" prefWidth="730.0">
                            <children>
-                              <TextField prefHeight="26.0" prefWidth="329.0" text="Final Exam" />
+                              <TextField prefHeight="26.0" prefWidth="329.0" text="Final Sınavı
+" />
                               <TextField fx:id="finalTextFieldOne" prefHeight="26.0" prefWidth="136.0" />
                               <TextField fx:id="finalTextFieldTwo" prefHeight="26.0" prefWidth="126.0" />
                               <TextField fx:id="finalTextFieldThree" prefHeight="26.0" prefWidth="135.0" />
@@ -636,12 +644,13 @@
                         <HBox prefHeight="49.0" prefWidth="730.0">
                            <children>
                               <TextField editable="false" prefHeight="53.0" prefWidth="86.0" text="#" />
-                              <TextField editable="false" prefHeight="51.0" prefWidth="235.0" text="Program Competencies/Outcomes" />
+                              <TextField editable="false" prefHeight="51.0" prefWidth="235.0" text="Program Yeterlilikleri/Çıktıları " />
                               <VBox prefHeight="50.0" prefWidth="414.0">
                                  <children>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
                                        <children>
-                                          <TextField editable="false" prefHeight="26.0" prefWidth="412.0" text="Contribution Level" />
+                                          <TextField editable="false" prefHeight="26.0" prefWidth="412.0" text="Katkı Düzeyi
+" />
                                        </children>
                                     </HBox>
                                     <HBox prefHeight="100.0" prefWidth="200.0">
