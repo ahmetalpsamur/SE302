@@ -32,7 +32,7 @@
       </Label>
       <Button layoutX="33.0" layoutY="342.0" mnemonicParsing="false" onAction="#chooseLanguage" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Add New Syllabus" />
       <Button layoutX="224.0" layoutY="342.0" mnemonicParsing="false" onAction="#viewSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="View Syllabus" />
-      <Button layoutX="609.0" layoutY="342.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Compare Syllabus" />
+      <Button layoutX="609.0" layoutY="342.0" mnemonicParsing="false" onAction="#compareSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Compare Syllabus" />
       <Button layoutX="420.0" layoutY="342.0" mnemonicParsing="false"  prefHeight="47.0" prefWidth="162.0" onAction= "#editSyllabus" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Edit Syllabus" />
       <Text layoutX="130.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Syllabus Application provides adding, viewing, editing, and comparison of syllabuses. Designed for educators and administrators, offering advanced features for dynamic viewing,robust editing and management." wrappingWidth="581.6708984375">
          <font>

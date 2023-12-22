@@ -1427,7 +1427,7 @@ public class Controllers implements Initializable,Serializable {
         if (currentSyllabus != null && currentSyllabus2 != null) {
             showSyllabusDetails();
         } else {
-            System.out.println("Please select a syllabus to compare.");
+            System.out.println("Please select two syllabus to compare.");
         }
     }
     private void showSyllabusDetails() throws IOException {
@@ -1788,8 +1788,7 @@ public class Controllers implements Initializable,Serializable {
                             // syllabusListView.getItems().indexOf(syllabusListView.getItems().get(newValue.intValue()));
                             currentIndex = newValue.intValue();
                             currentSyllabus = syllabusListView.getItems().get(newValue.intValue());
-                            System.out.println(currentSyllabus.getCourseName());
-                            System.out.println(currentSyllabus.getEditorName());
+                            System.out.println(" --> Course Name: " + currentSyllabus.getCourseName()+" --> Editor Name: " + currentSyllabus.getEditorName());
                         } else {
                             currentSyllabus = null;
                         }
