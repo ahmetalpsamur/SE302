@@ -941,27 +941,39 @@ public class Controllers implements Initializable,Serializable {
                 controller.supportCourseCheck.setDisable(true);
                 controller.comSkillsCourseCheck.setDisable(true);
                 controller.transfSkillCourseCheck.setDisable(true);
-                
-                // Set the selected radio button based on the saved category
-                switch (tempSyllabus.getCourseCategory()) {
-                    case "Core Course":
-                        controller.coreCourseCheck.setSelected(true);
-                        break;
-                    case "Major Area Course":
-                        controller.majorCourseCheck.setSelected(true);
-                        break;
-                    case "Supportive Course":
-                        controller.supportCourseCheck.setSelected(true);
-                        break;
-                    case "Communication and Management Skills Course":
-                        controller.comSkillsCourseCheck.setSelected(true);
-                        break;
-                    case "Transferable Skills Course":
-                        controller.transfSkillCourseCheck.setSelected(true);
-                        break;
 
+                // if buttons are selected
+                if (tempSyllabus.getCourseCategory() != null) {
+                    // Set the selected radio button based on the saved category
+                    switch (tempSyllabus.getCourseCategory()) {
+                        case "Core Course":
+                            if (controller.coreCourseCheck != null) {
+                                controller.coreCourseCheck.setSelected(true);
+                            }
+                            break;
+                        case "Major Area Course":
+                            if (controller.majorCourseCheck != null) {
+                                controller.majorCourseCheck.setSelected(true);
+                            }
+                            break;
+                        case "Supportive Course":
+                            if (controller.supportCourseCheck != null) {
+                                controller.supportCourseCheck.setSelected(true);
+                            }
+                            break;
+                        case "Communication and Management Skills Course":
+                            if (controller.comSkillsCourseCheck != null) {
+                                controller.comSkillsCourseCheck.setSelected(true);
+                            }
+                            break;
+                        case "Transferable Skills Course":
+                            if (controller.transfSkillCourseCheck != null) {
+                                controller.transfSkillCourseCheck.setSelected(true);
+                            }
+                            break;
+                        default:
+                    }
                 }
-
                 controller.subjectsTextFieldTwo.setText(tempSyllabus.getSubjectsTwo());
                 controller.reqiredMaterialsTextFieldTwo.setText(tempSyllabus.getRequiredMaterialsTwo());
                 controller.subjectsTextFieldThree.setText(tempSyllabus.getSubjectsThree());
@@ -1214,24 +1226,28 @@ public class Controllers implements Initializable,Serializable {
             controller.learningOutcomesTextField.setText(tempSyllabus.getLearningOutcomes());
             controller.courseDescriptionTextField.setText(tempSyllabus.getCourseDescription());
 
-        // Set the selected radio button based on the saved category
-        switch (tempSyllabus.getCourseCategory()) {
-            case "Core Course":
-                controller.coreCourseCheck.setSelected(true);
-                break;
-            case "Major Area Course":
-                controller.majorCourseCheck.setSelected(true);
-                break;
-            case "Supportive Course":
-                controller.supportCourseCheck.setSelected(true);
-                break;
-            case "Communication and Management Skills Course":
-                controller.comSkillsCourseCheck.setSelected(true);
-                break;
-            case "Transferable Skills Course":
-                controller.transfSkillCourseCheck.setSelected(true);
-                break;
-
+        // if buttons are selected
+        if (tempSyllabus.getCourseCategory() != null) {
+            // Set the selected radio button based on the saved category
+            switch (tempSyllabus.getCourseCategory()) {
+                case "Core Course":
+                    controller.coreCourseCheck.setSelected(true);
+                    break;
+                case "Major Area Course":
+                    controller.majorCourseCheck.setSelected(true);
+                    break;
+                case "Supportive Course":
+                    controller.supportCourseCheck.setSelected(true);
+                    break;
+                case "Communication and Management Skills Course":
+                    controller.comSkillsCourseCheck.setSelected(true);
+                    break;
+                case "Transferable Skills Course":
+                    controller.transfSkillCourseCheck.setSelected(true);
+                    break;
+                default:
+                    tempSyllabus.setCourseCategory(null);
+            }
         }
 
             controller.subjectsTextFieldTwo.setText(tempSyllabus.getSubjectsTwo());
