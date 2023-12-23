@@ -11,12 +11,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+
 
 import javafx.scene.input.MouseEvent;
+
+import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -564,6 +570,7 @@ public class Controllers implements Initializable,Serializable {
         syllabus.setEditDate(date);
         syllabus.setEditTime(time);
 
+
         handleCourseCategorySelection();
         syllabus.setCourseCategory(selectedCourseCategory);
 
@@ -790,6 +797,25 @@ public class Controllers implements Initializable,Serializable {
     public void saveSyllabus(ActionEvent event) throws IOException {
         Syllabus test = new Syllabus();
         setAssistantTextField(test);
+        test.setEdited(false);
+        syllabusList.add(test);
+        if (syllabusListView != null) {
+            syllabusListO.add(test);
+            syllabusListView.setItems(syllabusListO);
+            System.out.println("Added");
+
+
+        }
+        else
+            System.out.println("Null");
+        saveSyllabusToFile();
+        System.out.println(test.getCourseName());
+    }
+    @FXML
+    public void saveEditedSyllabus(ActionEvent event) throws IOException{
+        Syllabus test = new Syllabus();
+        setAssistantTextField(test);
+        test.setEdited(true);
         syllabusList.add(test);
         if (syllabusListView != null) {
             syllabusListO.add(test);
@@ -1163,19 +1189,9 @@ public class Controllers implements Initializable,Serializable {
         }
     }
 
-    public void editSaveButton() throws IOException {
-        System.out.println("Selected index for update: " + currentIndex);
+    @FXML
+    public void editSaveButton(ActionEvent event) throws IOException {
 
-        if (tempSyllabus != null && currentIndex >= 0) {
-            tempSyllabus.setCourseName(courseNameText.getText());
-            tempSyllabus.setCode(codeTextField.getText());
-            tempSyllabus.setFall(fallTextField.getText());
-
-            updateSyllabusList(currentIndex, tempSyllabus);
-            saveSyllabusToFile();
-        } else {
-            System.out.println("No syllabus selected for editing or index is out of range");
-        }
     }
 
     private void updateSyllabusList(int index, Syllabus updatedSyllabus) {
@@ -1204,8 +1220,6 @@ public class Controllers implements Initializable,Serializable {
         this.controller = fxmlLoader.getController();
         Stage stage = new Stage();
         stage.setTitle("Edit Syllabus");
-
-
             controller.courseNameText.setText(tempSyllabus.getCourseName());
             controller.codeTextField.setText(tempSyllabus.getCode());
             controller.fallTextField.setText(tempSyllabus.getFall());
@@ -1760,7 +1774,7 @@ public class Controllers implements Initializable,Serializable {
 
         syllabusListView.setCellFactory(param -> new ListCell<Syllabus>() {
                     private HBox createCell(String label, String value) {
-                        Text labelTxt = new Text(label + ": ");
+                        Text labelTxt = new Text(label);
                         labelTxt.setStyle("-fx-font-weight: bold;");
                         Text valueTxt = new Text(value);
                         HBox cell = new HBox(labelTxt, valueTxt);
@@ -1776,13 +1790,17 @@ public class Controllers implements Initializable,Serializable {
                     setText(null);
                     setGraphic(null);
                 } else {
+
                     HBox hbox = new HBox(
-                            createCell("Course",item.getCourseName()),
-                            createCell("Editor",item.getEditorName()),
-                            createCell("Description",item.getCourseDescription()),
-                            createCell("Date",item.getEditDate()),
-                            createCell("Time",item.getEditTime())
+
+                            createCell("Course:",item.getCourseName()),
+                            createCell("",item.getEditedString()),
+                            createCell("Editor:",item.getEditorName()),
+                            createCell("Description:",item.getCourseDescription()),
+                            createCell("Date:",item.getEditDate()),
+                            createCell("Time:",item.getEditTime())
                     );
+                    ((Text) ((HBox) hbox.getChildren().get(1)).getChildren().get(1)).setFill(Color.RED); // Editor
                     setGraphic(hbox);
 
                 }
@@ -1800,8 +1818,6 @@ public class Controllers implements Initializable,Serializable {
                     (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
                         if (newValue.intValue() >= 0) {
 
-                            // currentIndex =
-                            // syllabusListView.getItems().indexOf(syllabusListView.getItems().get(newValue.intValue()));
                             currentIndex = newValue.intValue();
                             currentSyllabus = syllabusListView.getItems().get(newValue.intValue());
                             System.out.println(" --> Course Name: " + currentSyllabus.getCourseName()+" --> Editor Name: " + currentSyllabus.getEditorName());

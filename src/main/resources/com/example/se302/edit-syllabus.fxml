@@ -829,7 +829,7 @@
                   </VBox>
                   <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#editSaveButton" text="Save" />
+                        <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#saveEditedSyllabus" text="Save" />
                         
                      </children>
                   </HBox>

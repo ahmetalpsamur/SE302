@@ -13,12 +13,25 @@ public class Syllabus implements Serializable {
     private static final long serialVersionUID = -6956108329243054430L;
     // to avoid the serialized file to get a different serialized id compared to at the beginning
     // it was showed that this value -6956108329243054430 was assigned at the beginning
-
+    private Boolean edited;
     private String editorName;
     private String editDescription;
     private String editDate;
     private String editTime;
-
+    public boolean getEdited(){
+        return edited;
+    }
+    public void setEdited(Boolean edited){
+        this.edited=edited;
+    }
+    public String getEditedString(){
+        if (getEdited()==true){
+            return "(Edited)";
+        }
+        else {
+            return "";
+        }
+    }
     public String getEditorName() {
         return editorName;
     }
