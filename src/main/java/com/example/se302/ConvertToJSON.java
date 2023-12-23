@@ -252,830 +252,1009 @@ public class ConvertToJSON {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    public static void Compare(Syllabus syllabus, Syllabus editSyllabus, File file){
-
-        try {
-            String compareFilePath;
-            if (!syllabus.getCode().equals(editSyllabus.getCode())) {
-                compareFilePath = "Changes_" + editSyllabus.getCode() + ".json";
-            } else {
-                compareFilePath = "Changes_" + syllabus.getCode() + ".json";
+    public static void Compare(Syllabus currentSyllabus, File file, Syllabus currentSyllabus2) {
+        try (FileWriter fileWriter = new FileWriter(file)) {
+            StringBuilder jsonResult = new StringBuilder("{\n");
+            if (currentSyllabus.getCourseName() != null && currentSyllabus2.getCourseName() != null &&
+                    !currentSyllabus.getCourseName().equals(currentSyllabus2.getCourseName())) {
+                jsonResult.append("  \"CourseName\": \"Changed from '").append(currentSyllabus.getCourseName()).append("' to '").append(currentSyllabus2.getCourseName()).append("',\n");
             }
 
-            FileWriter fileWriter = new FileWriter(compareFilePath);
-
-            if (!syllabus.getCode().equals(editSyllabus.getCode())) {
-                sameFileCounter++;
-                fileList.add(compareFilePath);
+            if (currentSyllabus.getCode() != null && currentSyllabus2.getCode() != null &&
+                    !currentSyllabus.getCode().equals(currentSyllabus2.getCode())) {
+                jsonResult.append("  \"Code\": \"Changed from '").append(currentSyllabus.getCode()).append("' to '").append(currentSyllabus2.getCode()).append("',\n");
             }
 
-            if (!syllabus.getCourseName().equals(editSyllabus.getCourseName())) {
-                fileWriter.write("  Course Name changed from '" + syllabus.getCourseName() + "' to '" + editSyllabus.getCourseName() + "'");
+            if (currentSyllabus.getFall() != null && currentSyllabus2.getFall() != null &&
+                    !currentSyllabus.getFall().equals(currentSyllabus2.getFall())) {
+                jsonResult.append("  \"Fall\": \"Changed from '").append(currentSyllabus.getFall()).append("' to '").append(currentSyllabus2.getFall()).append("',\n");
             }
 
-            if (!syllabus.getCode().equals(editSyllabus.getCode())) {
-                fileWriter.write("  Code changed from '" + syllabus.getCode() + "' to '" + editSyllabus.getCode() + "'");
+            if (currentSyllabus.getSpring() != null && currentSyllabus2.getSpring() != null &&
+                    !currentSyllabus.getSpring().equals(currentSyllabus2.getSpring())) {
+                jsonResult.append("  \"Spring\": \"Changed from '").append(currentSyllabus.getSpring()).append("' to '").append(currentSyllabus2.getSpring()).append("',\n");
             }
 
-            if (!syllabus.getFall().equals(editSyllabus.getFall())) {
-                fileWriter.write("  Fall changed from '" + syllabus.getFall() + "' to '" + editSyllabus.getFall() + "'");
+            if (currentSyllabus.getTheory() != null && currentSyllabus2.getTheory() != null &&
+                    !currentSyllabus.getTheory().equals(currentSyllabus2.getTheory())) {
+                jsonResult.append("  \"Theory\": \"Changed from '").append(currentSyllabus.getTheory()).append("' to '").append(currentSyllabus2.getTheory()).append("',\n");
             }
 
-            if (!syllabus.getSpring().equals(editSyllabus.getSpring())) {
-                fileWriter.write("  Spring changed from '" + syllabus.getSpring() + "' to '" + editSyllabus.getSpring() + "'");
+            if (currentSyllabus.getLocalCredit() != null && currentSyllabus2.getLocalCredit() != null &&
+                    !currentSyllabus.getLocalCredit().equals(currentSyllabus2.getLocalCredit())) {
+                jsonResult.append("  \"LocalCredit\": \"Changed from '").append(currentSyllabus.getLocalCredit()).append("' to '").append(currentSyllabus2.getLocalCredit()).append("',\n");
             }
 
-            if (!syllabus.getTheory().equals(editSyllabus.getTheory())) {
-                fileWriter.write("  Theory changed from '" + syllabus.getTheory() + "' to '" + editSyllabus.getTheory() + "'");
+            if (currentSyllabus.getEcts() != null && currentSyllabus2.getEcts() != null &&
+                    !currentSyllabus.getEcts().equals(currentSyllabus2.getEcts())) {
+                jsonResult.append("  \"Ects\": \"Changed from '").append(currentSyllabus.getEcts()).append("' to '").append(currentSyllabus2.getEcts()).append("',\n");
             }
 
-            if (!syllabus.getLocalCredit().equals(editSyllabus.getLocalCredit())) {
-                fileWriter.write("  Local Credit changed from '" + syllabus.getLocalCredit() + "' to '" + editSyllabus.getLocalCredit() + "'");
+            if (currentSyllabus.getPrerequisites() != null && currentSyllabus2.getPrerequisites() != null &&
+                    !currentSyllabus.getPrerequisites().equals(currentSyllabus2.getPrerequisites())) {
+                jsonResult.append("  \"Prerequisites\": \"Changed from '").append(currentSyllabus.getPrerequisites()).append("' to '").append(currentSyllabus2.getPrerequisites()).append("',\n");
             }
 
-            if (!syllabus.getEcts().equals(editSyllabus.getEcts())) {
-                fileWriter.write("  ECTS changed from '" + syllabus.getEcts() + "' to '" + editSyllabus.getEcts() + "'");
+            if (currentSyllabus.getLab() != null && currentSyllabus2.getLab() != null &&
+                    !currentSyllabus.getLab().equals(currentSyllabus2.getLab())) {
+                jsonResult.append("  \"Lab\": \"Changed from '").append(currentSyllabus.getLab()).append("' to '").append(currentSyllabus2.getLab()).append("',\n");
             }
 
-            if (!syllabus.getPrerequisites().equals(editSyllabus.getPrerequisites())) {
-                fileWriter.write("  Prerequisites changed from '" + syllabus.getPrerequisites() + "' to '" + editSyllabus.getPrerequisites() + "'");
+            if (currentSyllabus.getCourseLanguage() != null && currentSyllabus2.getCourseLanguage() != null &&
+                    !currentSyllabus.getCourseLanguage().equals(currentSyllabus2.getCourseLanguage())) {
+                jsonResult.append("  \"CourseLanguage\": \"Changed from '").append(currentSyllabus.getCourseLanguage()).append("' to '").append(currentSyllabus2.getCourseLanguage()).append("',\n");
             }
 
-            if (!syllabus.getLab().equals(editSyllabus.getLab())) {
-                fileWriter.write("  Lab changed from '" + syllabus.getLab() + "' to '" + editSyllabus.getLab() + "'");
+            if (currentSyllabus.getCourseType() != null && currentSyllabus2.getCourseType() != null &&
+                    !currentSyllabus.getCourseType().equals(currentSyllabus2.getCourseType())) {
+                jsonResult.append("  \"CourseType\": \"Changed from '").append(currentSyllabus.getCourseType()).append("' to '").append(currentSyllabus2.getCourseType()).append("',\n");
             }
 
-            if (!syllabus.getCourseLanguage().equals(editSyllabus.getCourseLanguage())) {
-                fileWriter.write("  Course Language changed from '" + syllabus.getCourseLanguage() + "' to '" + editSyllabus.getCourseLanguage() + "'");
+            if (currentSyllabus.getCourseLevel() != null && currentSyllabus2.getCourseLevel() != null &&
+                    !currentSyllabus.getCourseLevel().equals(currentSyllabus2.getCourseLevel())) {
+                jsonResult.append("  \"CourseLevel\": \"Changed from '").append(currentSyllabus.getCourseLevel()).append("' to '").append(currentSyllabus2.getCourseLevel()).append("',\n");
             }
 
-            if (!syllabus.getCourseType().equals(editSyllabus.getCourseType())) {
-                fileWriter.write("  Course Type changed from '" + syllabus.getCourseType() + "' to '" + editSyllabus.getCourseType() + "'");
+            if (currentSyllabus.getTeachingMethods() != null && currentSyllabus2.getTeachingMethods() != null &&
+                    !currentSyllabus.getTeachingMethods().equals(currentSyllabus2.getTeachingMethods())) {
+                jsonResult.append("  \"TeachingMethods\": \"Changed from '").append(currentSyllabus.getTeachingMethods()).append("' to '").append(currentSyllabus2.getTeachingMethods()).append("',\n");
             }
 
-            if (!syllabus.getCourseLevel().equals(editSyllabus.getCourseLevel())) {
-                fileWriter.write("  Course Level changed from '" + syllabus.getCourseLevel() + "' to '" + editSyllabus.getCourseLevel() + "'");
+            if (currentSyllabus.getCourseCoordinator() != null && currentSyllabus2.getCourseCoordinator() != null &&
+                    !currentSyllabus.getCourseCoordinator().equals(currentSyllabus2.getCourseCoordinator())) {
+                jsonResult.append("  \"CourseCoordinator\": \"Changed from '").append(currentSyllabus.getCourseCoordinator()).append("' to '").append(currentSyllabus2.getCourseCoordinator()).append("',\n");
             }
 
-            if (!syllabus.getTeachingMethods().equals(editSyllabus.getTeachingMethods())) {
-                fileWriter.write("  Teaching Methods changed from '" + syllabus.getTeachingMethods() + "' to '" + editSyllabus.getTeachingMethods() + "'");
+            if (currentSyllabus.getCourseCoordinator2() != null && currentSyllabus2.getCourseCoordinator2() != null &&
+                    !currentSyllabus.getCourseCoordinator2().equals(currentSyllabus2.getCourseCoordinator2())) {
+                jsonResult.append("  \"CourseCoordinator2\": \"Changed from '").append(currentSyllabus.getCourseCoordinator2()).append("' to '").append(currentSyllabus2.getCourseCoordinator2()).append("',\n");
             }
 
-            if (!syllabus.getCourseCoordinator().equals(editSyllabus.getCourseCoordinator())) {
-                fileWriter.write("  Course Coordinator changed from '" + syllabus.getCourseCoordinator() + "' to '" + editSyllabus.getCourseCoordinator() + "'");
+            if (currentSyllabus.getAssistant() != null && currentSyllabus2.getAssistant() != null &&
+                    !currentSyllabus.getAssistant().equals(currentSyllabus2.getAssistant())) {
+                jsonResult.append("  \"Assistant\": \"Changed from '").append(currentSyllabus.getAssistant()).append("' to '").append(currentSyllabus2.getAssistant()).append("',\n");
             }
 
-            if (!syllabus.getCourseCoordinator2().equals(editSyllabus.getCourseCoordinator2())) {
-                fileWriter.write("  Course Coordinator2 changed from '" + syllabus.getCourseCoordinator2() + "' to '" + editSyllabus.getCourseCoordinator2() + "'");
+            if (currentSyllabus.getCourseObjectives() != null && currentSyllabus2.getCourseObjectives() != null &&
+                    !currentSyllabus.getCourseObjectives().equals(currentSyllabus2.getCourseObjectives())) {
+                jsonResult.append("  \"CourseObjectives\": \"Changed from '").append(currentSyllabus.getCourseObjectives()).append("' to '").append(currentSyllabus2.getCourseObjectives()).append("',\n");
             }
 
-            if (!syllabus.getAssistant().equals(editSyllabus.getAssistant())) {
-                fileWriter.write("  Assistant changed from '" + syllabus.getAssistant() + "' to '" + editSyllabus.getAssistant() + "'");
+            if (currentSyllabus.getLearningOutcomes() != null && currentSyllabus2.getLearningOutcomes() != null &&
+                    !currentSyllabus.getLearningOutcomes().equals(currentSyllabus2.getLearningOutcomes())) {
+                jsonResult.append("  \"LearningOutcomes\": \"Changed from '").append(currentSyllabus.getLearningOutcomes()).append("' to '").append(currentSyllabus2.getLearningOutcomes()).append("',\n");
             }
 
-            if (!syllabus.getCourseObjectives().equals(editSyllabus.getCourseObjectives())) {
-                fileWriter.write("  Course Objectives changed from '" + syllabus.getCourseObjectives() + "' to '" + editSyllabus.getCourseObjectives() + "'");
+            if (currentSyllabus.getCourseDescription() != null && currentSyllabus2.getCourseDescription() != null &&
+                    !currentSyllabus.getCourseDescription().equals(currentSyllabus2.getCourseDescription())) {
+                jsonResult.append("  \"CourseDescription\": \"Changed from '").append(currentSyllabus.getCourseDescription()).append("' to '").append(currentSyllabus2.getCourseDescription()).append("',\n");
             }
 
-            if (!syllabus.getLearningOutcomes().equals(editSyllabus.getLearningOutcomes())) {
-                fileWriter.write("  Learning Outcomes changed from '" + syllabus.getLearningOutcomes() + "' to '" + editSyllabus.getLearningOutcomes() + "'");
+            if (currentSyllabus.getSubjectsTwo() != null && currentSyllabus2.getSubjectsTwo() != null &&
+                    !currentSyllabus.getSubjectsTwo().equals(currentSyllabus2.getSubjectsTwo())) {
+                jsonResult.append("  \"SubjectsTwo\": \"Changed from '").append(currentSyllabus.getSubjectsTwo()).append("' to '").append(currentSyllabus2.getSubjectsTwo()).append("',\n");
             }
 
-            if (!syllabus.getCourseDescription().equals(editSyllabus.getCourseDescription())) {
-                fileWriter.write("  Course Description changed from '" + syllabus.getCourseDescription() + "' to '" + editSyllabus.getCourseDescription() + "'");
-            }
-            if (!syllabus.getSubjectsTwo().equals(editSyllabus.getSubjectsTwo())) {
-                fileWriter.write("  Subjects Two changed from '" + syllabus.getSubjectsTwo() + "' to '" + editSyllabus.getSubjectsTwo() + "'");
+            if (currentSyllabus.getSubjectsThree() != null && currentSyllabus2.getSubjectsThree() != null &&
+                    !currentSyllabus.getSubjectsThree().equals(currentSyllabus2.getSubjectsThree())) {
+                jsonResult.append("  \"SubjectsThree\": \"Changed from '").append(currentSyllabus.getSubjectsThree()).append("' to '").append(currentSyllabus2.getSubjectsThree()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsThree().equals(editSyllabus.getSubjectsThree())) {
-                fileWriter.write("  Subjects Three changed from '" + syllabus.getSubjectsThree() + "' to '" + editSyllabus.getSubjectsThree() + "'");
+            if (currentSyllabus.getSubjectsFour() != null && currentSyllabus2.getSubjectsFour() != null &&
+                    !currentSyllabus.getSubjectsFour().equals(currentSyllabus2.getSubjectsFour())) {
+                jsonResult.append("  \"SubjectsFour\": \"Changed from '").append(currentSyllabus.getSubjectsFour()).append("' to '").append(currentSyllabus2.getSubjectsFour()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsFour().equals(editSyllabus.getSubjectsFour())) {
-                fileWriter.write("  Subjects Four changed from '" + syllabus.getSubjectsFour() + "' to '" + editSyllabus.getSubjectsFour() + "'");
+            if (currentSyllabus.getSubjectsFive() != null && currentSyllabus2.getSubjectsFive() != null &&
+                    !currentSyllabus.getSubjectsFive().equals(currentSyllabus2.getSubjectsFive())) {
+                jsonResult.append("  \"SubjectsFive\": \"Changed from '").append(currentSyllabus.getSubjectsFive()).append("' to '").append(currentSyllabus2.getSubjectsFive()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsFive().equals(editSyllabus.getSubjectsFive())) {
-                fileWriter.write("  Subjects Five changed from '" + syllabus.getSubjectsFive() + "' to '" + editSyllabus.getSubjectsFive() + "'");
+            if (currentSyllabus.getSubjectsSix() != null && currentSyllabus2.getSubjectsSix() != null &&
+                    !currentSyllabus.getSubjectsSix().equals(currentSyllabus2.getSubjectsSix())) {
+                jsonResult.append("  \"SubjectsSix\": \"Changed from '").append(currentSyllabus.getSubjectsSix()).append("' to '").append(currentSyllabus2.getSubjectsSix()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsSix().equals(editSyllabus.getSubjectsSix())) {
-                fileWriter.write("  Subjects Six changed from '" + syllabus.getSubjectsSix() + "' to '" + editSyllabus.getSubjectsSix() + "'");
+            if (currentSyllabus.getSubjectsSeven() != null && currentSyllabus2.getSubjectsSeven() != null &&
+                    !currentSyllabus.getSubjectsSeven().equals(currentSyllabus2.getSubjectsSeven())) {
+                jsonResult.append("  \"SubjectsSeven\": \"Changed from '").append(currentSyllabus.getSubjectsSeven()).append("' to '").append(currentSyllabus2.getSubjectsSeven()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsSeven().equals(editSyllabus.getSubjectsSeven())) {
-                fileWriter.write("  Subjects Seven changed from '" + syllabus.getSubjectsSeven() + "' to '" + editSyllabus.getSubjectsSeven() + "'");
+            if (currentSyllabus.getSubjectsEight() != null && currentSyllabus2.getSubjectsEight() != null &&
+                    !currentSyllabus.getSubjectsEight().equals(currentSyllabus2.getSubjectsEight())) {
+                jsonResult.append("  \"SubjectsEight\": \"Changed from '").append(currentSyllabus.getSubjectsEight()).append("' to '").append(currentSyllabus2.getSubjectsEight()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsEight().equals(editSyllabus.getSubjectsEight())) {
-                fileWriter.write("  Subjects Eight changed from '" + syllabus.getSubjectsEight() + "' to '" + editSyllabus.getSubjectsEight() + "'");
+            if (currentSyllabus.getSubjectsNine() != null && currentSyllabus2.getSubjectsNine() != null &&
+                    !currentSyllabus.getSubjectsNine().equals(currentSyllabus2.getSubjectsNine())) {
+                jsonResult.append("  \"SubjectsNine\": \"Changed from '").append(currentSyllabus.getSubjectsNine()).append("' to '").append(currentSyllabus2.getSubjectsNine()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsNine().equals(editSyllabus.getSubjectsNine())) {
-                fileWriter.write("  Subjects Nine changed from '" + syllabus.getSubjectsNine() + "' to '" + editSyllabus.getSubjectsNine() + "'");
+            if (currentSyllabus.getSubjectsTen() != null && currentSyllabus2.getSubjectsTen() != null &&
+                    !currentSyllabus.getSubjectsTen().equals(currentSyllabus2.getSubjectsTen())) {
+                jsonResult.append("  \"SubjectsTen\": \"Changed from '").append(currentSyllabus.getSubjectsTen()).append("' to '").append(currentSyllabus2.getSubjectsTen()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsTen().equals(editSyllabus.getSubjectsTen())) {
-                fileWriter.write("  Subjects Ten changed from '" + syllabus.getSubjectsTen() + "' to '" + editSyllabus.getSubjectsTen() + "'");
+            if (currentSyllabus.getSubjectsEleven() != null && currentSyllabus2.getSubjectsEleven() != null &&
+                    !currentSyllabus.getSubjectsEleven().equals(currentSyllabus2.getSubjectsEleven())) {
+                jsonResult.append("  \"SubjectsEleven\": \"Changed from '").append(currentSyllabus.getSubjectsEleven()).append("' to '").append(currentSyllabus2.getSubjectsEleven()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsEleven().equals(editSyllabus.getSubjectsEleven())) {
-                fileWriter.write("  Subjects Eleven changed from '" + syllabus.getSubjectsEleven() + "' to '" + editSyllabus.getSubjectsEleven() + "'");
+            if (currentSyllabus.getSubjectsTwelve() != null && currentSyllabus2.getSubjectsTwelve() != null &&
+                    !currentSyllabus.getSubjectsTwelve().equals(currentSyllabus2.getSubjectsTwelve())) {
+                jsonResult.append("  \"SubjectsTwelve\": \"Changed from '").append(currentSyllabus.getSubjectsTwelve()).append("' to '").append(currentSyllabus2.getSubjectsTwelve()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsTwelve().equals(editSyllabus.getSubjectsTwelve())) {
-                fileWriter.write("  Subjects Twelve changed from '" + syllabus.getSubjectsTwelve() + "' to '" + editSyllabus.getSubjectsTwelve() + "'");
+            if (currentSyllabus.getSubjectsThirteen() != null && currentSyllabus2.getSubjectsThirteen() != null &&
+                    !currentSyllabus.getSubjectsThirteen().equals(currentSyllabus2.getSubjectsThirteen())) {
+                jsonResult.append("  \"SubjectsThirteen\": \"Changed from '").append(currentSyllabus.getSubjectsThirteen()).append("' to '").append(currentSyllabus2.getSubjectsThirteen()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsThirteen().equals(editSyllabus.getSubjectsThirteen())) {
-                fileWriter.write("  Subjects Thirteen changed from '" + syllabus.getSubjectsThirteen() + "' to '" + editSyllabus.getSubjectsThirteen() + "'");
+            if (currentSyllabus.getSubjectsFourteen() != null && currentSyllabus2.getSubjectsFourteen() != null &&
+                    !currentSyllabus.getSubjectsFourteen().equals(currentSyllabus2.getSubjectsFourteen())) {
+                jsonResult.append("  \"SubjectsFourteen\": \"Changed from '").append(currentSyllabus.getSubjectsFourteen()).append("' to '").append(currentSyllabus2.getSubjectsFourteen()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsFourteen().equals(editSyllabus.getSubjectsFourteen())) {
-                fileWriter.write("  Subjects Fourteen changed from '" + syllabus.getSubjectsFourteen() + "' to '" + editSyllabus.getSubjectsFourteen() + "'");
+            if (currentSyllabus.getSubjectsFifteen() != null && currentSyllabus2.getSubjectsFifteen() != null &&
+                    !currentSyllabus.getSubjectsFifteen().equals(currentSyllabus2.getSubjectsFifteen())) {
+                jsonResult.append("  \"SubjectsFifteen\": \"Changed from '").append(currentSyllabus.getSubjectsFifteen()).append("' to '").append(currentSyllabus2.getSubjectsFifteen()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsFifteen().equals(editSyllabus.getSubjectsFifteen())) {
-                fileWriter.write("  Subjects Fifteen changed from '" + syllabus.getSubjectsFifteen() + "' to '" + editSyllabus.getSubjectsFifteen() + "'");
+            if (currentSyllabus.getSubjectsSixteen() != null && currentSyllabus2.getSubjectsSixteen() != null &&
+                    !currentSyllabus.getSubjectsSixteen().equals(currentSyllabus2.getSubjectsSixteen())) {
+                jsonResult.append("  \"SubjectsSixteen\": \"Changed from '").append(currentSyllabus.getSubjectsSixteen()).append("' to '").append(currentSyllabus2.getSubjectsSixteen()).append("',\n");
             }
 
-            if (!syllabus.getSubjectsSixteen().equals(editSyllabus.getSubjectsSixteen())) {
-                fileWriter.write("  Subjects Sixteen changed from '" + syllabus.getSubjectsSixteen() + "' to '" + editSyllabus.getSubjectsSixteen() + "'");
+            if (currentSyllabus.getRequiredMaterialsTwo() != null && currentSyllabus2.getRequiredMaterialsTwo() != null &&
+                    !currentSyllabus.getRequiredMaterialsTwo().equals(currentSyllabus2.getRequiredMaterialsTwo())) {
+                jsonResult.append("  \"RequiredMaterialsTwo\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsTwo()).append("' to '").append(currentSyllabus2.getRequiredMaterialsTwo()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsTwo().equals(editSyllabus.getRequiredMaterialsTwo())) {
-                fileWriter.write("  Required Two changed from '" + syllabus.getRequiredMaterialsTwo() + "' to '" + editSyllabus.getRequiredMaterialsTwo() + "'");
+            if (currentSyllabus.getRequiredMaterialsThree() != null && currentSyllabus2.getRequiredMaterialsThree() != null &&
+                    !currentSyllabus.getRequiredMaterialsThree().equals(currentSyllabus2.getRequiredMaterialsThree())) {
+                jsonResult.append("  \"RequiredMaterialsThree\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsThree()).append("' to '").append(currentSyllabus2.getRequiredMaterialsThree()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsThree().equals(editSyllabus.getRequiredMaterialsThree())) {
-                fileWriter.write("  Required Three changed from '" + syllabus.getRequiredMaterialsThree() + "' to '" + editSyllabus.getRequiredMaterialsThree() + "'");
+            if (currentSyllabus.getRequiredMaterialsFour() != null && currentSyllabus2.getRequiredMaterialsFour() != null &&
+                    !currentSyllabus.getRequiredMaterialsFour().equals(currentSyllabus2.getRequiredMaterialsFour())) {
+                jsonResult.append("  \"RequiredMaterialsFour\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsFour()).append("' to '").append(currentSyllabus2.getRequiredMaterialsFour()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsFour().equals(editSyllabus.getRequiredMaterialsFour())) {
-                fileWriter.write("  Required Four changed from '" + syllabus.getRequiredMaterialsFour() + "' to '" + editSyllabus.getRequiredMaterialsFour() + "'");
+            if (currentSyllabus.getRequiredMaterialsFive() != null && currentSyllabus2.getRequiredMaterialsFive() != null &&
+                    !currentSyllabus.getRequiredMaterialsFive().equals(currentSyllabus2.getRequiredMaterialsFive())) {
+                jsonResult.append("  \"RequiredMaterialsFive\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsFive()).append("' to '").append(currentSyllabus2.getRequiredMaterialsFive()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsFive().equals(editSyllabus.getRequiredMaterialsFive())) {
-                fileWriter.write("  Required Five changed from '" + syllabus.getRequiredMaterialsFive() + "' to '" + editSyllabus.getRequiredMaterialsFive() + "'");
+            if (currentSyllabus.getRequiredMaterialsSix() != null && currentSyllabus2.getRequiredMaterialsSix() != null &&
+                    !currentSyllabus.getRequiredMaterialsSix().equals(currentSyllabus2.getRequiredMaterialsSix())) {
+                jsonResult.append("  \"RequiredMaterialsSix\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsSix()).append("' to '").append(currentSyllabus2.getRequiredMaterialsSix()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsSix().equals(editSyllabus.getRequiredMaterialsSix())) {
-                fileWriter.write("  Required Six changed from '" + syllabus.getRequiredMaterialsSix() + "' to '" + editSyllabus.getRequiredMaterialsSix() + "'");
+            if (currentSyllabus.getRequiredMaterialsSeven() != null && currentSyllabus2.getRequiredMaterialsSeven() != null &&
+                    !currentSyllabus.getRequiredMaterialsSeven().equals(currentSyllabus2.getRequiredMaterialsSeven())) {
+                jsonResult.append("  \"RequiredMaterialsSeven\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsSeven()).append("' to '").append(currentSyllabus2.getRequiredMaterialsSeven()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsSeven().equals(editSyllabus.getRequiredMaterialsSeven())) {
-                fileWriter.write("  Required Seven changed from '" + syllabus.getRequiredMaterialsSeven() + "' to '" + editSyllabus.getRequiredMaterialsSeven() + "'");
+            if (currentSyllabus.getRequiredMaterialsEight() != null && currentSyllabus2.getRequiredMaterialsEight() != null &&
+                    !currentSyllabus.getRequiredMaterialsEight().equals(currentSyllabus2.getRequiredMaterialsEight())) {
+                jsonResult.append("  \"RequiredMaterialsEight\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsEight()).append("' to '").append(currentSyllabus2.getRequiredMaterialsEight()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsEight().equals(editSyllabus.getRequiredMaterialsEight())) {
-                fileWriter.write("  Required Eight changed from '" + syllabus.getRequiredMaterialsEight() + "' to '" + editSyllabus.getRequiredMaterialsEight() + "'");
+            if (currentSyllabus.getRequiredMaterialsNine() != null && currentSyllabus2.getRequiredMaterialsNine() != null &&
+                    !currentSyllabus.getRequiredMaterialsNine().equals(currentSyllabus2.getRequiredMaterialsNine())) {
+                jsonResult.append("  \"RequiredMaterialsNine\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsNine()).append("' to '").append(currentSyllabus2.getRequiredMaterialsNine()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsNine().equals(editSyllabus.getRequiredMaterialsNine())) {
-                fileWriter.write("  Required Nine changed from '" + syllabus.getRequiredMaterialsNine() + "' to '" + editSyllabus.getRequiredMaterialsNine() + "'");
+            if (currentSyllabus.getRequiredMaterialsTen() != null && currentSyllabus2.getRequiredMaterialsTen() != null &&
+                    !currentSyllabus.getRequiredMaterialsTen().equals(currentSyllabus2.getRequiredMaterialsTen())) {
+                jsonResult.append("  \"RequiredMaterialsTen\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsTen()).append("' to '").append(currentSyllabus2.getRequiredMaterialsTen()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsTen().equals(editSyllabus.getRequiredMaterialsTen())) {
-                fileWriter.write("  Required Ten changed from '" + syllabus.getRequiredMaterialsTen() + "' to '" + editSyllabus.getRequiredMaterialsTen() + "'");
+            if (currentSyllabus.getRequiredMaterialsEleven() != null && currentSyllabus2.getRequiredMaterialsEleven() != null &&
+                    !currentSyllabus.getRequiredMaterialsEleven().equals(currentSyllabus2.getRequiredMaterialsEleven())) {
+                jsonResult.append("  \"RequiredMaterialsEleven\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsEleven()).append("' to '").append(currentSyllabus2.getRequiredMaterialsEleven()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsEleven().equals(editSyllabus.getRequiredMaterialsEleven())) {
-                fileWriter.write("  Required Eleven changed from '" + syllabus.getRequiredMaterialsEleven() + "' to '" + editSyllabus.getRequiredMaterialsEleven() + "'");
+            if (currentSyllabus.getRequiredMaterialsTwelve() != null && currentSyllabus2.getRequiredMaterialsTwelve() != null &&
+                    !currentSyllabus.getRequiredMaterialsTwelve().equals(currentSyllabus2.getRequiredMaterialsTwelve())) {
+                jsonResult.append("  \"RequiredMaterialsTwelve\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsTwelve()).append("' to '").append(currentSyllabus2.getRequiredMaterialsTwelve()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsTwelve().equals(editSyllabus.getRequiredMaterialsTwelve())) {
-                fileWriter.write("  Required Twelve changed from '" + syllabus.getRequiredMaterialsTwelve() + "' to '" + editSyllabus.getRequiredMaterialsTwelve() + "'");
+            if (currentSyllabus.getRequiredMaterialsThirteen() != null && currentSyllabus2.getRequiredMaterialsThirteen() != null &&
+                    !currentSyllabus.getRequiredMaterialsThirteen().equals(currentSyllabus2.getRequiredMaterialsThirteen())) {
+                jsonResult.append("  \"RequiredMaterialsThirteen\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsThirteen()).append("' to '").append(currentSyllabus2.getRequiredMaterialsThirteen()).append("',\n");
             }
 
-            if (!syllabus.getRequiredMaterialsThirteen().equals(editSyllabus.getRequiredMaterialsThirteen())) {
-                fileWriter.write("  Required Thirteen changed from '" + syllabus.getRequiredMaterialsThirteen() + "' to '" + editSyllabus.getRequiredMaterialsThirteen() + "'");
+            if (currentSyllabus.getRequiredMaterialsFourteen() != null && currentSyllabus2.getRequiredMaterialsFourteen() != null &&
+                    !currentSyllabus.getRequiredMaterialsFourteen().equals(currentSyllabus2.getRequiredMaterialsFourteen())) {
+                jsonResult.append("  \"RequiredMaterialsFourteen\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsFourteen()).append("' to '").append(currentSyllabus2.getRequiredMaterialsFourteen()).append("',\n");
             }
-            if (!syllabus.getRequiredMaterialsFourteen().equals(editSyllabus.getRequiredMaterialsFourteen())) {
-                fileWriter.write("  Required Fourteen changed from '" + syllabus.getRequiredMaterialsFourteen() + "' to '" + editSyllabus.getRequiredMaterialsFourteen() + "'");
-            }
 
-            if (!syllabus.getRequiredMaterialsFifteen().equals(editSyllabus.getRequiredMaterialsFifteen())) {
-                fileWriter.write("  Required Fifteen changed from '" + syllabus.getRequiredMaterialsFifteen() + "' to '" + editSyllabus.getRequiredMaterialsFifteen() + "'");
+            if (currentSyllabus.getRequiredMaterialsFifteen() != null && currentSyllabus2.getRequiredMaterialsFifteen() != null &&
+                    !currentSyllabus.getRequiredMaterialsFifteen().equals(currentSyllabus2.getRequiredMaterialsFifteen())) {
+                jsonResult.append("  \"RequiredMaterialsFifteen\": \"Changed from '").append(currentSyllabus.getRequiredMaterialsFifteen()).append("' to '").append(currentSyllabus2.getRequiredMaterialsFifteen()).append("',\n");
             }
 
-            if (!syllabus.getParticipationOne().equals(editSyllabus.getParticipationOne())) {
-                fileWriter.write("  Participation One changed from '" + syllabus.getParticipationOne() + "' to '" + editSyllabus.getParticipationOne() + "'");
+            if (currentSyllabus.getParticipationOne() != null && currentSyllabus2.getParticipationOne() != null &&
+                    !currentSyllabus.getParticipationOne().equals(currentSyllabus2.getParticipationOne())) {
+                jsonResult.append("  \"ParticipationOne\": \"Changed from '").append(currentSyllabus.getParticipationOne()).append("' to '").append(currentSyllabus2.getParticipationOne()).append("',\n");
             }
 
-            if (!syllabus.getParticipationTwo().equals(editSyllabus.getParticipationTwo())) {
-                fileWriter.write("  Participation Two changed from '" + syllabus.getParticipationTwo() + "' to '" + editSyllabus.getParticipationTwo() + "'");
+            if (currentSyllabus.getParticipationTwo() != null && currentSyllabus2.getParticipationTwo() != null &&
+                    !currentSyllabus.getParticipationTwo().equals(currentSyllabus2.getParticipationTwo())) {
+                jsonResult.append("  \"ParticipationTwo\": \"Changed from '").append(currentSyllabus.getParticipationTwo()).append("' to '").append(currentSyllabus2.getParticipationTwo()).append("',\n");
             }
 
-            if (!syllabus.getParticipationThree().equals(editSyllabus.getParticipationThree())) {
-                fileWriter.write("  Participation Three changed from '" + syllabus.getParticipationThree() + "' to '" + editSyllabus.getParticipationThree() + "'");
+            if (currentSyllabus.getParticipationThree() != null && currentSyllabus2.getParticipationThree() != null &&
+                    !currentSyllabus.getParticipationThree().equals(currentSyllabus2.getParticipationThree())) {
+                jsonResult.append("  \"ParticipationThree\": \"Changed from '").append(currentSyllabus.getParticipationThree()).append("' to '").append(currentSyllabus2.getParticipationThree()).append("',\n");
             }
 
-            if (!syllabus.getParticipationFour().equals(editSyllabus.getParticipationFour())) {
-                fileWriter.write("  Participation Four changed from '" + syllabus.getParticipationFour() + "' to '" + editSyllabus.getParticipationFour() + "'");
+            if (currentSyllabus.getParticipationFour() != null && currentSyllabus2.getParticipationFour() != null &&
+                    !currentSyllabus.getParticipationFour().equals(currentSyllabus2.getParticipationFour())) {
+                jsonResult.append("  \"ParticipationFour\": \"Changed from '").append(currentSyllabus.getParticipationFour()).append("' to '").append(currentSyllabus2.getParticipationFour()).append("',\n");
             }
 
-            if (!syllabus.getParticipationFive().equals(editSyllabus.getParticipationFive())) {
-                fileWriter.write("  Participation Five changed from '" + syllabus.getParticipationFive() + "' to '" + editSyllabus.getParticipationFive() + "'");
+            if (currentSyllabus.getParticipationFive() != null && currentSyllabus2.getParticipationFive() != null &&
+                    !currentSyllabus.getParticipationFive().equals(currentSyllabus2.getParticipationFive())) {
+                jsonResult.append("  \"ParticipationFive\": \"Changed from '").append(currentSyllabus.getParticipationFive()).append("' to '").append(currentSyllabus2.getParticipationFive()).append("',\n");
             }
 
-            if (!syllabus.getParticipationSix().equals(editSyllabus.getParticipationSix())) {
-                fileWriter.write("  Participation Six changed from '" + syllabus.getParticipationSix() + "' to '" + editSyllabus.getParticipationSix() + "'");
+            if (currentSyllabus.getParticipationSix() != null && currentSyllabus2.getParticipationSix() != null &&
+                    !currentSyllabus.getParticipationSix().equals(currentSyllabus2.getParticipationSix())) {
+                jsonResult.append("  \"ParticipationSix\": \"Changed from '").append(currentSyllabus.getParticipationSix()).append("' to '").append(currentSyllabus2.getParticipationSix()).append("',\n");
             }
 
-            if (!syllabus.getParticipationSeven().equals(editSyllabus.getParticipationSeven())) {
-                fileWriter.write("  Participation Seven changed from '" + syllabus.getParticipationSeven() + "' to '" + editSyllabus.getParticipationSeven() + "'");
+            if (currentSyllabus.getParticipationSeven() != null && currentSyllabus2.getParticipationSeven() != null &&
+                    !currentSyllabus.getParticipationSeven().equals(currentSyllabus2.getParticipationSeven())) {
+                jsonResult.append("  \"ParticipationSeven\": \"Changed from '").append(currentSyllabus.getParticipationSeven()).append("' to '").append(currentSyllabus2.getParticipationSeven()).append("',\n");
             }
 
-            if (!syllabus.getParticipationEight().equals(editSyllabus.getParticipationEight())) {
-                fileWriter.write("  Participation Eight changed from '" + syllabus.getParticipationEight() + "' to '" + editSyllabus.getParticipationEight() + "'");
+            if (currentSyllabus.getParticipationEight() != null && currentSyllabus2.getParticipationEight() != null &&
+                    !currentSyllabus.getParticipationEight().equals(currentSyllabus2.getParticipationEight())) {
+                jsonResult.append("  \"ParticipationEight\": \"Changed from '").append(currentSyllabus.getParticipationEight()).append("' to '").append(currentSyllabus2.getParticipationEight()).append("',\n");
             }
 
-            if (!syllabus.getParticipationNine().equals(editSyllabus.getParticipationNine())) {
-                fileWriter.write("  Participation Nine changed from '" + syllabus.getParticipationNine() + "' to '" + editSyllabus.getParticipationNine() + "'");
+            if (currentSyllabus.getParticipationNine() != null && currentSyllabus2.getParticipationNine() != null &&
+                    !currentSyllabus.getParticipationNine().equals(currentSyllabus2.getParticipationNine())) {
+                jsonResult.append("  \"ParticipationNine\": \"Changed from '").append(currentSyllabus.getParticipationNine()).append("' to '").append(currentSyllabus2.getParticipationNine()).append("',\n");
             }
 
-            if (!syllabus.getLaboratoryOne().equals(editSyllabus.getLaboratoryOne())) {
-                fileWriter.write("  Laboratory One changed from '" + syllabus.getLaboratoryOne() + "' to '" + editSyllabus.getLaboratoryOne() + "'");
+            if (currentSyllabus.getLaboratoryOne() != null && currentSyllabus2.getLaboratoryOne() != null &&
+                    !currentSyllabus.getLaboratoryOne().equals(currentSyllabus2.getLaboratoryOne())) {
+                jsonResult.append("  \"LaboratoryOne\": \"Changed from '").append(currentSyllabus.getLaboratoryOne()).append("' to '").append(currentSyllabus2.getLaboratoryOne()).append("',\n");
             }
 
-            if (!syllabus.getLaboratoryTwo().equals(editSyllabus.getLaboratoryTwo())) {
-                fileWriter.write("  Laboratory Two changed from '" + syllabus.getLaboratoryTwo() + "' to '" + editSyllabus.getLaboratoryTwo() + "'");
+            if (currentSyllabus.getLaboratoryTwo() != null && currentSyllabus2.getLaboratoryTwo() != null &&
+                    !currentSyllabus.getLaboratoryTwo().equals(currentSyllabus2.getLaboratoryTwo())) {
+                jsonResult.append("  \"LaboratoryTwo\": \"Changed from '").append(currentSyllabus.getLaboratoryTwo()).append("' to '").append(currentSyllabus2.getLaboratoryTwo()).append("',\n");
             }
-            if (!syllabus.getLaboratoryThree().equals(editSyllabus.getLaboratoryThree())) {
-                fileWriter.write("  Laboratory Three changed from '" + syllabus.getLaboratoryThree() + "' to '" + editSyllabus.getLaboratoryThree() + "'");
-            }
 
-            if (!syllabus.getLaboratoryFour().equals(editSyllabus.getLaboratoryFour())) {
-                fileWriter.write("  Laboratory Four changed from '" + syllabus.getLaboratoryFour() + "' to '" + editSyllabus.getLaboratoryFour() + "'");
+            if (currentSyllabus.getLaboratoryThree() != null && currentSyllabus2.getLaboratoryThree() != null &&
+                    !currentSyllabus.getLaboratoryThree().equals(currentSyllabus2.getLaboratoryThree())) {
+                jsonResult.append("  \"LaboratoryThree\": \"Changed from '").append(currentSyllabus.getLaboratoryThree()).append("' to '").append(currentSyllabus2.getLaboratoryThree()).append("',\n");
             }
 
-            if (!syllabus.getLaboratoryFive().equals(editSyllabus.getLaboratoryFive())) {
-                fileWriter.write("  Laboratory Five changed from '" + syllabus.getLaboratoryFive() + "' to '" + editSyllabus.getLaboratoryFive() + "'");
+            if (currentSyllabus.getLaboratoryFour() != null && currentSyllabus2.getLaboratoryFour() != null &&
+                    !currentSyllabus.getLaboratoryFour().equals(currentSyllabus2.getLaboratoryFour())) {
+                jsonResult.append("  \"LaboratoryFour\": \"Changed from '").append(currentSyllabus.getLaboratoryFour()).append("' to '").append(currentSyllabus2.getLaboratoryFour()).append("',\n");
             }
 
-            if (!syllabus.getLaboratorySix().equals(editSyllabus.getLaboratorySix())) {
-                fileWriter.write("  Laboratory Six changed from '" + syllabus.getLaboratorySix() + "' to '" + editSyllabus.getLaboratorySix() + "'");
+            if (currentSyllabus.getLaboratoryFive() != null && currentSyllabus2.getLaboratoryFive() != null &&
+                    !currentSyllabus.getLaboratoryFive().equals(currentSyllabus2.getLaboratoryFive())) {
+                jsonResult.append("  \"LaboratoryFive\": \"Changed from '").append(currentSyllabus.getLaboratoryFive()).append("' to '").append(currentSyllabus2.getLaboratoryFive()).append("',\n");
             }
 
-            if (!syllabus.getLaboratorySeven().equals(editSyllabus.getLaboratorySeven())) {
-                fileWriter.write("  Laboratory Seven changed from '" + syllabus.getLaboratorySeven() + "' to '" + editSyllabus.getLaboratorySeven() + "'");
+            if (currentSyllabus.getLaboratorySix() != null && currentSyllabus2.getLaboratorySix() != null &&
+                    !currentSyllabus.getLaboratorySix().equals(currentSyllabus2.getLaboratorySix())) {
+                jsonResult.append("  \"LaboratorySix\": \"Changed from '").append(currentSyllabus.getLaboratorySix()).append("' to '").append(currentSyllabus2.getLaboratorySix()).append("',\n");
             }
 
-            if (!syllabus.getLaboratoryEight().equals(editSyllabus.getLaboratoryEight())) {
-                fileWriter.write("  Laboratory Eight changed from '" + syllabus.getLaboratoryEight() + "' to '" + editSyllabus.getLaboratoryEight() + "'");
+            if (currentSyllabus.getLaboratorySeven() != null && currentSyllabus2.getLaboratorySeven() != null &&
+                    !currentSyllabus.getLaboratorySeven().equals(currentSyllabus2.getLaboratorySeven())) {
+                jsonResult.append("  \"LaboratorySeven\": \"Changed from '").append(currentSyllabus.getLaboratorySeven()).append("' to '").append(currentSyllabus2.getLaboratorySeven()).append("',\n");
             }
 
-            if (!syllabus.getLaboratoryNine().equals(editSyllabus.getLaboratoryNine())) {
-                fileWriter.write("  Laboratory Nine changed from '" + syllabus.getLaboratoryNine() + "' to '" + editSyllabus.getLaboratoryNine() + "'");
+            if (currentSyllabus.getLaboratoryEight() != null && currentSyllabus2.getLaboratoryEight() != null &&
+                    !currentSyllabus.getLaboratoryEight().equals(currentSyllabus2.getLaboratoryEight())) {
+                jsonResult.append("  \"LaboratoryEight\": \"Changed from '").append(currentSyllabus.getLaboratoryEight()).append("' to '").append(currentSyllabus2.getLaboratoryEight()).append("',\n");
             }
-            if (!syllabus.getFieldWorkOne().equals(editSyllabus.getFieldWorkOne())) {
-                fileWriter.write("  FieldWork One changed from '" + syllabus.getFieldWorkOne() + "' to '" + editSyllabus.getFieldWorkOne() + "'");
+
+            if (currentSyllabus.getLaboratoryNine() != null && currentSyllabus2.getLaboratoryNine() != null &&
+                    !currentSyllabus.getLaboratoryNine().equals(currentSyllabus2.getLaboratoryNine())) {
+                jsonResult.append("  \"LaboratoryNine\": \"Changed from '").append(currentSyllabus.getLaboratoryNine()).append("' to '").append(currentSyllabus2.getLaboratoryNine()).append("',\n");
             }
 
-            if (!syllabus.getFieldWorkTwo().equals(editSyllabus.getFieldWorkTwo())) {
-                fileWriter.write("  FieldWork Two changed from '" + syllabus.getFieldWorkTwo() + "' to '" + editSyllabus.getFieldWorkTwo() + "'");
+            if (currentSyllabus.getFieldWorkOne() != null && currentSyllabus2.getFieldWorkOne() != null &&
+                    !currentSyllabus.getFieldWorkOne().equals(currentSyllabus2.getFieldWorkOne())) {
+                jsonResult.append("  \"FieldWorkOne\": \"Changed from '").append(currentSyllabus.getFieldWorkOne()).append("' to '").append(currentSyllabus2.getFieldWorkOne()).append("',\n");
             }
-            if (!syllabus.getFieldWorkThree().equals(editSyllabus.getFieldWorkThree())) {
-                fileWriter.write("  FieldWork Three changed from '" + syllabus.getFieldWorkThree() + "' to '" + editSyllabus.getFieldWorkThree() + "'");
+
+            if (currentSyllabus.getFieldWorkTwo() != null && currentSyllabus2.getFieldWorkTwo() != null &&
+                    !currentSyllabus.getFieldWorkTwo().equals(currentSyllabus2.getFieldWorkTwo())) {
+                jsonResult.append("  \"FieldWorkTwo\": \"Changed from '").append(currentSyllabus.getFieldWorkTwo()).append("' to '").append(currentSyllabus2.getFieldWorkTwo()).append("',\n");
             }
 
-            if (!syllabus.getFieldWorkFour().equals(editSyllabus.getFieldWorkFour())) {
-                fileWriter.write("  FieldWork Four changed from '" + syllabus.getFieldWorkFour() + "' to '" + editSyllabus.getFieldWorkFour() + "'");
+            if (currentSyllabus.getFieldWorkThree() != null && currentSyllabus2.getFieldWorkThree() != null &&
+                    !currentSyllabus.getFieldWorkThree().equals(currentSyllabus2.getFieldWorkThree())) {
+                jsonResult.append("  \"FieldWorkThree\": \"Changed from '").append(currentSyllabus.getFieldWorkThree()).append("' to '").append(currentSyllabus2.getFieldWorkThree()).append("',\n");
             }
 
-            if (!syllabus.getFieldWorkFive().equals(editSyllabus.getFieldWorkFive())) {
-                fileWriter.write("  FieldWork Five changed from '" + syllabus.getFieldWorkFive() + "' to '" + editSyllabus.getFieldWorkFive() + "'");
+            if (currentSyllabus.getFieldWorkFour() != null && currentSyllabus2.getFieldWorkFour() != null &&
+                    !currentSyllabus.getFieldWorkFour().equals(currentSyllabus2.getFieldWorkFour())) {
+                jsonResult.append("  \"FieldWorkFour\": \"Changed from '").append(currentSyllabus.getFieldWorkFour()).append("' to '").append(currentSyllabus2.getFieldWorkFour()).append("',\n");
             }
 
-            if (!syllabus.getFieldWorkSix().equals(editSyllabus.getFieldWorkSix())) {
-                fileWriter.write("  FieldWork Six changed from '" + syllabus.getFieldWorkSix() + "' to '" + editSyllabus.getFieldWorkSix() + "'");
+            if (currentSyllabus.getFieldWorkFive() != null && currentSyllabus2.getFieldWorkFive() != null &&
+                    !currentSyllabus.getFieldWorkFive().equals(currentSyllabus2.getFieldWorkFive())) {
+                jsonResult.append("  \"FieldWorkFive\": \"Changed from '").append(currentSyllabus.getFieldWorkFive()).append("' to '").append(currentSyllabus2.getFieldWorkFive()).append("',\n");
             }
 
-            if (!syllabus.getFieldWorkSeven().equals(editSyllabus.getFieldWorkSeven())) {
-                fileWriter.write("  FieldWork Seven changed from '" + syllabus.getFieldWorkSeven() + "' to '" + editSyllabus.getFieldWorkSeven() + "'");
+            if (currentSyllabus.getFieldWorkSix() != null && currentSyllabus2.getFieldWorkSix() != null &&
+                    !currentSyllabus.getFieldWorkSix().equals(currentSyllabus2.getFieldWorkSix())) {
+                jsonResult.append("  \"FieldWorkSix\": \"Changed from '").append(currentSyllabus.getFieldWorkSix()).append("' to '").append(currentSyllabus2.getFieldWorkSix()).append("',\n");
             }
 
-            if (!syllabus.getFieldWorkEight().equals(editSyllabus.getFieldWorkEight())) {
-                fileWriter.write("  FieldWork Eight changed from '" + syllabus.getFieldWorkEight() + "' to '" + editSyllabus.getFieldWorkEight() + "'");
+            if (currentSyllabus.getFieldWorkSeven() != null && currentSyllabus2.getFieldWorkSeven() != null &&
+                    !currentSyllabus.getFieldWorkSeven().equals(currentSyllabus2.getFieldWorkSeven())) {
+                jsonResult.append("  \"FieldWorkSeven\": \"Changed from '").append(currentSyllabus.getFieldWorkSeven()).append("' to '").append(currentSyllabus2.getFieldWorkSeven()).append("',\n");
             }
 
-            if (!syllabus.getFieldWorkNine().equals(editSyllabus.getFieldWorkNine())) {
-                fileWriter.write("  FieldWork Nine changed from '" + syllabus.getFieldWorkNine() + "' to '" + editSyllabus.getFieldWorkNine() + "'");
+            if (currentSyllabus.getFieldWorkEight() != null && currentSyllabus2.getFieldWorkEight() != null &&
+                    !currentSyllabus.getFieldWorkEight().equals(currentSyllabus2.getFieldWorkEight())) {
+                jsonResult.append("  \"FieldWorkEight\": \"Changed from '").append(currentSyllabus.getFieldWorkEight()).append("' to '").append(currentSyllabus2.getFieldWorkEight()).append("',\n");
             }
-            if (!syllabus.getQuiz2One().equals(editSyllabus.getQuiz2One())) {
-                fileWriter.write("  Quiz2 One changed from '" + syllabus.getQuiz2One() + "' to '" + editSyllabus.getQuiz2One() + "'");
+
+            if (currentSyllabus.getFieldWorkNine() != null && currentSyllabus2.getFieldWorkNine() != null &&
+                    !currentSyllabus.getFieldWorkNine().equals(currentSyllabus2.getFieldWorkNine())) {
+                jsonResult.append("  \"FieldWorkNine\": \"Changed from '").append(currentSyllabus.getFieldWorkNine()).append("' to '").append(currentSyllabus2.getFieldWorkNine()).append("',\n");
             }
 
-            if (!syllabus.getQuiz2Two().equals(editSyllabus.getQuiz2Two())) {
-                fileWriter.write("  Quiz2 Two changed from '" + syllabus.getQuiz2Two() + "' to '" + editSyllabus.getQuiz2Two() + "'");
+            if (currentSyllabus.getQuiz2One() != null && currentSyllabus2.getQuiz2One() != null &&
+                    !currentSyllabus.getQuiz2One().equals(currentSyllabus2.getQuiz2One())) {
+                jsonResult.append("  \"Quiz2One\": \"Changed from '").append(currentSyllabus.getQuiz2One()).append("' to '").append(currentSyllabus2.getQuiz2One()).append("',\n");
             }
-            if (!syllabus.getQuiz2Three().equals(editSyllabus.getQuiz2Three())) {
-                fileWriter.write("  Quiz2 Three changed from '" + syllabus.getQuiz2Three() + "' to '" + editSyllabus.getQuiz2Three() + "'");
+
+            if (currentSyllabus.getQuiz2Two() != null && currentSyllabus2.getQuiz2Two() != null &&
+                    !currentSyllabus.getQuiz2Two().equals(currentSyllabus2.getQuiz2Two())) {
+                jsonResult.append("  \"Quiz2Two\": \"Changed from '").append(currentSyllabus.getQuiz2Two()).append("' to '").append(currentSyllabus2.getQuiz2Two()).append("',\n");
             }
-            if (!syllabus.getQuizFour().equals(editSyllabus.getQuizFour())) {
-                fileWriter.write("  Quiz2 Four changed from '" + syllabus.getQuizFour() + "' to '" + editSyllabus.getQuizFour() + "'");
+
+            if (currentSyllabus.getQuiz2Three() != null && currentSyllabus2.getQuiz2Three() != null &&
+                    !currentSyllabus.getQuiz2Three().equals(currentSyllabus2.getQuiz2Three())) {
+                jsonResult.append("  \"Quiz2Three\": \"Changed from '").append(currentSyllabus.getQuiz2Three()).append("' to '").append(currentSyllabus2.getQuiz2Three()).append("',\n");
             }
 
-            if (!syllabus.getQuizFive().equals(editSyllabus.getQuizFive())) {
-                fileWriter.write("  Quiz2 Five changed from '" + syllabus.getQuizFive() + "' to '" + editSyllabus.getQuizFive() + "'");
+            if (currentSyllabus.getQuizFour() != null && currentSyllabus2.getQuizFour() != null &&
+                    !currentSyllabus.getQuizFour().equals(currentSyllabus2.getQuizFour())) {
+                jsonResult.append("  \"QuizFour\": \"Changed from '").append(currentSyllabus.getQuizFour()).append("' to '").append(currentSyllabus2.getQuizFour()).append("',\n");
             }
 
-            if (!syllabus.getQuizSix().equals(editSyllabus.getQuizSix())) {
-                fileWriter.write("  Quiz2 Six changed from '" + syllabus.getQuizSix() + "' to '" + editSyllabus.getQuizSix() + "'");
+            if (currentSyllabus.getQuizFive() != null && currentSyllabus2.getQuizFive() != null &&
+                    !currentSyllabus.getQuizFive().equals(currentSyllabus2.getQuizFive())) {
+                jsonResult.append("  \"QuizFive\": \"Changed from '").append(currentSyllabus.getQuizFive()).append("' to '").append(currentSyllabus2.getQuizFive()).append("',\n");
             }
 
-            if (!syllabus.getQuizSeven().equals(editSyllabus.getQuizSeven())) {
-                fileWriter.write("  Quiz2 Seven changed from '" + syllabus.getQuizSeven() + "' to '" + editSyllabus.getQuizSeven() + "'");
+            if (currentSyllabus.getQuizSix() != null && currentSyllabus2.getQuizSix() != null &&
+                    !currentSyllabus.getQuizSix().equals(currentSyllabus2.getQuizSix())) {
+                jsonResult.append("  \"QuizSix\": \"Changed from '").append(currentSyllabus.getQuizSix()).append("' to '").append(currentSyllabus2.getQuizSix()).append("',\n");
             }
 
-            if (!syllabus.getQuizEight().equals(editSyllabus.getQuizEight())) {
-                fileWriter.write("  Quiz2 Eight changed from '" + syllabus.getQuizEight() + "' to '" + editSyllabus.getQuizEight() + "'");
+            if (currentSyllabus.getQuizSeven() != null && currentSyllabus2.getQuizSeven() != null &&
+                    !currentSyllabus.getQuizSeven().equals(currentSyllabus2.getQuizSeven())) {
+                jsonResult.append("  \"QuizSeven\": \"Changed from '").append(currentSyllabus.getQuizSeven()).append("' to '").append(currentSyllabus2.getQuizSeven()).append("',\n");
             }
 
-            if (!syllabus.getQuizNine().equals(editSyllabus.getQuizNine())) {
-                fileWriter.write("  Quiz2 Nine changed from '" + syllabus.getQuizNine() + "' to '" + editSyllabus.getQuizNine() + "'");
+            if (currentSyllabus.getQuizEight() != null && currentSyllabus2.getQuizEight() != null &&
+                    !currentSyllabus.getQuizEight().equals(currentSyllabus2.getQuizEight())) {
+                jsonResult.append("  \"QuizEight\": \"Changed from '").append(currentSyllabus.getQuizEight()).append("' to '").append(currentSyllabus2.getQuizEight()).append("',\n");
             }
-            if (!syllabus.getCourseHourOne().equals(editSyllabus.getCourseHourOne())) {
-                fileWriter.write("  Coursehour One changed from '" + syllabus.getCourseHourOne() + "' to '" + editSyllabus.getCourseHourOne() + "'");
+
+            if (currentSyllabus.getQuizNine() != null && currentSyllabus2.getQuizNine() != null &&
+                    !currentSyllabus.getQuizNine().equals(currentSyllabus2.getQuizNine())) {
+                jsonResult.append("  \"QuizNine\": \"Changed from '").append(currentSyllabus.getQuizNine()).append("' to '").append(currentSyllabus2.getQuizNine()).append("',\n");
             }
 
-            if (!syllabus.getCourseHourTwo().equals(editSyllabus.getCourseHourTwo())) {
-                fileWriter.write("  Coursehour Two changed from '" + syllabus.getCourseHourTwo() + "' to '" + editSyllabus.getCourseHourTwo() + "'");
+            if (currentSyllabus.getCourseHourOne() != null && currentSyllabus2.getCourseHourOne() != null &&
+                    !currentSyllabus.getCourseHourOne().equals(currentSyllabus2.getCourseHourOne())) {
+                jsonResult.append("  \"CourseHourOne\": \"Changed from '").append(currentSyllabus.getCourseHourOne()).append("' to '").append(currentSyllabus2.getCourseHourOne()).append("',\n");
             }
 
-            if (!syllabus.getLabhourOne().equals(editSyllabus.getLabhourOne())) {
-                fileWriter.write("  Labhour One changed from '" + syllabus.getLabhourOne() + "' to '" + editSyllabus.getLabhourOne() + "'");
+            if (currentSyllabus.getCourseHourTwo() != null && currentSyllabus2.getCourseHourTwo() != null &&
+                    !currentSyllabus.getCourseHourTwo().equals(currentSyllabus2.getCourseHourTwo())) {
+                jsonResult.append("  \"CourseHourTwo\": \"Changed from '").append(currentSyllabus.getCourseHourTwo()).append("' to '").append(currentSyllabus2.getCourseHourTwo()).append("',\n");
             }
-            if (!syllabus.getLabhourTwo().equals(editSyllabus.getLabhourTwo())) {
-                fileWriter.write("  Labhour Two changed from '" + syllabus.getLabhourTwo() + "' to '" + editSyllabus.getLabhourTwo() + "'");
+
+            if (currentSyllabus.getLabhourOne() != null && currentSyllabus2.getLabhourOne() != null &&
+                    !currentSyllabus.getLabhourOne().equals(currentSyllabus2.getLabhourOne())) {
+                jsonResult.append("  \"LabhourOne\": \"Changed from '").append(currentSyllabus.getLabhourOne()).append("' to '").append(currentSyllabus2.getLabhourOne()).append("',\n");
             }
 
-            if (!syllabus.getStudyhourOne().equals(editSyllabus.getStudyhourOne())) {
-                fileWriter.write("  Studyhour One changed from '" + syllabus.getStudyhourOne() + "' to '" + editSyllabus.getStudyhourOne() + "'");
+            if (currentSyllabus.getLabhourTwo() != null && currentSyllabus2.getLabhourTwo() != null &&
+                    !currentSyllabus.getLabhourTwo().equals(currentSyllabus2.getLabhourTwo())) {
+                jsonResult.append("  \"LabhourTwo\": \"Changed from '").append(currentSyllabus.getLabhourTwo()).append("' to '").append(currentSyllabus2.getLabhourTwo()).append("',\n");
             }
 
-            if (!syllabus.getStudyhourTwo().equals(editSyllabus.getStudyhourTwo())) {
-                fileWriter.write("  Studyhour Two changed from '" + syllabus.getStudyhourTwo() + "' to '" + editSyllabus.getStudyhourTwo() + "'");
+            if (currentSyllabus.getStudyhourOne() != null && currentSyllabus2.getStudyhourOne() != null &&
+                    !currentSyllabus.getStudyhourOne().equals(currentSyllabus2.getStudyhourOne())) {
+                jsonResult.append("  \"StudyhourOne\": \"Changed from '").append(currentSyllabus.getStudyhourOne()).append("' to '").append(currentSyllabus2.getStudyhourOne()).append("',\n");
             }
 
-            if (!syllabus.getStudyhourThree().equals(editSyllabus.getStudyhourThree())) {
-                fileWriter.write("  Studyhour Three changed from '" + syllabus.getStudyhourThree() + "' to '" + editSyllabus.getStudyhourThree() + "'");
+            if (currentSyllabus.getStudyhourTwo() != null && currentSyllabus2.getStudyhourTwo() != null &&
+                    !currentSyllabus.getStudyhourTwo().equals(currentSyllabus2.getStudyhourTwo())) {
+                jsonResult.append("  \"StudyhourTwo\": \"Changed from '").append(currentSyllabus.getStudyhourTwo()).append("' to '").append(currentSyllabus2.getStudyhourTwo()).append("',\n");
             }
 
-            if (!syllabus.getFieldworkOne().equals(editSyllabus.getFieldworkOne())) {
-                fileWriter.write("  Fieldwork One changed from '" + syllabus.getFieldworkOne() + "' to '" + editSyllabus.getFieldworkOne() + "'");
+            if (currentSyllabus.getStudyhourThree() != null && currentSyllabus2.getStudyhourThree() != null &&
+                    !currentSyllabus.getStudyhourThree().equals(currentSyllabus2.getStudyhourThree())) {
+                jsonResult.append("  \"StudyhourThree\": \"Changed from '").append(currentSyllabus.getStudyhourThree()).append("' to '").append(currentSyllabus2.getStudyhourThree()).append("',\n");
             }
 
-            if (!syllabus.getFieldworkTwo().equals(editSyllabus.getFieldworkTwo())) {
-                fileWriter.write("  Fieldwork Two changed from '" + syllabus.getFieldworkTwo() + "' to '" + editSyllabus.getFieldworkTwo() + "'");
+            if (currentSyllabus.getFieldworkOne() != null && currentSyllabus2.getFieldworkOne() != null &&
+                    !currentSyllabus.getFieldworkOne().equals(currentSyllabus2.getFieldworkOne())) {
+                jsonResult.append("  \"FieldworkOne\": \"Changed from '").append(currentSyllabus.getFieldworkOne()).append("' to '").append(currentSyllabus2.getFieldworkOne()).append("',\n");
             }
 
-            if (!syllabus.getFieldworkThree().equals(editSyllabus.getFieldworkThree())) {
-                fileWriter.write("  Fieldwork Three changed from '" + syllabus.getFieldworkThree() + "' to '" + editSyllabus.getFieldworkThree() + "'");
+            if (currentSyllabus.getFieldworkTwo() != null && currentSyllabus2.getFieldworkTwo() != null &&
+                    !currentSyllabus.getFieldworkTwo().equals(currentSyllabus2.getFieldworkTwo())) {
+                jsonResult.append("  \"FieldworkTwo\": \"Changed from '").append(currentSyllabus.getFieldworkTwo()).append("' to '").append(currentSyllabus2.getFieldworkTwo()).append("',\n");
             }
 
-            if (!syllabus.getQuizOne().equals(editSyllabus.getQuizOne())) {
-                fileWriter.write("  Quiz One changed from '" + syllabus.getQuizOne() + "' to '" + editSyllabus.getQuizOne() + "'");
+            if (currentSyllabus.getFieldworkThree() != null && currentSyllabus2.getFieldworkThree() != null &&
+                    !currentSyllabus.getFieldworkThree().equals(currentSyllabus2.getFieldworkThree())) {
+                jsonResult.append("  \"FieldworkThree\": \"Changed from '").append(currentSyllabus.getFieldworkThree()).append("' to '").append(currentSyllabus2.getFieldworkThree()).append("',\n");
             }
 
-            if (!syllabus.getQuizTwo().equals(editSyllabus.getQuizTwo())) {
-                fileWriter.write("  Quiz Two changed from '" + syllabus.getQuizTwo() + "' to '" + editSyllabus.getQuizTwo() + "'");
+            if (currentSyllabus.getQuizOne() != null && currentSyllabus2.getQuizOne() != null &&
+                    !currentSyllabus.getQuizOne().equals(currentSyllabus2.getQuizOne())) {
+                jsonResult.append("  \"QuizOne\": \"Changed from '").append(currentSyllabus.getQuizOne()).append("' to '").append(currentSyllabus2.getQuizOne()).append("',\n");
             }
 
-            if (!syllabus.getQuizThree().equals(editSyllabus.getQuizThree())) {
-                fileWriter.write("  Quiz Three changed from '" + syllabus.getQuizThree() + "' to '" + editSyllabus.getQuizThree() + "'");
+            if (currentSyllabus.getQuizTwo() != null && currentSyllabus2.getQuizTwo() != null &&
+                    !currentSyllabus.getQuizTwo().equals(currentSyllabus2.getQuizTwo())) {
+                jsonResult.append("  \"QuizTwo\": \"Changed from '").append(currentSyllabus.getQuizTwo()).append("' to '").append(currentSyllabus2.getQuizTwo()).append("',\n");
             }
 
-            if (!syllabus.getHomeworkOne().equals(editSyllabus.getHomeworkOne())) {
-                fileWriter.write("  Homework One changed from '" + syllabus.getHomeworkOne() + "' to '" + editSyllabus.getHomeworkOne() + "'");
+            if (currentSyllabus.getQuizThree() != null && currentSyllabus2.getQuizThree() != null &&
+                    !currentSyllabus.getQuizThree().equals(currentSyllabus2.getQuizThree())) {
+                jsonResult.append("  \"QuizThree\": \"Changed from '").append(currentSyllabus.getQuizThree()).append("' to '").append(currentSyllabus2.getQuizThree()).append("',\n");
             }
 
-            if (!syllabus.getHomeworkTwo().equals(editSyllabus.getHomeworkTwo())) {
-                fileWriter.write("  Homework Two changed from '" + syllabus.getHomeworkTwo() + "' to '" + editSyllabus.getHomeworkTwo() + "'");
+            if (currentSyllabus.getHomeworkOne() != null && currentSyllabus2.getHomeworkOne() != null &&
+                    !currentSyllabus.getHomeworkOne().equals(currentSyllabus2.getHomeworkOne())) {
+                jsonResult.append("  \"HomeworkOne\": \"Changed from '").append(currentSyllabus.getHomeworkOne()).append("' to '").append(currentSyllabus2.getHomeworkOne()).append("',\n");
             }
 
-            if (!syllabus.getHomeworkThree().equals(editSyllabus.getHomeworkThree())) {
-                fileWriter.write("  Homework Three changed from '" + syllabus.getHomeworkThree() + "' to '" + editSyllabus.getHomeworkThree() + "'");
+            if (currentSyllabus.getHomeworkTwo() != null && currentSyllabus2.getHomeworkTwo() != null &&
+                    !currentSyllabus.getHomeworkTwo().equals(currentSyllabus2.getHomeworkTwo())) {
+                jsonResult.append("  \"HomeworkTwo\": \"Changed from '").append(currentSyllabus.getHomeworkTwo()).append("' to '").append(currentSyllabus2.getHomeworkTwo()).append("',\n");
             }
 
-            if (!syllabus.getPresentationOne().equals(editSyllabus.getPresentationOne())) {
-                fileWriter.write("  Presentation One changed from '" + syllabus.getPresentationOne() + "' to '" + editSyllabus.getPresentationOne() + "'");
+            if (currentSyllabus.getHomeworkThree() != null && currentSyllabus2.getHomeworkThree() != null &&
+                    !currentSyllabus.getHomeworkThree().equals(currentSyllabus2.getHomeworkThree())) {
+                jsonResult.append("  \"HomeworkThree\": \"Changed from '").append(currentSyllabus.getHomeworkThree()).append("' to '").append(currentSyllabus2.getHomeworkThree()).append("',\n");
             }
 
-            if (!syllabus.getPresentationTwo().equals(editSyllabus.getPresentationTwo())) {
-                fileWriter.write("  Presentation Two changed from '" + syllabus.getPresentationTwo() + "' to '" + editSyllabus.getPresentationTwo() + "'");
+            if (currentSyllabus.getPresentationOne() != null && currentSyllabus2.getPresentationOne() != null &&
+                    !currentSyllabus.getPresentationOne().equals(currentSyllabus2.getPresentationOne())) {
+                jsonResult.append("  \"PresentationOne\": \"Changed from '").append(currentSyllabus.getPresentationOne()).append("' to '").append(currentSyllabus2.getPresentationOne()).append("',\n");
             }
 
-            if (!syllabus.getPresentationThree().equals(editSyllabus.getPresentationThree())) {
-                fileWriter.write("  Presentation Three changed from '" + syllabus.getPresentationThree() + "' to '" + editSyllabus.getPresentationThree() + "'");
+            if (currentSyllabus.getPresentationTwo() != null && currentSyllabus2.getPresentationTwo() != null &&
+                    !currentSyllabus.getPresentationTwo().equals(currentSyllabus2.getPresentationTwo())) {
+                jsonResult.append("  \"PresentationTwo\": \"Changed from '").append(currentSyllabus.getPresentationTwo()).append("' to '").append(currentSyllabus2.getPresentationTwo()).append("',\n");
             }
 
-            if (!syllabus.getProjectOne().equals(editSyllabus.getProjectOne())) {
-                fileWriter.write("  Project One changed from '" + syllabus.getProjectOne() + "' to '" + editSyllabus.getProjectOne() + "'");
+            if (currentSyllabus.getPresentationThree() != null && currentSyllabus2.getPresentationThree() != null &&
+                    !currentSyllabus.getPresentationThree().equals(currentSyllabus2.getPresentationThree())) {
+                jsonResult.append("  \"PresentationThree\": \"Changed from '").append(currentSyllabus.getPresentationThree()).append("' to '").append(currentSyllabus2.getPresentationThree()).append("',\n");
             }
 
-            if (!syllabus.getProjectTwo().equals(editSyllabus.getProjectTwo())) {
-                fileWriter.write("  Project Two changed from '" + syllabus.getProjectTwo() + "' to '" + editSyllabus.getProjectTwo() + "'");
+            if (currentSyllabus.getProjectOne() != null && currentSyllabus2.getProjectOne() != null &&
+                    !currentSyllabus.getProjectOne().equals(currentSyllabus2.getProjectOne())) {
+                jsonResult.append("  \"ProjectOne\": \"Changed from '").append(currentSyllabus.getProjectOne()).append("' to '").append(currentSyllabus2.getProjectOne()).append("',\n");
             }
 
-            if (!syllabus.getProjectThree().equals(editSyllabus.getProjectThree())) {
-                fileWriter.write("  Project Three changed from '" + syllabus.getProjectThree() + "' to '" + editSyllabus.getProjectThree() + "'");
+            if (currentSyllabus.getProjectTwo() != null && currentSyllabus2.getProjectTwo() != null &&
+                    !currentSyllabus.getProjectTwo().equals(currentSyllabus2.getProjectTwo())) {
+                jsonResult.append("  \"ProjectTwo\": \"Changed from '").append(currentSyllabus.getProjectTwo()).append("' to '").append(currentSyllabus2.getProjectTwo()).append("',\n");
             }
 
-            if (!syllabus.getPortfolioOne().equals(editSyllabus.getPortfolioOne())) {
-                fileWriter.write("  Portfolio One changed from '" + syllabus.getPortfolioOne() + "' to '" + editSyllabus.getPortfolioOne() + "'");
+            if (currentSyllabus.getProjectThree() != null && currentSyllabus2.getProjectThree() != null &&
+                    !currentSyllabus.getProjectThree().equals(currentSyllabus2.getProjectThree())) {
+                jsonResult.append("  \"ProjectThree\": \"Changed from '").append(currentSyllabus.getProjectThree()).append("' to '").append(currentSyllabus2.getProjectThree()).append("',\n");
             }
 
-            if (!syllabus.getPortfolioTwo().equals(editSyllabus.getPortfolioTwo())) {
-                fileWriter.write("  Portfolio Two changed from '" + syllabus.getPortfolioTwo() + "' to '" + editSyllabus.getPortfolioTwo() + "'");
+            if (currentSyllabus.getPortfolioOne() != null && currentSyllabus2.getPortfolioOne() != null &&
+                    !currentSyllabus.getPortfolioOne().equals(currentSyllabus2.getPortfolioOne())) {
+                jsonResult.append("  \"PortfolioOne\": \"Changed from '").append(currentSyllabus.getPortfolioOne()).append("' to '").append(currentSyllabus2.getPortfolioOne()).append("',\n");
             }
 
-            if (!syllabus.getPortfolioThree().equals(editSyllabus.getPortfolioThree())) {
-                fileWriter.write("  Portfolio Three changed from '" + syllabus.getPortfolioThree() + "' to '" + editSyllabus.getPortfolioThree() + "'");
+            if (currentSyllabus.getPortfolioTwo() != null && currentSyllabus2.getPortfolioTwo() != null &&
+                    !currentSyllabus.getPortfolioTwo().equals(currentSyllabus2.getPortfolioTwo())) {
+                jsonResult.append("  \"PortfolioTwo\": \"Changed from '").append(currentSyllabus.getPortfolioTwo()).append("' to '").append(currentSyllabus2.getPortfolioTwo()).append("',\n");
             }
 
-            if (!syllabus.getSeminarOne().equals(editSyllabus.getSeminarOne())) {
-                fileWriter.write("  Seminar One changed from '" + syllabus.getSeminarOne() + "' to '" + editSyllabus.getSeminarOne() + "'");
+            if (currentSyllabus.getPortfolioThree() != null && currentSyllabus2.getPortfolioThree() != null &&
+                    !currentSyllabus.getPortfolioThree().equals(currentSyllabus2.getPortfolioThree())) {
+                jsonResult.append("  \"PortfolioThree\": \"Changed from '").append(currentSyllabus.getPortfolioThree()).append("' to '").append(currentSyllabus2.getPortfolioThree()).append("',\n");
             }
 
-            if (!syllabus.getSeminarTwo().equals(editSyllabus.getSeminarTwo())) {
-                fileWriter.write("  Seminar Two changed from '" + syllabus.getSeminarTwo() + "' to '" + editSyllabus.getSeminarTwo() + "'");
+            if (currentSyllabus.getSeminarOne() != null && currentSyllabus2.getSeminarOne() != null &&
+                    !currentSyllabus.getSeminarOne().equals(currentSyllabus2.getSeminarOne())) {
+                jsonResult.append("  \"SeminarOne\": \"Changed from '").append(currentSyllabus.getSeminarOne()).append("' to '").append(currentSyllabus2.getSeminarOne()).append("',\n");
             }
 
-            if (!syllabus.getSeminarThree().equals(editSyllabus.getSeminarThree())) {
-                fileWriter.write("  Seminar Three changed from '" + syllabus.getSeminarThree() + "' to '" + editSyllabus.getSeminarThree() + "'");
+            if (currentSyllabus.getSeminarTwo() != null && currentSyllabus2.getSeminarTwo() != null &&
+                    !currentSyllabus.getSeminarTwo().equals(currentSyllabus2.getSeminarTwo())) {
+                jsonResult.append("  \"SeminarTwo\": \"Changed from '").append(currentSyllabus.getSeminarTwo()).append("' to '").append(currentSyllabus2.getSeminarTwo()).append("',\n");
             }
 
-            if (!syllabus.getOralOne().equals(editSyllabus.getOralOne())) {
-                fileWriter.write("  Oral One changed from '" + syllabus.getOralOne() + "' to '" + editSyllabus.getOralOne() + "'");
+            if (currentSyllabus.getSeminarThree() != null && currentSyllabus2.getSeminarThree() != null &&
+                    !currentSyllabus.getSeminarThree().equals(currentSyllabus2.getSeminarThree())) {
+                jsonResult.append("  \"SeminarThree\": \"Changed from '").append(currentSyllabus.getSeminarThree()).append("' to '").append(currentSyllabus2.getSeminarThree()).append("',\n");
             }
 
-            if (!syllabus.getOralTwo().equals(editSyllabus.getOralTwo())) {
-                fileWriter.write("  Oral Two changed from '" + syllabus.getOralTwo() + "' to '" + editSyllabus.getOralTwo() + "'");
+            if (currentSyllabus.getOralOne() != null && currentSyllabus2.getOralOne() != null &&
+                    !currentSyllabus.getOralOne().equals(currentSyllabus2.getOralOne())) {
+                jsonResult.append("  \"OralOne\": \"Changed from '").append(currentSyllabus.getOralOne()).append("' to '").append(currentSyllabus2.getOralOne()).append("',\n");
             }
 
-            if (!syllabus.getOralThree().equals(editSyllabus.getOralThree())) {
-                fileWriter.write("  Oral Three changed from '" + syllabus.getOralThree() + "' to '" + editSyllabus.getOralThree() + "'");
+            if (currentSyllabus.getOralTwo() != null && currentSyllabus2.getOralTwo() != null &&
+                    !currentSyllabus.getOralTwo().equals(currentSyllabus2.getOralTwo())) {
+                jsonResult.append("  \"OralTwo\": \"Changed from '").append(currentSyllabus.getOralTwo()).append("' to '").append(currentSyllabus2.getOralTwo()).append("',\n");
             }
 
-            if (!syllabus.getMidtermOne().equals(editSyllabus.getMidtermOne())) {
-                fileWriter.write("  Midterm One changed from '" + syllabus.getMidtermOne() + "' to '" + editSyllabus.getMidtermOne() + "'");
+            if (currentSyllabus.getOralThree() != null && currentSyllabus2.getOralThree() != null &&
+                    !currentSyllabus.getOralThree().equals(currentSyllabus2.getOralThree())) {
+                jsonResult.append("  \"OralThree\": \"Changed from '").append(currentSyllabus.getOralThree()).append("' to '").append(currentSyllabus2.getOralThree()).append("',\n");
             }
 
-            if (!syllabus.getMidtermTwo().equals(editSyllabus.getMidtermTwo())) {
-                fileWriter.write("  Midterm Two changed from '" + syllabus.getMidtermTwo() + "' to '" + editSyllabus.getMidtermTwo() + "'");
+            if (currentSyllabus.getMidtermOne() != null && currentSyllabus2.getMidtermOne() != null &&
+                    !currentSyllabus.getMidtermOne().equals(currentSyllabus2.getMidtermOne())) {
+                jsonResult.append("  \"MidtermOne\": \"Changed from '").append(currentSyllabus.getMidtermOne()).append("' to '").append(currentSyllabus2.getMidtermOne()).append("',\n");
             }
 
-            if (!syllabus.getMidtermThree().equals(editSyllabus.getMidtermThree())) {
-                fileWriter.write("  Midterm Three changed from '" + syllabus.getMidtermThree() + "' to '" + editSyllabus.getMidtermThree() + "'");
+            if (currentSyllabus.getMidtermTwo() != null && currentSyllabus2.getMidtermTwo() != null &&
+                    !currentSyllabus.getMidtermTwo().equals(currentSyllabus2.getMidtermTwo())) {
+                jsonResult.append("  \"MidtermTwo\": \"Changed from '").append(currentSyllabus.getMidtermTwo()).append("' to '").append(currentSyllabus2.getMidtermTwo()).append("',\n");
             }
 
-            if (!syllabus.getFinalOne().equals(editSyllabus.getFinalOne())) {
-                fileWriter.write("  Final One changed from '" + syllabus.getFinalOne() + "' to '" + editSyllabus.getFinalOne() + "'");
+            if (currentSyllabus.getMidtermThree() != null && currentSyllabus2.getMidtermThree() != null &&
+                    !currentSyllabus.getMidtermThree().equals(currentSyllabus2.getMidtermThree())) {
+                jsonResult.append("  \"MidtermThree\": \"Changed from '").append(currentSyllabus.getMidtermThree()).append("' to '").append(currentSyllabus2.getMidtermThree()).append("',\n");
             }
 
-            if (!syllabus.getFinalTwo().equals(editSyllabus.getFinalTwo())) {
-                fileWriter.write("  Final Two changed from '" + syllabus.getFinalTwo() + "' to '" + editSyllabus.getFinalTwo() + "'");
+            if (currentSyllabus.getFinalOne() != null && currentSyllabus2.getFinalOne() != null &&
+                    !currentSyllabus.getFinalOne().equals(currentSyllabus2.getFinalOne())) {
+                jsonResult.append("  \"FinalOne\": \"Changed from '").append(currentSyllabus.getFinalOne()).append("' to '").append(currentSyllabus2.getFinalOne()).append("',\n");
             }
 
-            if (!syllabus.getFinalThree().equals(editSyllabus.getFinalThree())) {
-                fileWriter.write("  Final Three changed from '" + syllabus.getFinalThree() + "' to '" + editSyllabus.getFinalThree() + "'");
+            if (currentSyllabus.getFinalTwo() != null && currentSyllabus2.getFinalTwo() != null &&
+                    !currentSyllabus.getFinalTwo().equals(currentSyllabus2.getFinalTwo())) {
+                jsonResult.append("  \"FinalTwo\": \"Changed from '").append(currentSyllabus.getFinalTwo()).append("' to '").append(currentSyllabus2.getFinalTwo()).append("',\n");
             }
 
-            if (!syllabus.getOneProgramZero().equals(editSyllabus.getOneProgramZero())) {
-                fileWriter.write("  OneProgram Zero changed from '" + syllabus.getOneProgramZero() + "' to '" + editSyllabus.getOneProgramZero() + "'");
+            if (currentSyllabus.getFinalThree() != null && currentSyllabus2.getFinalThree() != null &&
+                    !currentSyllabus.getFinalThree().equals(currentSyllabus2.getFinalThree())) {
+                jsonResult.append("  \"FinalThree\": \"Changed from '").append(currentSyllabus.getFinalThree()).append("' to '").append(currentSyllabus2.getFinalThree()).append("',\n");
             }
 
-            if (!syllabus.getOneProgramOne().equals(editSyllabus.getOneProgramOne())) {
-                fileWriter.write("  OneProgram One changed from '" + syllabus.getOneProgramOne() + "' to '" + editSyllabus.getOneProgramOne() + "'");
+            if (currentSyllabus.getOneProgramZero() != null && currentSyllabus2.getOneProgramZero() != null &&
+                    !currentSyllabus.getOneProgramZero().equals(currentSyllabus2.getOneProgramZero())) {
+                jsonResult.append("  \"OneProgramZero\": \"Changed from '").append(currentSyllabus.getOneProgramZero()).append("' to '").append(currentSyllabus2.getOneProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getOneProgramTwo().equals(editSyllabus.getOneProgramTwo())) {
-                fileWriter.write("  OneProgram Two changed from '" + syllabus.getOneProgramTwo() + "' to '" + editSyllabus.getOneProgramTwo() + "'");
+            if (currentSyllabus.getOneProgramOne() != null && currentSyllabus2.getOneProgramOne() != null &&
+                    !currentSyllabus.getOneProgramOne().equals(currentSyllabus2.getOneProgramOne())) {
+                jsonResult.append("  \"OneProgramOne\": \"Changed from '").append(currentSyllabus.getOneProgramOne()).append("' to '").append(currentSyllabus2.getOneProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getOneProgramThree().equals(editSyllabus.getOneProgramThree())) {
-                fileWriter.write("  OneProgram Three changed from '" + syllabus.getOneProgramThree() + "' to '" + editSyllabus.getOneProgramThree() + "'");
+            if (currentSyllabus.getOneProgramTwo() != null && currentSyllabus2.getOneProgramTwo() != null &&
+                    !currentSyllabus.getOneProgramTwo().equals(currentSyllabus2.getOneProgramTwo())) {
+                jsonResult.append("  \"OneProgramTwo\": \"Changed from '").append(currentSyllabus.getOneProgramTwo()).append("' to '").append(currentSyllabus2.getOneProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getOneProgramFour().equals(editSyllabus.getOneProgramFour())) {
-                fileWriter.write("  OneProgram Four changed from '" + syllabus.getOneProgramFour() + "' to '" + editSyllabus.getOneProgramFour() + "'");
+            if (currentSyllabus.getOneProgramThree() != null && currentSyllabus2.getOneProgramThree() != null &&
+                    !currentSyllabus.getOneProgramThree().equals(currentSyllabus2.getOneProgramThree())) {
+                jsonResult.append("  \"OneProgramThree\": \"Changed from '").append(currentSyllabus.getOneProgramThree()).append("' to '").append(currentSyllabus2.getOneProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getOneProgramFive().equals(editSyllabus.getOneProgramFive())) {
-                fileWriter.write("  OneProgram Five changed from '" + syllabus.getOneProgramFive() + "' to '" + editSyllabus.getOneProgramFive() + "'");
+            if (currentSyllabus.getOneProgramFour() != null && currentSyllabus2.getOneProgramFour() != null &&
+                    !currentSyllabus.getOneProgramFour().equals(currentSyllabus2.getOneProgramFour())) {
+                jsonResult.append("  \"OneProgramFour\": \"Changed from '").append(currentSyllabus.getOneProgramFour()).append("' to '").append(currentSyllabus2.getOneProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getTwoProgramZero().equals(editSyllabus.getTwoProgramZero())) {
-                fileWriter.write("  TwoProgram Zero changed from '" + syllabus.getTwoProgramZero() + "' to '" + editSyllabus.getTwoProgramZero() + "'");
+            if (currentSyllabus.getOneProgramFive() != null && currentSyllabus2.getOneProgramFive() != null &&
+                    !currentSyllabus.getOneProgramFive().equals(currentSyllabus2.getOneProgramFive())) {
+                jsonResult.append("  \"OneProgramFive\": \"Changed from '").append(currentSyllabus.getOneProgramFive()).append("' to '").append(currentSyllabus2.getOneProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getTwoProgramOne().equals(editSyllabus.getTwoProgramOne())) {
-                fileWriter.write("  TwoProgram One changed from '" + syllabus.getTwoProgramOne() + "' to '" + editSyllabus.getTwoProgramOne() + "'");
+            if (currentSyllabus.getTwoProgramZero() != null && currentSyllabus2.getTwoProgramZero() != null &&
+                    !currentSyllabus.getTwoProgramZero().equals(currentSyllabus2.getTwoProgramZero())) {
+                jsonResult.append("  \"TwoProgramZero\": \"Changed from '").append(currentSyllabus.getTwoProgramZero()).append("' to '").append(currentSyllabus2.getTwoProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getTwoProgramTwo().equals(editSyllabus.getTwoProgramTwo())) {
-                fileWriter.write("  TwoProgram Two changed from '" + syllabus.getTwoProgramTwo() + "' to '" + editSyllabus.getTwoProgramTwo() + "'");
+            if (currentSyllabus.getTwoProgramOne() != null && currentSyllabus2.getTwoProgramOne() != null &&
+                    !currentSyllabus.getTwoProgramOne().equals(currentSyllabus2.getTwoProgramOne())) {
+                jsonResult.append("  \"TwoProgramOne\": \"Changed from '").append(currentSyllabus.getTwoProgramOne()).append("' to '").append(currentSyllabus2.getTwoProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getTwoProgramThree().equals(editSyllabus.getTwoProgramThree())) {
-                fileWriter.write("  TwoProgram Three changed from '" + syllabus.getTwoProgramThree() + "' to '" + editSyllabus.getTwoProgramThree() + "'");
+            if (currentSyllabus.getTwoProgramTwo() != null && currentSyllabus2.getTwoProgramTwo() != null &&
+                    !currentSyllabus.getTwoProgramTwo().equals(currentSyllabus2.getTwoProgramTwo())) {
+                jsonResult.append("  \"TwoProgramTwo\": \"Changed from '").append(currentSyllabus.getTwoProgramTwo()).append("' to '").append(currentSyllabus2.getTwoProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getTwoProgramFour().equals(editSyllabus.getTwoProgramFour())) {
-                fileWriter.write("  TwoProgram Four changed from '" + syllabus.getTwoProgramFour() + "' to '" + editSyllabus.getTwoProgramFour() + "'");
+            if (currentSyllabus.getTwoProgramThree() != null && currentSyllabus2.getTwoProgramThree() != null &&
+                    !currentSyllabus.getTwoProgramThree().equals(currentSyllabus2.getTwoProgramThree())) {
+                jsonResult.append("  \"TwoProgramThree\": \"Changed from '").append(currentSyllabus.getTwoProgramThree()).append("' to '").append(currentSyllabus2.getTwoProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getTwoProgramFive().equals(editSyllabus.getTwoProgramFive())) {
-                fileWriter.write("  TwoProgram Five changed from '" + syllabus.getTwoProgramFive() + "' to '" + editSyllabus.getTwoProgramFive() + "'");
+            if (currentSyllabus.getTwoProgramFour() != null && currentSyllabus2.getTwoProgramFour() != null &&
+                    !currentSyllabus.getTwoProgramFour().equals(currentSyllabus2.getTwoProgramFour())) {
+                jsonResult.append("  \"TwoProgramFour\": \"Changed from '").append(currentSyllabus.getTwoProgramFour()).append("' to '").append(currentSyllabus2.getTwoProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getThreeProgramZero().equals(editSyllabus.getThreeProgramZero())) {
-                fileWriter.write("  ThreeProgram Zero changed from '" + syllabus.getThreeProgramZero() + "' to '" + editSyllabus.getThreeProgramZero() + "'");
+            if (currentSyllabus.getTwoProgramFive() != null && currentSyllabus2.getTwoProgramFive() != null &&
+                    !currentSyllabus.getTwoProgramFive().equals(currentSyllabus2.getTwoProgramFive())) {
+                jsonResult.append("  \"TwoProgramFive\": \"Changed from '").append(currentSyllabus.getTwoProgramFive()).append("' to '").append(currentSyllabus2.getTwoProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getThreeProgramOne().equals(editSyllabus.getThreeProgramOne())) {
-                fileWriter.write("  ThreeProgram One changed from '" + syllabus.getThreeProgramOne() + "' to '" + editSyllabus.getThreeProgramOne() + "'");
+            if (currentSyllabus.getThreeProgramZero() != null && currentSyllabus2.getThreeProgramZero() != null &&
+                    !currentSyllabus.getThreeProgramZero().equals(currentSyllabus2.getThreeProgramZero())) {
+                jsonResult.append("  \"ThreeProgramZero\": \"Changed from '").append(currentSyllabus.getThreeProgramZero()).append("' to '").append(currentSyllabus2.getThreeProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getThreeProgramTwo().equals(editSyllabus.getThreeProgramTwo())) {
-                fileWriter.write("  ThreeProgram Two changed from '" + syllabus.getThreeProgramTwo() + "' to '" + editSyllabus.getThreeProgramTwo() + "'");
+            if (currentSyllabus.getThreeProgramOne() != null && currentSyllabus2.getThreeProgramOne() != null &&
+                    !currentSyllabus.getThreeProgramOne().equals(currentSyllabus2.getThreeProgramOne())) {
+                jsonResult.append("  \"ThreeProgramOne\": \"Changed from '").append(currentSyllabus.getThreeProgramOne()).append("' to '").append(currentSyllabus2.getThreeProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getThreeProgramThree().equals(editSyllabus.getThreeProgramThree())) {
-                fileWriter.write("  ThreeProgram Three changed from '" + syllabus.getThreeProgramThree() + "' to '" + editSyllabus.getThreeProgramThree() + "'");
+            if (currentSyllabus.getThreeProgramTwo() != null && currentSyllabus2.getThreeProgramTwo() != null &&
+                    !currentSyllabus.getThreeProgramTwo().equals(currentSyllabus2.getThreeProgramTwo())) {
+                jsonResult.append("  \"ThreeProgramTwo\": \"Changed from '").append(currentSyllabus.getThreeProgramTwo()).append("' to '").append(currentSyllabus2.getThreeProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getThreeProgramFour().equals(editSyllabus.getThreeProgramFour())) {
-                fileWriter.write("  ThreeProgram Four changed from '" + syllabus.getThreeProgramFour() + "' to '" + editSyllabus.getThreeProgramFour() + "'");
+            if (currentSyllabus.getThreeProgramThree() != null && currentSyllabus2.getThreeProgramThree() != null &&
+                    !currentSyllabus.getThreeProgramThree().equals(currentSyllabus2.getThreeProgramThree())) {
+                jsonResult.append("  \"ThreeProgramThree\": \"Changed from '").append(currentSyllabus.getThreeProgramThree()).append("' to '").append(currentSyllabus2.getThreeProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getThreeProgramFive().equals(editSyllabus.getThreeProgramFive())) {
-                fileWriter.write("  ThreeProgram Five changed from '" + syllabus.getThreeProgramFive() + "' to '" + editSyllabus.getThreeProgramFive() + "'");
+            if (currentSyllabus.getThreeProgramFour() != null && currentSyllabus2.getThreeProgramFour() != null &&
+                    !currentSyllabus.getThreeProgramFour().equals(currentSyllabus2.getThreeProgramFour())) {
+                jsonResult.append("  \"ThreeProgramFour\": \"Changed from '").append(currentSyllabus.getThreeProgramFour()).append("' to '").append(currentSyllabus2.getThreeProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getFourProgramZero().equals(editSyllabus.getFourProgramZero())) {
-                fileWriter.write("  FourProgram Zero changed from '" + syllabus.getFourProgramZero() + "' to '" + editSyllabus.getFourProgramZero() + "'");
+            if (currentSyllabus.getThreeProgramFive() != null && currentSyllabus2.getThreeProgramFive() != null &&
+                    !currentSyllabus.getThreeProgramFive().equals(currentSyllabus2.getThreeProgramFive())) {
+                jsonResult.append("  \"ThreeProgramFive\": \"Changed from '").append(currentSyllabus.getThreeProgramFive()).append("' to '").append(currentSyllabus2.getThreeProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getFourProgramOne().equals(editSyllabus.getFourProgramOne())) {
-                fileWriter.write("  FourProgram One changed from '" + syllabus.getFourProgramOne() + "' to '" + editSyllabus.getFourProgramOne() + "'");
+            if (currentSyllabus.getFourProgramZero() != null && currentSyllabus2.getFourProgramZero() != null &&
+                    !currentSyllabus.getFourProgramZero().equals(currentSyllabus2.getFourProgramZero())) {
+                jsonResult.append("  \"FourProgramZero\": \"Changed from '").append(currentSyllabus.getFourProgramZero()).append("' to '").append(currentSyllabus2.getFourProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getFourProgramTwo().equals(editSyllabus.getFourProgramTwo())) {
-                fileWriter.write("  FourProgram Two changed from '" + syllabus.getFourProgramTwo() + "' to '" + editSyllabus.getFourProgramTwo() + "'");
+            if (currentSyllabus.getFourProgramOne() != null && currentSyllabus2.getFourProgramOne() != null &&
+                    !currentSyllabus.getFourProgramOne().equals(currentSyllabus2.getFourProgramOne())) {
+                jsonResult.append("  \"FourProgramOne\": \"Changed from '").append(currentSyllabus.getFourProgramOne()).append("' to '").append(currentSyllabus2.getFourProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getFourProgramThree().equals(editSyllabus.getFourProgramThree())) {
-                fileWriter.write("  FourProgram Three changed from '" + syllabus.getFourProgramThree() + "' to '" + editSyllabus.getFourProgramThree() + "'");
+            if (currentSyllabus.getFourProgramTwo() != null && currentSyllabus2.getFourProgramTwo() != null &&
+                    !currentSyllabus.getFourProgramTwo().equals(currentSyllabus2.getFourProgramTwo())) {
+                jsonResult.append("  \"FourProgramTwo\": \"Changed from '").append(currentSyllabus.getFourProgramTwo()).append("' to '").append(currentSyllabus2.getFourProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getFourProgramFour().equals(editSyllabus.getFourProgramFour())) {
-                fileWriter.write("  FourProgram Four changed from '" + syllabus.getFourProgramFour() + "' to '" + editSyllabus.getFourProgramFour() + "'");
+            if (currentSyllabus.getFourProgramThree() != null && currentSyllabus2.getFourProgramThree() != null &&
+                    !currentSyllabus.getFourProgramThree().equals(currentSyllabus2.getFourProgramThree())) {
+                jsonResult.append("  \"FourProgramThree\": \"Changed from '").append(currentSyllabus.getFourProgramThree()).append("' to '").append(currentSyllabus2.getFourProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getFourProgramFive().equals(editSyllabus.getFourProgramFive())) {
-                fileWriter.write("  FourProgram Five changed from '" + syllabus.getFourProgramFive() + "' to '" + editSyllabus.getFourProgramFive() + "'");
+            if (currentSyllabus.getFourProgramFour() != null && currentSyllabus2.getFourProgramFour() != null &&
+                    !currentSyllabus.getFourProgramFour().equals(currentSyllabus2.getFourProgramFour())) {
+                jsonResult.append("  \"FourProgramFour\": \"Changed from '").append(currentSyllabus.getFourProgramFour()).append("' to '").append(currentSyllabus2.getFourProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getFiveProgramZero().equals(editSyllabus.getFiveProgramZero())) {
-                fileWriter.write("  FiveProgram Zero changed from '" + syllabus.getFiveProgramZero() + "' to '" + editSyllabus.getFiveProgramZero() + "'");
+            if (currentSyllabus.getFourProgramFive() != null && currentSyllabus2.getFourProgramFive() != null &&
+                    !currentSyllabus.getFourProgramFive().equals(currentSyllabus2.getFourProgramFive())) {
+                jsonResult.append("  \"FourProgramFive\": \"Changed from '").append(currentSyllabus.getFourProgramFive()).append("' to '").append(currentSyllabus2.getFourProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getFiveProgramOne().equals(editSyllabus.getFiveProgramOne())) {
-                fileWriter.write("  FiveProgram One changed from '" + syllabus.getFiveProgramOne() + "' to '" + editSyllabus.getFiveProgramOne() + "'");
+            if (currentSyllabus.getFiveProgramZero() != null && currentSyllabus2.getFiveProgramZero() != null &&
+                    !currentSyllabus.getFiveProgramZero().equals(currentSyllabus2.getFiveProgramZero())) {
+                jsonResult.append("  \"FiveProgramZero\": \"Changed from '").append(currentSyllabus.getFiveProgramZero()).append("' to '").append(currentSyllabus2.getFiveProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getFiveProgramTwo().equals(editSyllabus.getFiveProgramTwo())) {
-                fileWriter.write("  FiveProgram Two changed from '" + syllabus.getFiveProgramTwo() + "' to '" + editSyllabus.getFiveProgramTwo() + "'");
+            if (currentSyllabus.getFiveProgramOne() != null && currentSyllabus2.getFiveProgramOne() != null &&
+                    !currentSyllabus.getFiveProgramOne().equals(currentSyllabus2.getFiveProgramOne())) {
+                jsonResult.append("  \"FiveProgramOne\": \"Changed from '").append(currentSyllabus.getFiveProgramOne()).append("' to '").append(currentSyllabus2.getFiveProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getFiveProgramThree().equals(editSyllabus.getFiveProgramThree())) {
-                fileWriter.write("  FiveProgram Three changed from '" + syllabus.getFiveProgramThree() + "' to '" + editSyllabus.getFiveProgramThree() + "'");
+            if (currentSyllabus.getFiveProgramTwo() != null && currentSyllabus2.getFiveProgramTwo() != null &&
+                    !currentSyllabus.getFiveProgramTwo().equals(currentSyllabus2.getFiveProgramTwo())) {
+                jsonResult.append("  \"FiveProgramTwo\": \"Changed from '").append(currentSyllabus.getFiveProgramTwo()).append("' to '").append(currentSyllabus2.getFiveProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getFiveProgramFour().equals(editSyllabus.getFiveProgramFour())) {
-                fileWriter.write("  FiveProgram Four changed from '" + syllabus.getFiveProgramFour() + "' to '" + editSyllabus.getFiveProgramFour() + "'");
+            if (currentSyllabus.getFiveProgramThree() != null && currentSyllabus2.getFiveProgramThree() != null &&
+                    !currentSyllabus.getFiveProgramThree().equals(currentSyllabus2.getFiveProgramThree())) {
+                jsonResult.append("  \"FiveProgramThree\": \"Changed from '").append(currentSyllabus.getFiveProgramThree()).append("' to '").append(currentSyllabus2.getFiveProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getFiveProgramFive().equals(editSyllabus.getFiveProgramFive())) {
-                fileWriter.write("  FiveProgram Five changed from '" + syllabus.getFiveProgramFive() + "' to '" + editSyllabus.getFiveProgramFive() + "'");
+            if (currentSyllabus.getFiveProgramFour() != null && currentSyllabus2.getFiveProgramFour() != null &&
+                    !currentSyllabus.getFiveProgramFour().equals(currentSyllabus2.getFiveProgramFour())) {
+                jsonResult.append("  \"FiveProgramFour\": \"Changed from '").append(currentSyllabus.getFiveProgramFour()).append("' to '").append(currentSyllabus2.getFiveProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getSixProgramZero().equals(editSyllabus.getSixProgramZero())) {
-                fileWriter.write("  SixProgram Zero changed from '" + syllabus.getSixProgramZero() + "' to '" + editSyllabus.getSixProgramZero() + "'");
+            if (currentSyllabus.getFiveProgramFive() != null && currentSyllabus2.getFiveProgramFive() != null &&
+                    !currentSyllabus.getFiveProgramFive().equals(currentSyllabus2.getFiveProgramFive())) {
+                jsonResult.append("  \"FiveProgramFive\": \"Changed from '").append(currentSyllabus.getFiveProgramFive()).append("' to '").append(currentSyllabus2.getFiveProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getSixProgramOne().equals(editSyllabus.getSixProgramOne())) {
-                fileWriter.write("  SixProgram One changed from '" + syllabus.getSixProgramOne() + "' to '" + editSyllabus.getSixProgramOne() + "'");
+            if (currentSyllabus.getSixProgramZero() != null && currentSyllabus2.getSixProgramZero() != null &&
+                    !currentSyllabus.getSixProgramZero().equals(currentSyllabus2.getSixProgramZero())) {
+                jsonResult.append("  \"SixProgramZero\": \"Changed from '").append(currentSyllabus.getSixProgramZero()).append("' to '").append(currentSyllabus2.getSixProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getSixProgramTwo().equals(editSyllabus.getSixProgramTwo())) {
-                fileWriter.write("  SixProgram Two changed from '" + syllabus.getSixProgramTwo() + "' to '" + editSyllabus.getSixProgramTwo() + "'");
+            if (currentSyllabus.getSixProgramOne() != null && currentSyllabus2.getSixProgramOne() != null &&
+                    !currentSyllabus.getSixProgramOne().equals(currentSyllabus2.getSixProgramOne())) {
+                jsonResult.append("  \"SixProgramOne\": \"Changed from '").append(currentSyllabus.getSixProgramOne()).append("' to '").append(currentSyllabus2.getSixProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getSixProgramThree().equals(editSyllabus.getSixProgramThree())) {
-                fileWriter.write("  SixProgram Three changed from '" + syllabus.getSixProgramThree() + "' to '" + editSyllabus.getSixProgramThree() + "'");
+            if (currentSyllabus.getSixProgramTwo() != null && currentSyllabus2.getSixProgramTwo() != null &&
+                    !currentSyllabus.getSixProgramTwo().equals(currentSyllabus2.getSixProgramTwo())) {
+                jsonResult.append("  \"SixProgramTwo\": \"Changed from '").append(currentSyllabus.getSixProgramTwo()).append("' to '").append(currentSyllabus2.getSixProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getSixProgramFour().equals(editSyllabus.getSixProgramFour())) {
-                fileWriter.write("  SixProgram Four changed from '" + syllabus.getSixProgramFour() + "' to '" + editSyllabus.getSixProgramFour() + "'");
+            if (currentSyllabus.getSixProgramThree() != null && currentSyllabus2.getSixProgramThree() != null &&
+                    !currentSyllabus.getSixProgramThree().equals(currentSyllabus2.getSixProgramThree())) {
+                jsonResult.append("  \"SixProgramThree\": \"Changed from '").append(currentSyllabus.getSixProgramThree()).append("' to '").append(currentSyllabus2.getSixProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getSixProgramFive().equals(editSyllabus.getSixProgramFive())) {
-                fileWriter.write("  SixProgram Five changed from '" + syllabus.getSixProgramFive() + "' to '" + editSyllabus.getSixProgramFive() + "'");
+            if (currentSyllabus.getSixProgramFour() != null && currentSyllabus2.getSixProgramFour() != null &&
+                    !currentSyllabus.getSixProgramFour().equals(currentSyllabus2.getSixProgramFour())) {
+                jsonResult.append("  \"SixProgramFour\": \"Changed from '").append(currentSyllabus.getSixProgramFour()).append("' to '").append(currentSyllabus2.getSixProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getSevenProgramZero().equals(editSyllabus.getSevenProgramZero())) {
-                fileWriter.write("  SevenProgram Zero changed from '" + syllabus.getSevenProgramZero() + "' to '" + editSyllabus.getSevenProgramZero() + "'");
+            if (currentSyllabus.getSixProgramFive() != null && currentSyllabus2.getSixProgramFive() != null &&
+                    !currentSyllabus.getSixProgramFive().equals(currentSyllabus2.getSixProgramFive())) {
+                jsonResult.append("  \"SixProgramFive\": \"Changed from '").append(currentSyllabus.getSixProgramFive()).append("' to '").append(currentSyllabus2.getSixProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getSevenProgramOne().equals(editSyllabus.getSevenProgramOne())) {
-                fileWriter.write("  SevenProgram One changed from '" + syllabus.getSevenProgramOne() + "' to '" + editSyllabus.getSevenProgramOne() + "'");
+            if (currentSyllabus.getSevenProgramZero() != null && currentSyllabus2.getSevenProgramZero() != null &&
+                    !currentSyllabus.getSevenProgramZero().equals(currentSyllabus2.getSevenProgramZero())) {
+                jsonResult.append("  \"SevenProgramZero\": \"Changed from '").append(currentSyllabus.getSevenProgramZero()).append("' to '").append(currentSyllabus2.getSevenProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getSevenProgramTwo().equals(editSyllabus.getSevenProgramTwo())) {
-                fileWriter.write("  SevenProgram Two changed from '" + syllabus.getSevenProgramTwo() + "' to '" + editSyllabus.getSevenProgramTwo() + "'");
+            if (currentSyllabus.getSevenProgramOne() != null && currentSyllabus2.getSevenProgramOne() != null &&
+                    !currentSyllabus.getSevenProgramOne().equals(currentSyllabus2.getSevenProgramOne())) {
+                jsonResult.append("  \"SevenProgramOne\": \"Changed from '").append(currentSyllabus.getSevenProgramOne()).append("' to '").append(currentSyllabus2.getSevenProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getSevenProgramThree().equals(editSyllabus.getSevenProgramThree())) {
-                fileWriter.write("  SevenProgram Three changed from '" + syllabus.getSevenProgramThree() + "' to '" + editSyllabus.getSevenProgramThree() + "'");
+            if (currentSyllabus.getSevenProgramTwo() != null && currentSyllabus2.getSevenProgramTwo() != null &&
+                    !currentSyllabus.getSevenProgramTwo().equals(currentSyllabus2.getSevenProgramTwo())) {
+                jsonResult.append("  \"SevenProgramTwo\": \"Changed from '").append(currentSyllabus.getSevenProgramTwo()).append("' to '").append(currentSyllabus2.getSevenProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getSevenProgramFour().equals(editSyllabus.getSevenProgramFour())) {
-                fileWriter.write("  SevenProgram Four changed from '" + syllabus.getSevenProgramFour() + "' to '" + editSyllabus.getSevenProgramFour() + "'");
+            if (currentSyllabus.getSevenProgramThree() != null && currentSyllabus2.getSevenProgramThree() != null &&
+                    !currentSyllabus.getSevenProgramThree().equals(currentSyllabus2.getSevenProgramThree())) {
+                jsonResult.append("  \"SevenProgramThree\": \"Changed from '").append(currentSyllabus.getSevenProgramThree()).append("' to '").append(currentSyllabus2.getSevenProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getSevenProgramFive().equals(editSyllabus.getSevenProgramFive())) {
-                fileWriter.write("  SevenProgram Five changed from '" + syllabus.getSevenProgramFive() + "' to '" + editSyllabus.getSevenProgramFive() + "'");
+            if (currentSyllabus.getSevenProgramFour() != null && currentSyllabus2.getSevenProgramFour() != null &&
+                    !currentSyllabus.getSevenProgramFour().equals(currentSyllabus2.getSevenProgramFour())) {
+                jsonResult.append("  \"SevenProgramFour\": \"Changed from '").append(currentSyllabus.getSevenProgramFour()).append("' to '").append(currentSyllabus2.getSevenProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getEightProgramZero().equals(editSyllabus.getEightProgramZero())) {
-                fileWriter.write("  EightProgram Zero changed from '" + syllabus.getEightProgramZero() + "' to '" + editSyllabus.getEightProgramZero() + "'");
+            if (currentSyllabus.getSevenProgramFive() != null && currentSyllabus2.getSevenProgramFive() != null &&
+                    !currentSyllabus.getSevenProgramFive().equals(currentSyllabus2.getSevenProgramFive())) {
+                jsonResult.append("  \"SevenProgramFive\": \"Changed from '").append(currentSyllabus.getSevenProgramFive()).append("' to '").append(currentSyllabus2.getSevenProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getEightProgramOne().equals(editSyllabus.getEightProgramOne())) {
-                fileWriter.write("  EightProgram One changed from '" + syllabus.getEightProgramOne() + "' to '" + editSyllabus.getEightProgramOne() + "'");
+            if (currentSyllabus.getEightProgramZero() != null && currentSyllabus2.getEightProgramZero() != null &&
+                    !currentSyllabus.getEightProgramZero().equals(currentSyllabus2.getEightProgramZero())) {
+                jsonResult.append("  \"EightProgramZero\": \"Changed from '").append(currentSyllabus.getEightProgramZero()).append("' to '").append(currentSyllabus2.getEightProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getEightProgramTwo().equals(editSyllabus.getEightProgramTwo())) {
-                fileWriter.write("  EightProgram Two changed from '" + syllabus.getEightProgramTwo() + "' to '" + editSyllabus.getEightProgramTwo() + "'");
+            if (currentSyllabus.getEightProgramOne() != null && currentSyllabus2.getEightProgramOne() != null &&
+                    !currentSyllabus.getEightProgramOne().equals(currentSyllabus2.getEightProgramOne())) {
+                jsonResult.append("  \"EightProgramOne\": \"Changed from '").append(currentSyllabus.getEightProgramOne()).append("' to '").append(currentSyllabus2.getEightProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getEightProgramThree().equals(editSyllabus.getEightProgramThree())) {
-                fileWriter.write("  EightProgram Three changed from '" + syllabus.getEightProgramThree() + "' to '" + editSyllabus.getEightProgramThree() + "'");
+            if (currentSyllabus.getEightProgramTwo() != null && currentSyllabus2.getEightProgramTwo() != null &&
+                    !currentSyllabus.getEightProgramTwo().equals(currentSyllabus2.getEightProgramTwo())) {
+                jsonResult.append("  \"EightProgramTwo\": \"Changed from '").append(currentSyllabus.getEightProgramTwo()).append("' to '").append(currentSyllabus2.getEightProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getEightProgramFour().equals(editSyllabus.getEightProgramFour())) {
-                fileWriter.write("  EightProgram Four changed from '" + syllabus.getEightProgramFour() + "' to '" + editSyllabus.getEightProgramFour() + "'");
+            if (currentSyllabus.getEightProgramThree() != null && currentSyllabus2.getEightProgramThree() != null &&
+                    !currentSyllabus.getEightProgramThree().equals(currentSyllabus2.getEightProgramThree())) {
+                jsonResult.append("  \"EightProgramThree\": \"Changed from '").append(currentSyllabus.getEightProgramThree()).append("' to '").append(currentSyllabus2.getEightProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getEightProgramFive().equals(editSyllabus.getEightProgramFive())) {
-                fileWriter.write("  EightProgram Five changed from '" + syllabus.getEightProgramFive() + "' to '" + editSyllabus.getEightProgramFive() + "'");
+            if (currentSyllabus.getEightProgramFour() != null && currentSyllabus2.getEightProgramFour() != null &&
+                    !currentSyllabus.getEightProgramFour().equals(currentSyllabus2.getEightProgramFour())) {
+                jsonResult.append("  \"EightProgramFour\": \"Changed from '").append(currentSyllabus.getEightProgramFour()).append("' to '").append(currentSyllabus2.getEightProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getNineProgramZero().equals(editSyllabus.getNineProgramZero())) {
-                fileWriter.write("  NineProgram Zero changed from '" + syllabus.getNineProgramZero() + "' to '" + editSyllabus.getNineProgramZero() + "'");
+            if (currentSyllabus.getEightProgramFive() != null && currentSyllabus2.getEightProgramFive() != null &&
+                    !currentSyllabus.getEightProgramFive().equals(currentSyllabus2.getEightProgramFive())) {
+                jsonResult.append("  \"EightProgramFive\": \"Changed from '").append(currentSyllabus.getEightProgramFive()).append("' to '").append(currentSyllabus2.getEightProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getNineProgramOne().equals(editSyllabus.getNineProgramOne())) {
-                fileWriter.write("  NineProgram One changed from '" + syllabus.getNineProgramOne() + "' to '" + editSyllabus.getNineProgramOne() + "'");
+            if (currentSyllabus.getNineProgramZero() != null && currentSyllabus2.getNineProgramZero() != null &&
+                    !currentSyllabus.getNineProgramZero().equals(currentSyllabus2.getNineProgramZero())) {
+                jsonResult.append("  \"NineProgramZero\": \"Changed from '").append(currentSyllabus.getNineProgramZero()).append("' to '").append(currentSyllabus2.getNineProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getNineProgramTwo().equals(editSyllabus.getNineProgramTwo())) {
-                fileWriter.write("  NineProgram Two changed from '" + syllabus.getNineProgramTwo() + "' to '" + editSyllabus.getNineProgramTwo() + "'");
+            if (currentSyllabus.getNineProgramOne() != null && currentSyllabus2.getNineProgramOne() != null &&
+                    !currentSyllabus.getNineProgramOne().equals(currentSyllabus2.getNineProgramOne())) {
+                jsonResult.append("  \"NineProgramOne\": \"Changed from '").append(currentSyllabus.getNineProgramOne()).append("' to '").append(currentSyllabus2.getNineProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getNineProgramThree().equals(editSyllabus.getNineProgramThree())) {
-                fileWriter.write("  NineProgram Three changed from '" + syllabus.getNineProgramThree() + "' to '" + editSyllabus.getNineProgramThree() + "'");
+            if (currentSyllabus.getNineProgramTwo() != null && currentSyllabus2.getNineProgramTwo() != null &&
+                    !currentSyllabus.getNineProgramTwo().equals(currentSyllabus2.getNineProgramTwo())) {
+                jsonResult.append("  \"NineProgramTwo\": \"Changed from '").append(currentSyllabus.getNineProgramTwo()).append("' to '").append(currentSyllabus2.getNineProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getNineProgramFour().equals(editSyllabus.getNineProgramFour())) {
-                fileWriter.write("  NineProgram Four changed from '" + syllabus.getNineProgramFour() + "' to '" + editSyllabus.getNineProgramFour() + "'");
+            if (currentSyllabus.getNineProgramThree() != null && currentSyllabus2.getNineProgramThree() != null &&
+                    !currentSyllabus.getNineProgramThree().equals(currentSyllabus2.getNineProgramThree())) {
+                jsonResult.append("  \"NineProgramThree\": \"Changed from '").append(currentSyllabus.getNineProgramThree()).append("' to '").append(currentSyllabus2.getNineProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getNineProgramFive().equals(editSyllabus.getNineProgramFive())) {
-                fileWriter.write("  NineProgram Five changed from '" + syllabus.getNineProgramFive() + "' to '" + editSyllabus.getNineProgramFive() + "'");
+            if (currentSyllabus.getNineProgramFour() != null && currentSyllabus2.getNineProgramFour() != null &&
+                    !currentSyllabus.getNineProgramFour().equals(currentSyllabus2.getNineProgramFour())) {
+                jsonResult.append("  \"NineProgramFour\": \"Changed from '").append(currentSyllabus.getNineProgramFour()).append("' to '").append(currentSyllabus2.getNineProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getTenProgramZero().equals(editSyllabus.getTenProgramZero())) {
-                fileWriter.write("  TenProgram Zero changed from '" + syllabus.getTenProgramZero() + "' to '" + editSyllabus.getTenProgramZero() + "'");
+            if (currentSyllabus.getNineProgramFive() != null && currentSyllabus2.getNineProgramFive() != null &&
+                    !currentSyllabus.getNineProgramFive().equals(currentSyllabus2.getNineProgramFive())) {
+                jsonResult.append("  \"NineProgramFive\": \"Changed from '").append(currentSyllabus.getNineProgramFive()).append("' to '").append(currentSyllabus2.getNineProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getTenProgramOne().equals(editSyllabus.getTenProgramOne())) {
-                fileWriter.write("  TenProgram One changed from '" + syllabus.getTenProgramOne() + "' to '" + editSyllabus.getTenProgramOne() + "'");
+            if (currentSyllabus.getTenProgramZero() != null && currentSyllabus2.getTenProgramZero() != null &&
+                    !currentSyllabus.getTenProgramZero().equals(currentSyllabus2.getTenProgramZero())) {
+                jsonResult.append("  \"TenProgramZero\": \"Changed from '").append(currentSyllabus.getTenProgramZero()).append("' to '").append(currentSyllabus2.getTenProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getTenProgramTwo().equals(editSyllabus.getTenProgramTwo())) {
-                fileWriter.write("  TenProgram Two changed from '" + syllabus.getTenProgramTwo() + "' to '" + editSyllabus.getTenProgramTwo() + "'");
+            if (currentSyllabus.getTenProgramOne() != null && currentSyllabus2.getTenProgramOne() != null &&
+                    !currentSyllabus.getTenProgramOne().equals(currentSyllabus2.getTenProgramOne())) {
+                jsonResult.append("  \"TenProgramOne\": \"Changed from '").append(currentSyllabus.getTenProgramOne()).append("' to '").append(currentSyllabus2.getTenProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getTenProgramThree().equals(editSyllabus.getTenProgramThree())) {
-                fileWriter.write("  TenProgram Three changed from '" + syllabus.getTenProgramThree() + "' to '" + editSyllabus.getTenProgramThree() + "'");
+            if (currentSyllabus.getTenProgramTwo() != null && currentSyllabus2.getTenProgramTwo() != null &&
+                    !currentSyllabus.getTenProgramTwo().equals(currentSyllabus2.getTenProgramTwo())) {
+                jsonResult.append("  \"TenProgramTwo\": \"Changed from '").append(currentSyllabus.getTenProgramTwo()).append("' to '").append(currentSyllabus2.getTenProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getTenProgramFour().equals(editSyllabus.getTenProgramFour())) {
-                fileWriter.write("  TenProgram Four changed from '" + syllabus.getTenProgramFour() + "' to '" + editSyllabus.getTenProgramFour() + "'");
+            if (currentSyllabus.getTenProgramThree() != null && currentSyllabus2.getTenProgramThree() != null &&
+                    !currentSyllabus.getTenProgramThree().equals(currentSyllabus2.getTenProgramThree())) {
+                jsonResult.append("  \"TenProgramThree\": \"Changed from '").append(currentSyllabus.getTenProgramThree()).append("' to '").append(currentSyllabus2.getTenProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getTenProgramFive().equals(editSyllabus.getTenProgramFive())) {
-                fileWriter.write("  TenProgram Five changed from '" + syllabus.getTenProgramFive() + "' to '" + editSyllabus.getTenProgramFive() + "'");
+            if (currentSyllabus.getTenProgramFour() != null && currentSyllabus2.getTenProgramFour() != null &&
+                    !currentSyllabus.getTenProgramFour().equals(currentSyllabus2.getTenProgramFour())) {
+                jsonResult.append("  \"TenProgramFour\": \"Changed from '").append(currentSyllabus.getTenProgramFour()).append("' to '").append(currentSyllabus2.getTenProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getElevenProgramZero().equals(editSyllabus.getElevenProgramZero())) {
-                fileWriter.write("  ElevenProgram Zero changed from '" + syllabus.getElevenProgramZero() + "' to '" + editSyllabus.getElevenProgramZero() + "'");
+            if (currentSyllabus.getTenProgramFive() != null && currentSyllabus2.getTenProgramFive() != null &&
+                    !currentSyllabus.getTenProgramFive().equals(currentSyllabus2.getTenProgramFive())) {
+                jsonResult.append("  \"TenProgramFive\": \"Changed from '").append(currentSyllabus.getTenProgramFive()).append("' to '").append(currentSyllabus2.getTenProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getElevenProgramOne().equals(editSyllabus.getElevenProgramOne())) {
-                fileWriter.write("  ElevenProgram One changed from '" + syllabus.getElevenProgramOne() + "' to '" + editSyllabus.getElevenProgramOne() + "'");
+            if (currentSyllabus.getElevenProgramZero() != null && currentSyllabus2.getElevenProgramZero() != null &&
+                    !currentSyllabus.getElevenProgramZero().equals(currentSyllabus2.getElevenProgramZero())) {
+                jsonResult.append("  \"ElevenProgramZero\": \"Changed from '").append(currentSyllabus.getElevenProgramZero()).append("' to '").append(currentSyllabus2.getElevenProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getElevenProgramTwo().equals(editSyllabus.getElevenProgramTwo())) {
-                fileWriter.write("  ElevenProgram Two changed from '" + syllabus.getElevenProgramTwo() + "' to '" + editSyllabus.getElevenProgramTwo() + "'");
+            if (currentSyllabus.getElevenProgramOne() != null && currentSyllabus2.getElevenProgramOne() != null &&
+                    !currentSyllabus.getElevenProgramOne().equals(currentSyllabus2.getElevenProgramOne())) {
+                jsonResult.append("  \"ElevenProgramOne\": \"Changed from '").append(currentSyllabus.getElevenProgramOne()).append("' to '").append(currentSyllabus2.getElevenProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getElevenProgramThree().equals(editSyllabus.getElevenProgramThree())) {
-                fileWriter.write("  ElevenProgram Three changed from '" + syllabus.getElevenProgramThree() + "' to '" + editSyllabus.getElevenProgramThree() + "'");
+            if (currentSyllabus.getElevenProgramTwo() != null && currentSyllabus2.getElevenProgramTwo() != null &&
+                    !currentSyllabus.getElevenProgramTwo().equals(currentSyllabus2.getElevenProgramTwo())) {
+                jsonResult.append("  \"ElevenProgramTwo\": \"Changed from '").append(currentSyllabus.getElevenProgramTwo()).append("' to '").append(currentSyllabus2.getElevenProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getElevenProgramFour().equals(editSyllabus.getElevenProgramFour())) {
-                fileWriter.write("  ElevenProgram Four changed from '" + syllabus.getElevenProgramFour() + "' to '" + editSyllabus.getElevenProgramFour() + "'");
+            if (currentSyllabus.getElevenProgramThree() != null && currentSyllabus2.getElevenProgramThree() != null &&
+                    !currentSyllabus.getElevenProgramThree().equals(currentSyllabus2.getElevenProgramThree())) {
+                jsonResult.append("  \"ElevenProgramThree\": \"Changed from '").append(currentSyllabus.getElevenProgramThree()).append("' to '").append(currentSyllabus2.getElevenProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getElevenProgramFive().equals(editSyllabus.getElevenProgramFive())) {
-                fileWriter.write("  ElevenProgram Five changed from '" + syllabus.getElevenProgramFive() + "' to '" + editSyllabus.getElevenProgramFive() + "'");
+            if (currentSyllabus.getElevenProgramFour() != null && currentSyllabus2.getElevenProgramFour() != null &&
+                    !currentSyllabus.getElevenProgramFour().equals(currentSyllabus2.getElevenProgramFour())) {
+                jsonResult.append("  \"ElevenProgramFour\": \"Changed from '").append(currentSyllabus.getElevenProgramFour()).append("' to '").append(currentSyllabus2.getElevenProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getTwelveProgramZero().equals(editSyllabus.getTwelveProgramZero())) {
-                fileWriter.write("  TwelveProgram Zero changed from '" + syllabus.getTwelveProgramZero() + "' to '" + editSyllabus.getTwelveProgramZero() + "'");
+            if (currentSyllabus.getElevenProgramFive() != null && currentSyllabus2.getElevenProgramFive() != null &&
+                    !currentSyllabus.getElevenProgramFive().equals(currentSyllabus2.getElevenProgramFive())) {
+                jsonResult.append("  \"ElevenProgramFive\": \"Changed from '").append(currentSyllabus.getElevenProgramFive()).append("' to '").append(currentSyllabus2.getElevenProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getTwelveProgramOne().equals(editSyllabus.getTwelveProgramOne())) {
-                fileWriter.write("  TwelveProgram One changed from '" + syllabus.getTwelveProgramOne() + "' to '" + editSyllabus.getTwelveProgramOne() + "'");
+            if (currentSyllabus.getTwelveProgramZero() != null && currentSyllabus2.getTwelveProgramZero() != null &&
+                    !currentSyllabus.getTwelveProgramZero().equals(currentSyllabus2.getTwelveProgramZero())) {
+                jsonResult.append("  \"TwelveProgramZero\": \"Changed from '").append(currentSyllabus.getTwelveProgramZero()).append("' to '").append(currentSyllabus2.getTwelveProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getTwelveProgramTwo().equals(editSyllabus.getTwelveProgramTwo())) {
-                fileWriter.write("  TwelveProgram Two changed from '" + syllabus.getTwelveProgramTwo() + "' to '" + editSyllabus.getTwelveProgramTwo() + "'");
+            if (currentSyllabus.getTwelveProgramOne() != null && currentSyllabus2.getTwelveProgramOne() != null &&
+                    !currentSyllabus.getTwelveProgramOne().equals(currentSyllabus2.getTwelveProgramOne())) {
+                jsonResult.append("  \"TwelveProgramOne\": \"Changed from '").append(currentSyllabus.getTwelveProgramOne()).append("' to '").append(currentSyllabus2.getTwelveProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getTwelveProgramThree().equals(editSyllabus.getTwelveProgramThree())) {
-                fileWriter.write("  TwelveProgram Three changed from '" + syllabus.getTwelveProgramThree() + "' to '" + editSyllabus.getTwelveProgramThree() + "'");
+            if (currentSyllabus.getTwelveProgramTwo() != null && currentSyllabus2.getTwelveProgramTwo() != null &&
+                    !currentSyllabus.getTwelveProgramTwo().equals(currentSyllabus2.getTwelveProgramTwo())) {
+                jsonResult.append("  \"TwelveProgramTwo\": \"Changed from '").append(currentSyllabus.getTwelveProgramTwo()).append("' to '").append(currentSyllabus2.getTwelveProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getTwelveProgramFour().equals(editSyllabus.getTwelveProgramFour())) {
-                fileWriter.write("  TwelveProgram Four changed from '" + syllabus.getTwelveProgramFour() + "' to '" + editSyllabus.getTwelveProgramFour() + "'");
+            if (currentSyllabus.getTwelveProgramThree() != null && currentSyllabus2.getTwelveProgramThree() != null &&
+                    !currentSyllabus.getTwelveProgramThree().equals(currentSyllabus2.getTwelveProgramThree())) {
+                jsonResult.append("  \"TwelveProgramThree\": \"Changed from '").append(currentSyllabus.getTwelveProgramThree()).append("' to '").append(currentSyllabus2.getTwelveProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getTwelveProgramFive().equals(editSyllabus.getTwelveProgramFive())) {
-                fileWriter.write("  TwelveProgram Five changed from '" + syllabus.getTwelveProgramFive() + "' to '" + editSyllabus.getTwelveProgramFive() + "'");
+            if (currentSyllabus.getTwelveProgramFour() != null && currentSyllabus2.getTwelveProgramFour() != null &&
+                    !currentSyllabus.getTwelveProgramFour().equals(currentSyllabus2.getTwelveProgramFour())) {
+                jsonResult.append("  \"TwelveProgramFour\": \"Changed from '").append(currentSyllabus.getTwelveProgramFour()).append("' to '").append(currentSyllabus2.getTwelveProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getThirteenProgramZero().equals(editSyllabus.getThirteenProgramZero())) {
-                fileWriter.write("  ThirteenProgram Zero changed from '" + syllabus.getThirteenProgramZero() + "' to '" + editSyllabus.getThirteenProgramZero() + "'");
+            if (currentSyllabus.getTwelveProgramFive() != null && currentSyllabus2.getTwelveProgramFive() != null &&
+                    !currentSyllabus.getTwelveProgramFive().equals(currentSyllabus2.getTwelveProgramFive())) {
+                jsonResult.append("  \"TwelveProgramFive\": \"Changed from '").append(currentSyllabus.getTwelveProgramFive()).append("' to '").append(currentSyllabus2.getTwelveProgramFive()).append("',\n");
             }
 
-            if (!syllabus.getThirteenProgramOne().equals(editSyllabus.getThirteenProgramOne())) {
-                fileWriter.write("  ThirteenProgram One changed from '" + syllabus.getThirteenProgramOne() + "' to '" + editSyllabus.getThirteenProgramOne() + "'");
+            if (currentSyllabus.getThirteenProgramZero() != null && currentSyllabus2.getThirteenProgramZero() != null &&
+                    !currentSyllabus.getThirteenProgramZero().equals(currentSyllabus2.getThirteenProgramZero())) {
+                jsonResult.append("  \"ThirteenProgramZero\": \"Changed from '").append(currentSyllabus.getThirteenProgramZero()).append("' to '").append(currentSyllabus2.getThirteenProgramZero()).append("',\n");
             }
 
-            if (!syllabus.getThirteenProgramTwo().equals(editSyllabus.getThirteenProgramTwo())) {
-                fileWriter.write("  ThirteenProgram Two changed from '" + syllabus.getThirteenProgramTwo() + "' to '" + editSyllabus.getThirteenProgramTwo() + "'");
+            if (currentSyllabus.getThirteenProgramOne() != null && currentSyllabus2.getThirteenProgramOne() != null &&
+                    !currentSyllabus.getThirteenProgramOne().equals(currentSyllabus2.getThirteenProgramOne())) {
+                jsonResult.append("  \"ThirteenProgramOne\": \"Changed from '").append(currentSyllabus.getThirteenProgramOne()).append("' to '").append(currentSyllabus2.getThirteenProgramOne()).append("',\n");
             }
 
-            if (!syllabus.getThirteenProgramThree().equals(editSyllabus.getThirteenProgramThree())) {
-                fileWriter.write("  ThirteenProgram Three changed from '" + syllabus.getThirteenProgramThree() + "' to '" + editSyllabus.getThirteenProgramThree() + "'");
+            if (currentSyllabus.getThirteenProgramTwo() != null && currentSyllabus2.getThirteenProgramTwo() != null &&
+                    !currentSyllabus.getThirteenProgramTwo().equals(currentSyllabus2.getThirteenProgramTwo())) {
+                jsonResult.append("  \"ThirteenProgramTwo\": \"Changed from '").append(currentSyllabus.getThirteenProgramTwo()).append("' to '").append(currentSyllabus2.getThirteenProgramTwo()).append("',\n");
             }
 
-            if (!syllabus.getThirteenProgramFour().equals(editSyllabus.getThirteenProgramFour())) {
-                fileWriter.write("  ThirteenProgram Four changed from '" + syllabus.getThirteenProgramFour() + "' to '" + editSyllabus.getThirteenProgramFour() + "'");
+            if (currentSyllabus.getThirteenProgramThree() != null && currentSyllabus2.getThirteenProgramThree() != null &&
+                    !currentSyllabus.getThirteenProgramThree().equals(currentSyllabus2.getThirteenProgramThree())) {
+                jsonResult.append("  \"ThirteenProgramThree\": \"Changed from '").append(currentSyllabus.getThirteenProgramThree()).append("' to '").append(currentSyllabus2.getThirteenProgramThree()).append("',\n");
             }
 
-            if (!syllabus.getThirteenProgramFive().equals(editSyllabus.getThirteenProgramFive())) {
-                fileWriter.write("  ThirteenProgram Five changed from '" + syllabus.getThirteenProgramFive() + "' to '" + editSyllabus.getThirteenProgramFive() + "'");
+            if (currentSyllabus.getThirteenProgramFour() != null && currentSyllabus2.getThirteenProgramFour() != null &&
+                    !currentSyllabus.getThirteenProgramFour().equals(currentSyllabus2.getThirteenProgramFour())) {
+                jsonResult.append("  \"ThirteenProgramFour\": \"Changed from '").append(currentSyllabus.getThirteenProgramFour()).append("' to '").append(currentSyllabus2.getThirteenProgramFour()).append("',\n");
             }
 
-            if (!syllabus.getTeachingMethods().equals(editSyllabus.getTeachingMethods())) {
-                fileWriter.write("  teachingMethods changed from '" + syllabus.getTeachingMethods() + "' to '" + editSyllabus.getTeachingMethods() + "'");
+            if (currentSyllabus.getThirteenProgramFive() != null && currentSyllabus2.getThirteenProgramFive() != null &&
+                    !currentSyllabus.getThirteenProgramFive().equals(currentSyllabus2.getThirteenProgramFive())) {
+                jsonResult.append("  \"ThirteenProgramFive\": \"Changed from '").append(currentSyllabus.getThirteenProgramFive()).append("' to '").append(currentSyllabus2.getThirteenProgramFive()).append("',\n");
             }
+
+            jsonResult.append("}");
 
-            fileWriter.close();
+            fileWriter.write(jsonResult.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
-
-
