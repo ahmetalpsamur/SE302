@@ -1769,6 +1769,7 @@ public class Controllers implements Initializable,Serializable {
         if (syllabusListView != null) {
             syllabusListO.addAll(syllabusList);
             syllabusListView.setItems(syllabusListO);
+            syllabusListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         }
 
@@ -1812,20 +1813,22 @@ public class Controllers implements Initializable,Serializable {
         );
 
 
+        syllabusListView.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            ObservableList<Syllabus> selectedItems = syllabusListView.getSelectionModel().getSelectedItems();
+            currentIndex = selectedItems.size();
+            if (currentIndex > 2) {
+                syllabusListView.getSelectionModel().clearSelection(syllabusListView.getItems().indexOf(newSelection));
+            } else if (currentIndex == 1) {
+                currentSyllabus = selectedItems.get(0);
+                System.out.println(" --> Course Name: " + currentSyllabus.getCourseName() + " --> Editor Name: " + currentSyllabus.getEditorName());
+                currentSyllabus2 = null;
+            } else if (currentIndex == 2) {
+                currentSyllabus = selectedItems.get(0);
+                currentSyllabus2 = selectedItems.get(1);
+                System.out.println("1st Selection --> Course Name: " + currentSyllabus.getCourseName() + " --> Editor Name: " + currentSyllabus.getEditorName());
+                System.out.println("2nd Selection --> Course Name: " + currentSyllabus2.getCourseName() + " --> Editor Name: " + currentSyllabus2.getEditorName());
+            }
+        });
 
-        if (syllabusListView != null) {
-            syllabusListView.getSelectionModel().selectedIndexProperty().addListener(
-                    (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
-                        if (newValue.intValue() >= 0) {
-
-                            currentIndex = newValue.intValue();
-                            currentSyllabus = syllabusListView.getItems().get(newValue.intValue());
-                            System.out.println(" --> Course Name: " + currentSyllabus.getCourseName()+" --> Editor Name: " + currentSyllabus.getEditorName());
-                        } else {
-                            currentSyllabus = null;
-                        }
-                    }
-            );
-        }
 
 } }
