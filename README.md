@@ -1,0 +1,1 @@
+Welcome to the user-guide for Syllabus Application. Syllabus Application is a standalone desktop application that can add, edit, view,delete and store user-written Syllabus. The application is designed for Windows systems. The application languages is English and Turkish. The document is written based on the java programming language and the application will use java.
