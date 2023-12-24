@@ -13,9 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="619.0" prefWidth="800.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1050.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
    <children>
-      <Label layoutX="228.0" layoutY="52.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.96" prefHeight="88.0" prefWidth="345.0" text="Syllabus Application" textAlignment="JUSTIFY" textFill="#2b309a" wrapText="true">
+      <Label layoutX="356.0" layoutY="51.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.96" prefHeight="88.0" prefWidth="345.0" text="Syllabus Application" textAlignment="JUSTIFY" textFill="#2b309a" wrapText="true">
          <font>
             <Font name="Rockwell Condensed" size="50.0" />
          </font>
@@ -30,16 +30,16 @@
             </Blend>
          </effect>
       </Label>
-      <Button layoutX="33.0" layoutY="342.0" mnemonicParsing="false" onAction="#chooseLanguage" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Add New Syllabus" />
-      <Button layoutX="224.0" layoutY="342.0" mnemonicParsing="false" onAction="#viewSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="View Syllabus" />
-      <Button layoutX="609.0" layoutY="342.0" mnemonicParsing="false" onAction="#compareSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Compare Syllabus" />
-      <Button layoutX="420.0" layoutY="342.0" mnemonicParsing="false"  prefHeight="47.0" prefWidth="162.0" onAction= "#editSyllabus" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Edit Syllabus" />
-      <Text layoutX="130.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Syllabus Application provides adding, viewing, editing, and comparison of syllabuses. Designed for educators and administrators, offering advanced features for dynamic viewing,robust editing and management." wrappingWidth="581.6708984375">
+      <Button layoutX="8.0" layoutY="342.0" mnemonicParsing="false" onAction="#chooseLanguage" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Add New Syllabus" />
+      <Button layoutX="193.0" layoutY="342.0" mnemonicParsing="false" onAction="#viewSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="View Syllabus" />
+      <Button layoutX="588.0" layoutY="342.0" mnemonicParsing="false" onAction="#compareSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Compare Syllabus" />
+      <Button layoutX="390.0" layoutY="342.0" mnemonicParsing="false" onAction="#editSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Edit Syllabus" />
+      <Text layoutX="238.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Syllabus Application provides adding, viewing, editing, and comparison of syllabuses. Designed for educators and administrators, offering advanced features for dynamic viewing,robust editing and management." wrappingWidth="581.6708984375">
          <font>
             <Font name="Sans Serif Collection" size="18.0" />
          </font>
       </Text>
-      <MenuBar prefHeight="32.0" prefWidth="800.0" style="-fx-background-color: #9C88E2;">
+      <MenuBar prefHeight="32.0" prefWidth="1050.0" style="-fx-background-color: #9C88E2;">
         <menus>
           <Menu mnemonicParsing="false" text="Help">
             <items>
@@ -48,7 +48,9 @@
           </Menu>
         </menus>
       </MenuBar>
-       <ListView fx:id="syllabusListView" layoutX="224.0" layoutY="398.0" prefHeight="209.0" prefWidth="375.0">
+       <ListView fx:id="syllabusListView" layoutX="324.0" layoutY="403.0" prefHeight="210.0" prefWidth="458.0">
        </ListView>
+      <Button layoutX="793.0" layoutY="342.0" mnemonicParsing="false" onAction="#importSyllabus" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Import Syllabus" />
+      <Button layoutX="978.0" layoutY="342.0" mnemonicParsing="false" onAction="#deleteSyllabus" prefHeight="47.0" prefWidth="49.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="del" />
    </children>
 </AnchorPane>

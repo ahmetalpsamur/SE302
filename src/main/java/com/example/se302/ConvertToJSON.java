@@ -21,17 +21,13 @@ public class ConvertToJSON {
                 fileList.add("syllabus_" + syllabus.getCode() + ".json");
 
                 String jsonString = "{\n"
-
-                       + "Changes Detail: "
-                       + "\"Code of the Class\" : \" " + syllabus.getCode() + "\n"
-                       + "\"Editor Name and Surname\" : \" " + syllabus.getEditorName() + "\n"  //add editor info with get
-                       + "\"Reason for Changes\" : \" " + syllabus.getEditDescription() + "\n" // get why change info
-                       + "\"When was change made\" : \" " + syllabus.getEditDate() + "\n" //get date box
-                       + "\"What time was change made\" : \" " + syllabus.getEditTime() + "\n" //get time box
+                       + "\"Code of the Class\" : \" " + syllabus.getCode() + "\",\n"
+                       + "\"Editor Name and Surname\" : \" " + syllabus.getEditorName() + "\",\n"
+                       + "\"Reason for Changes\" : \" " + syllabus.getEditDescription() + "\",\n"
+                       + "\"When was change made\" : \" " + syllabus.getEditDate() + "\",\n"
+                       + "\"What time was change made\" : \" " + syllabus.getEditTime() + "\",\n"
                     //    + "\"Language of the Syllabus\" : \" " + syllabus.getSyllabusLanguage() + "\n" //get language
-
                         + "\n"
-
                         + "  \"courseName\": \"" + syllabus.getCourseName() + "\",\n"
                         + "  \"code\": \"" + syllabus.getCode() + "\",\n"
                         + "  \"fall\": \"" + syllabus.getFall() + "\",\n"
