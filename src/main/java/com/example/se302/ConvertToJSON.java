@@ -239,10 +239,7 @@ public class ConvertToJSON {
                     e.printStackTrace();
                 }
             }
-        }  /* else if (fileList.contains("syllabus" + syllabus.getCode() + ".json"){
-           String filePath = "syllabus_" + syllabus.getCode() + sameFileCounter + ".json";
-        } */     //IF THERE IS A FILE WITH THE SAME NAME,
-        //ADD THE FILE NAME (1), (2) ,...
+        }
         else {
             System.out.println("Please enter the course code");
         }

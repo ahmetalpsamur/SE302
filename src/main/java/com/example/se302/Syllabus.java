@@ -11,8 +11,7 @@ import java.io.Serializable;
 public class Syllabus implements Serializable {
 
     private static final long serialVersionUID = -6956108329243054430L;
-    // to avoid the serialized file to get a different serialized id compared to at the beginning
-    // it was showed that this value -6956108329243054430 was assigned at the beginning
+
     private Boolean edited;
     private String editorName;
     private String editDescription;

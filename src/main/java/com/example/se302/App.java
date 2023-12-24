@@ -15,6 +15,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1050, 660);
+        stage.setResizable(false);
+
         stage.setTitle("Syllabus App");
         stage.setScene(scene);
         Controllers.loadSyllabusFromFile();

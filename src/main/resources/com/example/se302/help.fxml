@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAEAFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302.Controllers">
    <children>
-      <Button layoutX="421.0" layoutY="316.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="156.0" style="-fx-background-color: #D6D0EC; -fx-border-color: #5A1673;" text="Go to Home Screen" />
+      <Text fill="#0020ff" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add New Syllabus:" wrappingWidth="549.6708984375" />
+      <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To add a new syllabus, click on the button and fill the information.  After this, you can save and export the syllabus." wrappingWidth="517.220703125" />
+      <Text fill="#2200ff" layoutX="14.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Syllabus:" />
+      <Text layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on one of the listed syllabuses and click on the button to view it." />
+      <Text fill="#341fee" layoutX="14.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Syllabus:" wrappingWidth="153.6708984375" />
+      <Text layoutX="14.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To edit a syllabus, click on a syllabus from the list and then click on the button and it will load the previous version. Then, you can make the changes you want." wrappingWidth="584.94873046875" />
+      <Text fill="#3f10bf" layoutX="14.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compare Syllabus:" wrappingWidth="358.6708984375" />
+      <Text layoutX="14.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To compare two syllabuses, press CTRL and click on two syllabuses you want to compare from the list." wrappingWidth="619.3193359375" />
+      <Text fill="#4417ae" layoutX="14.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Import Syllabus:" />
+      <Text layoutX="14.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on the button and choose the syllabus that you want to import to the application." />
+      <Text fill="#5123d0" layoutX="15.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Syllabus:" />
+      <Text layoutX="14.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on a syllabus from the list and then click on the button, the syllabus will be deleted." />
    </children>
 </AnchorPane>

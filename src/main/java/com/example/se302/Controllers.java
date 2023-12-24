@@ -38,7 +38,7 @@ public class Controllers implements Initializable,Serializable {
     private Syllabus currentSyllabus2;
     private Syllabus tempSyllabus;
 
-    //below lines are for language choicebox
+
 
     @FXML
     private ChoiceBox<String> myChoiceBox;
@@ -795,6 +795,7 @@ public class Controllers implements Initializable,Serializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        stage.setResizable(false);
         stage.setTitle("Syllabus");
         stage.setScene(scene);
         stage.show();
@@ -861,6 +862,7 @@ public class Controllers implements Initializable,Serializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("help.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        stage.setResizable(false);
         stage.setTitle("Help");
         stage.setScene(scene);
         stage.show();
@@ -870,6 +872,7 @@ public class Controllers implements Initializable,Serializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("add-new-syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 781, 524);
+        stage.setResizable(false);
         stage.setTitle("Language");
         stage.setScene(scene);
         stage.show();
@@ -900,25 +903,26 @@ public class Controllers implements Initializable,Serializable {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxmlFileName));
             Parent root = fxmlLoader.load();
 
-            // Create a new stage
+
             Stage stage = new Stage();
             Scene scene = new Scene(root, 760, 750);
 
-            // Set the scene to the stage
+
             stage.setScene(scene);
             stage.setTitle("Syllabus");
             stage.show();
+            stage.setResizable(false);
 
-            // Close the current stage
+
             Stage currentStage = (Stage) myChoiceBox.getScene().getWindow();
             currentStage.close();
         } catch (IOException e) {
-            // Handle the exception appropriately (e.g., log it, show an error message)
+
             e.printStackTrace();
         }
     }
     public void exportSyllabus(){
-        //Add part
+
         Syllabus test = new Syllabus();
         setAssistantTextField(test);
         System.out.println(test.getCourseName());
@@ -953,7 +957,7 @@ public class Controllers implements Initializable,Serializable {
     public void viewSyllabus() throws IOException {
         for (Syllabus syllabus : syllabusList) {
             System.out.println("Course Name: " + syllabus.getCourseName());
-            // Add more code here to display or load other information as needed
+
         }
         if (currentSyllabus != null) {
             Syllabus tempSyllabus;
@@ -961,6 +965,8 @@ public class Controllers implements Initializable,Serializable {
             Stage stage = new Stage();
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("view-syllabus.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+            stage.setResizable(false);
+
             Controllers controller = fxmlLoader.getController();
             stage.setTitle("View Syllabus");
 
@@ -986,16 +992,16 @@ public class Controllers implements Initializable,Serializable {
                 controller.courseDescriptionTextField.setText(tempSyllabus.getCourseDescription());
 
 
-                //Since it is only for user to view and not to make changes, make the buttons uneditable
+
                 controller.coreCourseCheck.setDisable(true);
                 controller.majorCourseCheck.setDisable(true);
                 controller.supportCourseCheck.setDisable(true);
                 controller.comSkillsCourseCheck.setDisable(true);
                 controller.transfSkillCourseCheck.setDisable(true);
 
-                // if buttons are selected
+
                 if (tempSyllabus.getCourseCategory() != null) {
-                    // Set the selected radio button based on the saved category
+
                     switch (tempSyllabus.getCourseCategory()) {
                         case "Core Course":
                             if (controller.coreCourseCheck != null) {
@@ -1214,26 +1220,6 @@ public class Controllers implements Initializable,Serializable {
         }
     }
 
-    @FXML
-    public void editSaveButton(ActionEvent event) throws IOException {
-
-    }
-
-    private void updateSyllabusList(int index, Syllabus updatedSyllabus) {
-        if (index >= 0 && index < syllabusList.size()) {
-            syllabusList.set(index, updatedSyllabus);
-
-            syllabusListO.set(index, updatedSyllabus);
-
-            if (syllabusListView != null) {
-                syllabusListView.refresh();
-            }
-        } else {
-            System.out.println("Index out of range: " + index);
-        }
-    }
-
-
 
     public void editSyllabus() throws IOException {
 
@@ -1244,6 +1230,7 @@ public class Controllers implements Initializable,Serializable {
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
         this.controller = fxmlLoader.getController();
         Stage stage = new Stage();
+        stage.setResizable(false);
         stage.setTitle("Edit Syllabus");
             controller.courseNameText.setText(tempSyllabus.getCourseName());
             controller.codeTextField.setText(tempSyllabus.getCode());
@@ -1265,9 +1252,9 @@ public class Controllers implements Initializable,Serializable {
             controller.learningOutcomesTextField.setText(tempSyllabus.getLearningOutcomes());
             controller.courseDescriptionTextField.setText(tempSyllabus.getCourseDescription());
 
-        // if buttons are selected
+
         if (tempSyllabus.getCourseCategory() != null) {
-            // Set the selected radio button based on the saved category
+
             switch (tempSyllabus.getCourseCategory()) {
                 case "Core Course":
                     controller.coreCourseCheck.setSelected(true);
@@ -1493,6 +1480,7 @@ public class Controllers implements Initializable,Serializable {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("compare-syllabus.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+        stage.setResizable(false);
         Controllers controller = fxmlLoader.getController();
         stage.setTitle("Compare Syllabuses");
         fillSyllabusDetails(controller);
@@ -1712,17 +1700,7 @@ public class Controllers implements Initializable,Serializable {
 
 
 
-    public void loadSyllabusInformation() {
-        // Load the ArrayList from the file
-        loadSyllabusFromFile();
 
-        // Iterate through the ArrayList and process each syllabus
-        for (Syllabus syllabus : syllabusList) {
-          //  setAssistantTextField(syllabus); //IS THIS TRUE
-            System.out.println("Course Name: " + syllabus.getCourseName());
-            // Add more code here to display or load other information as needed
-        }
-    }
 
 
     private static void saveSyllabusToFile() {
@@ -1760,8 +1738,10 @@ public class Controllers implements Initializable,Serializable {
 
                 FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("syllabus.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 760, 750);
+
                 this.controller = fxmlLoader.getController();
                 Stage stage = new Stage();
+                stage.setResizable(false);
                 stage.setTitle("Import Syllabus");
                 {
                     controller.courseNameText.setText(importedSyllabus.getCourseName());
@@ -2044,24 +2024,6 @@ public class Controllers implements Initializable,Serializable {
     }
 
 
-    public static void loadTurkishSyllabusFromFile() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("turkish_syllabus.dat"))) {
-            // Suppressing unchecked cast warning because we're confident it's an ArrayList<Syllabus>
-            @SuppressWarnings("unchecked")
-            ArrayList<Syllabus> loadedList = (ArrayList<Syllabus>) ois.readObject();
-
-            // Clear the existing syllabusList and add the loaded entries
-            syllabusList.clear();
-            syllabusList.addAll(loadedList);
-        } catch (FileNotFoundException e) {
-            // File not found, create a new file
-            saveTurkishSyllabusToFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
