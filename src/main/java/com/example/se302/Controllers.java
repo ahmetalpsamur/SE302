@@ -1480,7 +1480,13 @@ public class Controllers implements Initializable,Serializable {
             showSyllabusDetails();
             exportcompareSyllabus();
         } else {
+
             System.out.println("Please select two syllabus to compare.");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Select 2 item in list to Compare.Press CTRL while choosing");
+            alert.showAndWait();
         }
     }
     private void showSyllabusDetails() throws IOException {

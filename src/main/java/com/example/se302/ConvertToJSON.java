@@ -1244,8 +1244,9 @@ public class ConvertToJSON {
             if (currentSyllabus.getThirteenProgramFive() != null && currentSyllabus2.getThirteenProgramFive() != null &&
                     !currentSyllabus.getThirteenProgramFive().equals(currentSyllabus2.getThirteenProgramFive())) {
                 jsonResult.append("  \"ThirteenProgramFive\": \"Changed from '").append(currentSyllabus.getThirteenProgramFive()).append("' to '").append(currentSyllabus2.getThirteenProgramFive()).append("'\",\n");
+                jsonResult.append("  \"ThirteenProgramFive\": \"Changed from '").append(currentSyllabus.getThirteenProgramFive()).append("' to '").append(currentSyllabus2.getThirteenProgramFive()).append("'\",\n");
             }
-
+            jsonResult.deleteCharAt(jsonResult.length() - 2);
             jsonResult.append("}");
 
             fileWriter.write(jsonResult.toString());
