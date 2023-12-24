@@ -13,7 +13,8 @@
 
 ## Screenshot
 
-![Screenshot of Syllabus Application](https://github.com/ahmetalpsamur/SE302/assets/106466382/40635714-1c5b-44a2-a0bd-d0beae4b2ce8)
+![Screenshot of Syllabus Application](https://github.com/ahmetalpsamur/SE302/assets/104353749/5c4a9ff3-88e6-4f1b-970f-7354ab4daa11)
+
 
 ## Development
 
